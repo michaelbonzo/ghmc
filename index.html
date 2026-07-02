@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="white">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galen House Medical Centre — Bulawayo | Your Health Is Our Priority</title>
+<meta name="description" content="Galen House Medical Centre, Bulawayo — one-stop private medical facility offering doctor consultations, X-ray, CT/MRI, laboratory, physiotherapy, baby clinic, women's clinic, and overnight admissions. Open 24 hours, every day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-alt:#F3F8FC;
+    --surface:#FFFFFF;
+    --surface-raised:#FFFFFF;
+    --text:#0A2540;
+    --text-muted:#51677F;
+    --brand-blue:#0B5FA5;
+    --brand-blue-strong:#08406F;
+    --brand-navy:#0A2540;
+    --accent-green:#1B9C6E;
+    --accent-red:#E0473E;
+    --border:#E2EAF2;
+    --shadow: 0 20px 45px -25px rgba(10,37,64,.35);
+    --pill-bg: rgba(11,95,165,.08);
+    --hero-grad: radial-gradient(120% 120% at 8% 0%, #EAF4FD 0%, #FFFFFF 45%, #FFFFFF 100%);
+    --nav-bg: rgba(255,255,255,.82);
+    --toggle-track: #E2EAF2;
+    --toggle-thumb: #0B5FA5;
+    --footer-bg: #0A2540;
+    --footer-text: #C9D9EA;
+    --code-bg: #F3F8FC;
+    --transition-theme: background-color .5s ease, color .5s ease, border-color .5s ease, box-shadow .5s ease;
+  }
+
+  html[data-theme="blue"]{
+    --bg:#0A2A4D;
+    --bg-alt:#0D3562;
+    --surface:#0E3868;
+    --surface-raised:#123F72;
+    --text:#F3F8FC;
+    --text-muted:#B7CBE3;
+    --brand-blue:#63B0EE;
+    --brand-blue-strong:#9ED0F7;
+    --brand-navy:#F3F8FC;
+    --accent-green:#57DBA6;
+    --accent-red:#FF8079;
+    --border:rgba(255,255,255,.14);
+    --shadow: 0 20px 45px -20px rgba(0,0,0,.5);
+    --pill-bg: rgba(255,255,255,.08);
+    --hero-grad: radial-gradient(120% 120% at 8% 0%, #123F72 0%, #0A2A4D 45%, #0A2A4D 100%);
+    --nav-bg: rgba(10,42,77,.82);
+    --toggle-track: rgba(255,255,255,.18);
+    --toggle-thumb: #63B0EE;
+    --footer-bg: #071D38;
+    --footer-text: #9FB8D6;
+    --code-bg: #0D3562;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    transition:var(--transition-theme);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Sora',sans-serif;
+    margin:0;
+    letter-spacing:-.01em;
+    color:var(--brand-navy);
+  }
+  p{margin:0;color:var(--text-muted);line-height:1.65;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .mono{font-family:'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  section{position:relative;}
+  ::selection{background:var(--brand-blue);color:#fff;}
+  :focus-visible{outline:3px solid var(--accent-green);outline-offset:3px;border-radius:4px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* ---------- Top utility bar ---------- */
+  .topbar{
+    background:var(--brand-navy);
+    color:#fff;
+    font-size:.8rem;
+  }
+  html[data-theme="blue"] .topbar{ background:#071D38; }
+  .topbar .wrap{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:8px 24px;gap:16px;flex-wrap:wrap;
+  }
+  .topbar-item{display:flex;align-items:center;gap:6px;color:#DCEAFB;}
+  .topbar-item strong{color:#fff;font-weight:600;}
+  .topbar a:hover{color:var(--accent-green);}
+  .topbar-badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(87,219,166,.15);
+    color:#7CE8BC;
+    padding:3px 10px;border-radius:100px;font-weight:600;
+  }
+  .pulse-dot{width:6px;height:6px;border-radius:50%;background:#57DBA6;animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--nav-bg);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+    transition:var(--transition-theme);
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;gap:20px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand svg{width:38px;height:38px;flex-shrink:0;}
+  .brand img{
+    height:40px;width:auto;flex-shrink:0;
+    transition:filter .4s ease;
+  }
+  /* Logo automatically switches to white in the blue theme, regardless of the source image's own colours */
+  html[data-theme="blue"] .brand img{
+    filter:brightness(0) saturate(100%) invert(1);
+  }
+  .brand-text{display:flex;flex-direction:column;line-height:1.15;}
+  .brand-text .name{font-family:'Sora',sans-serif;font-weight:700;font-size:1.05rem;color:var(--brand-navy);}
+  .brand-text .sub{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-blue);font-weight:600;}
+
+  nav.links{display:flex;gap:28px;align-items:center;}
+  nav.links a{
+    font-size:.92rem;font-weight:500;color:var(--text);
+    position:relative;padding:4px 0;
+  }
+  nav.links a::after{
+    content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0%;
+    background:var(--accent-green);transition:width .25s ease;
+  }
+  nav.links a:hover::after{width:100%;}
+
+  .nav-actions{display:flex;align-items:center;gap:14px;}
+
+  .theme-toggle{
+    display:flex;align-items:center;gap:8px;
+    background:var(--pill-bg);
+    border:1px solid var(--border);
+    padding:5px;border-radius:100px;
+    cursor:pointer;
+  }
+  .theme-toggle button{
+    border:none;background:transparent;cursor:pointer;
+    padding:6px 12px;border-radius:100px;
+    font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--text-muted);
+    transition:background .25s ease, color .25s ease;
+  }
+  .theme-toggle button.active{
+    background:var(--brand-blue);color:#fff;
+  }
+
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-weight:600;font-size:.92rem;
+    padding:12px 22px;border-radius:10px;
+    border:1.5px solid transparent;cursor:pointer;
+    transition:transform .2s ease, box-shadow .2s ease, background .25s ease, color .25s ease, border-color .25s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--brand-blue);color:#fff;box-shadow:0 10px 24px -10px rgba(11,95,165,.55);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 28px -10px rgba(11,95,165,.6);}
+  .btn-ghost{background:transparent;border-color:var(--border);color:var(--text);}
+  .btn-ghost:hover{border-color:var(--brand-blue);color:var(--brand-blue);}
+  .btn-sm{padding:9px 16px;font-size:.82rem;}
+
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .burger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--hero-grad);
+    padding:72px 0 40px;
+    overflow:hidden;
+    transition:var(--transition-theme);
+  }
+  .hero-inner{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--brand-blue);background:var(--pill-bg);
+    padding:7px 14px;border-radius:100px;margin-bottom:22px;
+  }
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent-green);}
+  .hero h1{
+    font-size:clamp(2.4rem,4.6vw,3.6rem);
+    font-weight:800;line-height:1.05;color:var(--brand-navy);
+  }
+  .hero h1 span{color:var(--brand-blue);}
+  .hero p.lead{
+    margin-top:22px;font-size:1.08rem;max-width:46ch;
+  }
+  .hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
+  .hero-note{
+    margin-top:26px;display:flex;gap:10px;align-items:center;
+    font-size:.85rem;color:var(--text-muted);
+  }
+
+  .ecg-hero{
+    position:relative;background:var(--surface);
+    border:1px solid var(--border);border-radius:24px;
+    padding:32px 28px;box-shadow:var(--shadow);
+  }
+  .ecg-hero::before{
+    content:"";
+    position:absolute;inset:0;
+    border-radius:24px;
+    background-image:
+      linear-gradient(var(--pill-bg) 1px, transparent 1px),
+      linear-gradient(90deg, var(--pill-bg) 1px, transparent 1px);
+    background-size:24px 24px;
+    -webkit-mask-image:radial-gradient(ellipse 100% 90% at 50% 40%, #000 55%, transparent 100%);
+    mask-image:radial-gradient(ellipse 100% 90% at 50% 40%, #000 55%, transparent 100%);
+    opacity:.9;
+  }
+  .ecg-hero::after{
+    content:"";
+    position:absolute;
+    width:280px;height:280px;
+    background:radial-gradient(circle, var(--brand-blue) 0%, transparent 70%);
+    opacity:.14;
+    top:-90px;right:-90px;
+    border-radius:50%;
+    pointer-events:none;
+  }
+  .ecg-hero > *{position:relative;z-index:1;}
+  .ecg-hero .cad{
+    position:absolute;top:-18px;right:24px;
+    width:46px;height:46px;background:var(--brand-blue);
+    border-radius:50%;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 20px -8px rgba(11,95,165,.6);
+  }
+  .ecg-hero .cad svg{width:24px;height:24px;}
+  .ecg-hero svg.line{width:100%;height:auto;display:block;}
+  .ecg-caption{margin-top:18px;display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--text-muted);letter-spacing:.05em;}
+  .ecg-caption b{color:var(--accent-green);}
+
+  .ecg-path{
+    stroke:var(--brand-blue);
+    stroke-width:2.5;
+    fill:none;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-dasharray:1000 1000;
+    stroke-dashoffset:2000;
+    animation:draw-loop 3.2s linear infinite;
+  }
+  @keyframes draw-loop{ to{ stroke-dashoffset:0; } }
+
+  .ecg-path-glow{
+    stroke:var(--accent-green);
+    stroke-width:2.5;
+    fill:none;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    opacity:0;
+    filter:drop-shadow(0 0 6px var(--accent-green));
+    stroke-dasharray:70 930;
+    stroke-dashoffset:1000;
+    animation:sweep 3.2s linear infinite;
+  }
+  @keyframes sweep{
+    0%{ stroke-dashoffset:1000; opacity:0; }
+    3%{ opacity:1; }
+    92%{ opacity:1; }
+    100%{ stroke-dashoffset:-930; opacity:0; }
+  }
+
+  .ecg-dot{
+    fill:var(--accent-green);
+    filter:drop-shadow(0 0 5px var(--accent-green));
+    opacity:0;
+    animation:sweep-dot 3.2s linear infinite;
+  }
+  @keyframes sweep-dot{
+    0%{ opacity:0; }
+    3%{ opacity:1; }
+    92%{ opacity:1; }
+    100%{ opacity:0; }
+  }
+
+  .status-pulse{
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .status-dot{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--accent-green);
+    box-shadow:0 0 0 0 rgba(87,219,166,.6);
+    animation:status-ping 1.8s ease-out infinite;
+  }
+  @keyframes status-ping{
+    0%{ box-shadow:0 0 0 0 rgba(87,219,166,.55); }
+    70%{ box-shadow:0 0 0 8px rgba(87,219,166,0); }
+    100%{ box-shadow:0 0 0 0 rgba(87,219,166,0); }
+  }
+  .status-text{
+    animation:status-fade 2.4s ease-in-out infinite;
+  }
+  @keyframes status-fade{
+    0%,100%{ opacity:1; }
+    50%{ opacity:.55; }
+  }
+
+  /* ---------- Stats strip ---------- */
+  .stats{
+    background:var(--surface);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    transition:var(--transition-theme);
+  }
+  .stats .wrap{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    padding:34px 24px;gap:20px;
+  }
+  .stat{text-align:center;border-right:1px solid var(--border);}
+  .stat:last-child{border-right:none;}
+  .stat .num{font-family:'Sora',sans-serif;font-weight:800;font-size:2rem;color:var(--brand-blue);}
+  .stat .label{margin-top:4px;font-size:.78rem;color:var(--text-muted);font-weight:500;}
+
+  /* ---------- Section headers ---------- */
+  .section-pad{padding:96px 0;}
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-head .eyebrow{margin-bottom:16px;}
+  .section-head h2{font-size:clamp(1.8rem,3vw,2.4rem);}
+  .section-head p{margin-top:14px;font-size:1.02rem;}
+  .section-alt{background:var(--bg-alt);transition:var(--transition-theme);}
+
+  /* divider */
+  .divider{
+    display:flex;align-items:center;justify-content:center;
+    padding:6px 0 0;
+  }
+  .divider svg{width:100%;max-width:1180px;height:34px;opacity:.55;}
+  .divider path{stroke:var(--brand-blue);stroke-width:2;fill:none;opacity:.5;}
+
+  /* ---------- Real-life photography: varied treatments ---------- */
+  .photo-caption{
+    font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--text-muted);font-weight:500;margin-top:10px;
+  }
+
+  /* 1. Tilted framed card — used in the hero */
+  .photo-tilt-wrap{margin-top:48px;display:flex;justify-content:center;}
+  .photo-tilt{
+    position:relative;
+    max-width:640px;width:100%;
+    border-radius:18px;overflow:hidden;
+    border:5px solid var(--surface);
+    box-shadow:var(--shadow);
+    transform:rotate(-1.4deg);
+    transition:transform .35s ease, var(--transition-theme);
+    aspect-ratio:16/8;
+  }
+  .photo-tilt:hover{transform:rotate(0deg);}
+  .photo-tilt img{width:100%;height:100%;object-fit:cover;display:block;}
+  .photo-tilt .photo-caption{
+    position:absolute;left:14px;bottom:12px;margin-top:0;
+    background:rgba(10,37,64,.78);color:#fff;padding:6px 12px;border-radius:100px;
+  }
+
+  /* 2. Offset collage pair — used in About */
+  .photo-collage{
+    position:relative;margin-top:44px;
+    padding-bottom:60px;padding-right:40px;
+  }
+  .photo-collage .collage-main{
+    border-radius:18px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);
+    aspect-ratio:16/10;
+  }
+  .photo-collage .collage-main img{width:100%;height:100%;object-fit:cover;display:block;}
+  .photo-collage .collage-accent{
+    position:absolute;right:0;bottom:0;width:46%;
+    border-radius:14px;overflow:hidden;border:5px solid var(--bg);box-shadow:var(--shadow);
+    aspect-ratio:4/3;
+  }
+  .photo-collage .collage-accent img{width:100%;height:100%;object-fit:cover;display:block;}
+
+  /* 3. Circular badge photo — used in Services / Values */
+  .photo-circle{
+    width:120px;height:120px;border-radius:50%;overflow:hidden;flex-shrink:0;
+    border:4px solid var(--surface);box-shadow:var(--shadow);
+  }
+  .photo-circle img{width:100%;height:100%;object-fit:cover;display:block;}
+  .section-head-photo{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+
+  /* 4. Filmstrip row of unequal photos — used in Facilities */
+  .photo-filmstrip{
+    display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:16px;margin-top:40px;
+  }
+  .photo-filmstrip figure{
+    margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);
+    aspect-ratio:3/4;position:relative;
+  }
+  .photo-filmstrip figure:first-child{aspect-ratio:1/1;}
+  .photo-filmstrip img{width:100%;height:100%;object-fit:cover;display:block;}
+  .photo-filmstrip figcaption{
+    position:absolute;left:0;right:0;bottom:0;
+    background:linear-gradient(to top, rgba(6,20,36,.82), transparent);
+    color:#fff;font-size:.7rem;font-weight:600;padding:10px 12px;
+  }
+  @media (max-width:768px){ .photo-filmstrip{grid-template-columns:1fr 1fr;} .photo-filmstrip figure:first-child{grid-column:1/-1;aspect-ratio:16/9;} }
+
+  /* 5. Duotone editorial banner — used in Team */
+  .photo-duotone{
+    position:relative;margin-top:44px;border-radius:20px;overflow:hidden;
+    aspect-ratio:16/6;border:1px solid var(--border);
+  }
+  .photo-duotone img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    filter:grayscale(1) contrast(1.05);
+  }
+  .photo-duotone::after{
+    content:"";position:absolute;inset:0;
+    background:var(--brand-blue);mix-blend-mode:multiply;opacity:.72;
+  }
+  .photo-duotone .photo-caption{
+    position:absolute;left:24px;bottom:18px;margin-top:0;color:#fff;
+    z-index:1;font-size:.74rem;
+  }
+
+  /* 6. Split pair — used in Contact */
+  .photo-split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px;}
+  .photo-split figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);aspect-ratio:4/3;}
+  .photo-split img{width:100%;height:100%;object-fit:cover;display:block;}
+  @media (max-width:560px){ .photo-split{grid-template-columns:1fr;} }
+
+  /* ---------- About / history ---------- */
+  .about-grid{
+    display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start;
+  }
+  .about-card{
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:20px;padding:30px;box-shadow:var(--shadow);
+  }
+  .about-card h3{font-size:1.15rem;margin-bottom:10px;}
+  .about-card p{font-size:.94rem;}
+  .about-card + .about-card{margin-top:20px;}
+  .founder-quote{
+    border-left:3px solid var(--accent-green);
+    padding-left:20px;margin-top:24px;font-style:italic;color:var(--text);
+    font-size:1.02rem;
+  }
+  .timeline{margin-top:28px;display:flex;flex-direction:column;gap:18px;}
+  .timeline-item{display:flex;gap:16px;}
+  .timeline-year{
+    font-family:'IBM Plex Mono',monospace;font-weight:500;color:var(--brand-blue);
+    min-width:64px;font-size:.85rem;padding-top:2px;
+  }
+  .timeline-copy p{font-size:.92rem;}
+
+  /* ---------- Services ---------- */
+  .service-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  }
+  .service-card{
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:18px;padding:26px 24px;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--brand-blue);}
+  .service-icon{
+    width:44px;height:44px;border-radius:12px;
+    background:var(--pill-bg);display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;
+  }
+  .service-icon svg{width:22px;height:22px;stroke:var(--brand-blue);}
+  .service-card h4{font-size:1.02rem;margin-bottom:6px;}
+  .service-card p{font-size:.86rem;}
+
+  /* ---------- Facilities ---------- */
+  .facility-strip{
+    display:grid;grid-template-columns:repeat(6,1fr);gap:0;
+    border:1px solid var(--border);border-radius:20px;overflow:hidden;
+    background:var(--surface);
+  }
+  .facility-cell{
+    padding:26px 16px;text-align:center;border-right:1px solid var(--border);border-bottom:1px solid var(--border);
+  }
+  .facility-cell svg{width:26px;height:26px;stroke:var(--accent-green);margin:0 auto 10px;}
+  .facility-cell .flabel{font-size:.8rem;font-weight:600;color:var(--text);}
+
+  /* ---------- Values ---------- */
+  .values-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  }
+  .value-card{
+    padding:28px 24px;border-radius:18px;
+    background:var(--surface);border:1px solid var(--border);
+  }
+  .value-num{
+    font-family:'IBM Plex Mono',monospace;color:var(--brand-blue);font-size:.78rem;
+    background:var(--pill-bg);display:inline-block;padding:4px 10px;border-radius:100px;margin-bottom:14px;
+  }
+  .value-card h4{font-size:1.02rem;margin-bottom:8px;}
+  .value-card p{font-size:.88rem;}
+
+  /* ---------- Payments ---------- */
+  .pay-band{
+    background:var(--brand-navy);
+    border-radius:24px;padding:48px 40px;
+    display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:center;
+    color:#fff;
+  }
+  html[data-theme="blue"] .pay-band{background:#071D38;}
+  .pay-band h3{color:#fff;font-size:1.5rem;margin-bottom:10px;}
+  .pay-band p{color:#B9CEE6;}
+  .pay-icons{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+  .pay-chip{
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+    border-radius:14px;padding:18px 10px;text-align:center;
+  }
+  .pay-chip svg{width:24px;height:24px;stroke:#7CE8BC;margin:0 auto 8px;}
+  .pay-chip span{font-size:.74rem;color:#DCEAFB;font-weight:600;}
+
+  /* ---------- Team strip ---------- */
+  .team-band{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;
+  }
+  .team-copy p{margin-top:16px;font-size:1rem;}
+  .badge-row{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap;}
+  .badge{
+    display:flex;align-items:center;gap:10px;
+    border:1px solid var(--border);border-radius:14px;padding:12px 16px;
+    background:var(--surface);
+  }
+  .badge svg{width:20px;height:20px;stroke:var(--brand-blue);}
+  .badge span{font-size:.82rem;font-weight:600;}
+  .avatar-cluster{
+    background:var(--surface);border:1px solid var(--border);border-radius:20px;
+    padding:26px;box-shadow:var(--shadow);
+  }
+  .avatar-row{display:flex;}
+  .avatar{
+    width:52px;height:52px;border-radius:50%;
+    border:3px solid var(--bg);
+    margin-left:-14px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Sora',sans-serif;font-weight:700;color:#fff;font-size:.8rem;
+  }
+  .avatar:first-child{margin-left:0;}
+  .avatar-row + p{margin-top:16px;font-size:.85rem;}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;
+    border:1px solid var(--border);border-radius:24px;overflow:hidden;
+  }
+  .contact-info{
+    background:var(--surface);padding:48px 44px;
+  }
+  .contact-info h3{font-size:1.4rem;margin-bottom:8px;}
+  .contact-row{
+    display:flex;gap:16px;padding:18px 0;border-top:1px solid var(--border);
+  }
+  .contact-row:first-of-type{margin-top:26px;}
+  .contact-row svg{width:20px;height:20px;stroke:var(--brand-blue);flex-shrink:0;margin-top:2px;}
+  .contact-row .clabel{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);font-weight:600;margin-bottom:3px;}
+  .contact-row .cval{font-size:.95rem;color:var(--text);font-weight:500;}
+  .contact-row a:hover{color:var(--brand-blue);}
+  .map-embed{min-height:100%;background:var(--bg-alt);}
+  .map-embed iframe{width:100%;height:100%;min-height:420px;border:0;filter:grayscale(.15);}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--footer-bg);color:var(--footer-text);
+    padding:64px 0 28px;
+  }
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;
+    padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1);
+  }
+  .footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .footer-brand .name{font-family:'Sora',sans-serif;font-weight:700;color:#fff;font-size:1.05rem;}
+  footer p{color:var(--footer-text);font-size:.88rem;max-width:34ch;}
+  footer h5{color:#fff;font-family:'Sora',sans-serif;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+  footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
+  footer ul a{font-size:.88rem;color:var(--footer-text);}
+  footer ul a:hover{color:#fff;}
+  .footer-bottom{
+    padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    font-size:.78rem;color:#8FA8C6;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:980px){
+    nav.links, .nav-actions .btn-ghost{display:none;}
+    .burger{display:block;}
+    .hero-inner{grid-template-columns:1fr;}
+    .about-grid, .team-band{grid-template-columns:1fr;}
+    .service-grid{grid-template-columns:repeat(2,1fr);}
+    .facility-strip{grid-template-columns:repeat(3,1fr);}
+    .values-grid{grid-template-columns:1fr 1fr;}
+    .pay-band{grid-template-columns:1fr;}
+    .pay-icons{grid-template-columns:repeat(5,1fr);}
+    .contact-grid{grid-template-columns:1fr;}
+    .stats .wrap{grid-template-columns:repeat(2,1fr);}
+    .stat{border-right:none;border-bottom:1px solid var(--border);padding-bottom:16px;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:560px){
+    .service-grid{grid-template-columns:1fr;}
+    .facility-strip{grid-template-columns:repeat(2,1fr);}
+    .values-grid{grid-template-columns:1fr;}
+    .pay-icons{grid-template-columns:repeat(3,1fr);}
+    .footer-grid{grid-template-columns:1fr;}
+    .section-pad{padding:64px 0;}
+    .topbar .wrap{justify-content:center;text-align:center;}
+  }
+
+  /* Mobile menu */
+  .mobile-menu{
+    position:fixed;inset:0;background:var(--bg);z-index:100;
+    display:flex;flex-direction:column;padding:24px;
+    transform:translateX(100%);transition:transform .3s ease;
+  }
+  .mobile-menu.open{transform:translateX(0);}
+  .mobile-menu .close-row{display:flex;justify-content:flex-end;}
+  .mobile-menu nav{display:flex;flex-direction:column;gap:22px;margin-top:40px;}
+  .mobile-menu nav a{font-family:'Sora',sans-serif;font-size:1.4rem;font-weight:600;color:var(--text);}
+  .mobile-menu .btn{margin-top:32px;justify-content:center;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-item">
+      <span class="topbar-badge"><span class="pulse-dot"></span>Open 24 hours, every day</span>
+    </div>
+    <div class="topbar-item"> 93 J. Tongogara St &amp; Cnr 9th Ave, Bulawayo</div>
+    <div class="topbar-item"><strong>Emergency line:</strong>&nbsp;<a href="tel:+263773878352">+263 7773 878 352</a></div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="nav-inner wrap">
+    <a href="#top" class="brand">
+     <img src='g1.png' />
+    </a>
+
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#facilities">Facilities</a>
+      <a href="#values">Values</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="theme-toggle" role="group" aria-label="Theme switcher">
+        <button type="button" id="theme-white" class="active" onclick="setTheme('white')">White</button>
+        <button type="button" id="theme-blue" onclick="setTheme('blue')">Blue</button>
+      </div>
+      <a href="tel:+2632928810514" class="btn btn-ghost btn-sm"> +263 292 881 051-4</a>
+      <a href="tel:+263773878352" class="btn btn-primary btn-sm">Call Now</a>
+      <button class="burger" onclick="toggleMobile(true)" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="close-row">
+    <button class="burger" onclick="toggleMobile(false)" aria-label="Close menu">✕</button>
+  </div>
+  <nav>
+    <a href="#about" onclick="toggleMobile(false)">About</a>
+    <a href="#services" onclick="toggleMobile(false)">Services</a>
+    <a href="#facilities" onclick="toggleMobile(false)">Facilities</a>
+    <a href="#values" onclick="toggleMobile(false)">Values</a>
+    <a href="#contact" onclick="toggleMobile(false)">Contact</a>
+  </nav>
+  <a href="tel:+263773878352" class="btn btn-primary">Call +263 7773 878 352</a>
+</div>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <div class="eyebrow">Bulawayo · Serving patients since 1957</div>
+        <h1>Your health<br>is our <span>priority.</span></h1>
+        <p class="lead">Galen House Medical Centre is a one-stop private medical facility in Bulawayo — doctor consultations, in-house imaging and laboratory, specialist clinics, and overnight care, open around the clock.</p>
+        <div class="hero-ctas">
+          <a href="tel:+2632928810514" class="btn btn-primary">Call the Centre</a>
+          <a href="#services" class="btn btn-ghost">Explore Services</a>
+        </div>
+        <div class="hero-note">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          Medical Aids · Cash · Ecocash · Diaspora · Bank Transfer accepted
+        </div>
+      </div>
+
+      <div class="ecg-hero">
+        <div class="cad">
+         <img src="g2.png">
+        </div>
+        <svg class="line" viewBox="0 0 460 140" xmlns="http://www.w3.org/2000/svg">
+          <path id="ecgTrack" d="M0 70 H90 L110 30 L130 110 L150 15 L170 120 L190 70 H460" fill="none" />
+          <path class="ecg-path" d="M0 70 H90 L110 30 L130 110 L150 15 L170 120 L190 70 H460" />
+          <path class="ecg-path-glow" d="M0 70 H90 L110 30 L130 110 L150 15 L170 120 L190 70 H460" />
+          <circle class="ecg-dot" r="4">
+            <animateMotion dur="3.2s" repeatCount="indefinite" rotate="auto">
+              <mpath href="#ecgTrack"/>
+            </animateMotion>
+          </circle>
+        </svg>
+        <div class="ecg-caption">
+          <span>PATIENT STATUS</span>
+          <span class="status-pulse"><span class="status-dot"></span><span class="status-text">STABLE &amp; CARED FOR</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="wrap photo-tilt-wrap">
+      <div class="photo-tilt">
+        <img src="1.jpg" alt="Waiting room at a medical clinic" loading="lazy">
+      
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="wrap">
+      <div class="stat">
+        <div class="num">1957</div>
+        <div class="label">Founded by Dr&nbsp;Garry&nbsp;Ferguson</div>
+      </div>
+      <div class="stat">
+        <div class="num">24/7</div>
+        <div class="label">Open every hour, every day</div>
+      </div>
+      <div class="stat">
+        <div class="num">15+</div>
+        <div class="label">Services under one roof</div>
+      </div>
+      <div class="stat">
+        <div class="num">5</div>
+        <div class="label">Ways to pay, including diaspora</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <div class="section-head" style="margin-bottom:0;">
+          <div class="eyebrow">Our story</div>
+          <h2>Built on six decades of trust.</h2>
+        </div>
+        <div class="founder-quote">
+          "Galen House was set up for minor surgeries and ailments — to save people the stress of going all the way to bigger institutions. Over the years it became a training ground for the doctors who shaped private practice in Zimbabwe."
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">1957</div>
+            <div class="timeline-copy"><p>Dr Garry Ferguson, a family physician originally from Scotland, opens his practice in Bulawayo — the beginning of Galen House.</p></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">1980s</div>
+            <div class="timeline-copy"><p>Dr Ferguson helps form a united Zimbabwe Medical Association and co-establishes examinations for doctors entering private practice.</p></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">Today</div>
+            <div class="timeline-copy"><p>Galen House has grown into a full medical centre — imaging, laboratory, specialist clinics, physiotherapy and overnight admissions — still guided by the same founding purpose.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="about-card">
+          <h3>Our Vision</h3>
+          <p>A healthy Zimbabwe.</p>
+        </div>
+        <div class="about-card">
+          <h3>Our Mission</h3>
+          <p>To provide quality health services for everyone who walks through our doors at Galen House.</p>
+        </div>
+        <div class="about-card">
+          <h3>Corporate Governance</h3>
+          <p>We abide by the rules and regulations set by the Health Board, our governing bodies, and general societal ethics — the same discipline that has guided the centre since 1957.</p>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="photo-collage">
+        <div class="collage-main">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Doctor%20office%20waiting%20room.jpg" alt="Doctor's office waiting room" loading="lazy">
+        </div>
+        <div class="collage-accent">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Doctors%20stethoscope%201.jpg" alt="Close-up of a stethoscope" loading="lazy">
+        </div>
+      </div>
+      <div class="photo-caption">Representative photos</div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 1180 34"><path d="M0 17 H480 L500 4 L520 30 L540 4 L560 30 L580 17 H1180"/></svg>
+  </div>
+
+  <section class="section-pad section-alt" id="services">
+    <div class="wrap">
+      <div class="section-head section-head-photo">
+        <div class="photo-circle">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/A%20patient%20exam%20room%20at%20an%20urgent%20care%20clinic%20and%20doctor%27s%20office%20in%20North%20Carolina%2C%20United%20States%2006.jpg" alt="Clinic exam room" loading="lazy">
+        </div>
+        <div>
+          <div class="eyebrow">What we treat, and how</div>
+          <h2>Services, including but not limited to:</h2>
+          <p>From same-day consultations to specialist screening, our clinical teams cover the everyday and the specialised — all coordinated from one address.</p>
+        </div>
+      </div>
+
+      <div class="service-grid">
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2a4 4 0 0 1 4 4v3a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4Z"/><path d="M6 10v1a6 6 0 0 0 12 0v-1M12 17v5M8 22h8"/></svg></div>
+          <h4>Doctor Consultations</h4>
+          <p>General practitioner consultations and full medical examinations.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="m3 11 9-8 9 8M5 10v10h14V10"/></svg></div>
+          <h4>Home Medical Visits</h4>
+          <p>Care that comes to you when travelling to the centre isn't possible.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+          <h4>Endoscopy &amp; Colonoscopy</h4>
+          <p>General surgical scopes performed by experienced specialists.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></div>
+          <h4>ECG</h4>
+          <p>Heart monitoring and diagnostics performed on-site.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M8 10h8M8 14h5"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg></div>
+          <h4>Counseling</h4>
+          <p>Confidential, one-on-one psychosocial support.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+          <h4>Baby Clinic</h4>
+          <p>Vaccinations and weighing for babies and children under 10.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 21s-7-4.35-9.5-8.5C.7 8.9 2.7 5 6.5 5c2 0 3.4 1.1 4 2.2C11.1 6.1 12.5 5 14.5 5c3.8 0 5.8 3.9 4 7.5C19 16.65 12 21 12 21Z"/></svg></div>
+          <h4>Women's Clinic</h4>
+          <p>Pap smears and VIAC screening, plus antenatal check-ups.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a6 6 0 0 1 12 0v2"/></svg></div>
+          <h4>Men's Clinic</h4>
+          <p>Dedicated screening and consultations for men's health.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M6 4v16M18 4v16M6 8h4M6 16h4M14 8h4M14 16h4"/></svg></div>
+          <h4>Physiotherapy</h4>
+          <p>Rehabilitation for back pain, joint injuries and mobility.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg></div>
+          <h4>Overnight Admissions</h4>
+          <p>Comfortable in-patient beds for observation and recovery.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 9h.01M15 9h.01M8 14s1.5 2 4 2 4-2 4-2"/></svg></div>
+          <h4>Dermatology Clinic</h4>
+          <p>Quarterly specialist skin clinic, by appointment.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 4h16v12H8l-4 4Z"/></svg></div>
+          <h4>ANC Check-ups</h4>
+          <p>Antenatal monitoring through every stage of pregnancy.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" id="facilities">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">One stop, in-house</div>
+        <h2>Imaging, lab work and specialists — no referral trips required.</h2>
+        <p>Galen House houses its own diagnostic facilities, so results and specialist opinions stay within one visit wherever possible.</p>
+      </div>
+
+      <div class="facility-strip">
+        <div class="facility-cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>
+          <div class="flabel">General X-ray</div>
+        </div>
+        <div class="facility-cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+          <div class="flabel">CT Scan</div>
+        </div>
+        <div class="facility-cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 12h8M12 8v8"/></svg>
+          <div class="flabel">MRI</div>
+        </div>
+        <div class="facility-cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M9 3h6v6l4 8a3 3 0 0 1-3 4H8a3 3 0 0 1-3-4l4-8Z"/></svg>
+          <div class="flabel">Laboratory</div>
+        </div>
+        <div class="facility-cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21c4-3 7-6.5 7-10a7 7 0 0 0-14 0c0 3.5 3 7 7 10Z"/></svg>
+          <div class="flabel">Ultrasound Scan</div>
+        </div>
+        <div class="facility-cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 13h13l3 4h2M3 13V8h9l3 5M7 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm11 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg>
+          <div class="flabel">Ambulance Services</div>
+        </div>
+      </div>
+
+      <div class="photo-filmstrip">
+        <figure>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Doctor%20looking%20in%20the%20microscope.jpg" alt="Doctor examining a sample under a microscope" loading="lazy">
+          <figcaption>Laboratory</figcaption>
+        </figure>
+        <figure>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hospital%20Pharmacy.JPG" alt="Hospital pharmacy shelves" loading="lazy">
+          <figcaption>Pharmacy</figcaption>
+        </figure>
+        <figure>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Paramedics%20in%20an%20ambulance.jpg" alt="Paramedics inside an ambulance" loading="lazy">
+          <figcaption>Ambulance</figcaption>
+        </figure>
+      </div>
+      <div class="photo-caption">Representative photos</div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 1180 34"><path d="M0 17 H480 L500 4 L520 30 L540 4 L560 30 L580 17 H1180"/></svg>
+  </div>
+
+  <section class="section-pad section-alt" id="values">
+    <div class="wrap">
+      <div class="section-head section-head-photo">
+        <div class="photo-circle">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alexandria%20Baby%20Clinic%20(3294509488).jpg" alt="Baby clinic consultation" loading="lazy">
+        </div>
+        <div>
+          <div class="eyebrow">Our values</div>
+          <h2>The principles behind every consultation.</h2>
+        </div>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-num">01</div>
+          <h4>Confidentiality</h4>
+          <p>We adhere to the utmost patient confidentiality, always.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-num">02</div>
+          <h4>Respect</h4>
+          <p>Every patient is treated with dignity, regardless of circumstance.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-num">03</div>
+          <h4>Professionalism &amp; Competency</h4>
+          <p>Clinical decisions are made by trained, capable health personnel.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-num">04</div>
+          <h4>Teamwork &amp; Collaboration</h4>
+          <p>We work with other medical personnel and departments our patients are referred to.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-num">05</div>
+          <h4>Accountability &amp; Trust</h4>
+          <p>We have confidence in our health personnel's decisions on patient care and management.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-num">06</div>
+          <h4>Transparency</h4>
+          <p>Committed to satisfactory care for patients, and moral support for their relatives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="pay-band">
+        <div>
+          <h3>Modes of Payment</h3>
+          <p>We keep payment simple, however you're supporting your care — locally or from abroad.</p>
+        </div>
+        <div class="pay-icons">
+          <div class="pay-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M20 8H4M20 8v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8M20 8l-8-5-8 5"/></svg>
+            <span>Medical Aid</span>
+          </div>
+          <div class="pay-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <span>Cash</span>
+          </div>
+          <div class="pay-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20"/></svg>
+            <span>Ecocash</span>
+          </div>
+          <div class="pay-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
+            <span>Diaspora</span>
+          </div>
+          <div class="pay-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg>
+            <span>Bank Transfer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" id="team">
+    <div class="wrap team-band">
+      <div class="team-copy">
+        <div class="eyebrow">Our people</div>
+        <h2>A team built on decades of mentorship.</h2>
+        <p>Founder Dr Garry Ferguson practised at Galen House for 61 years, training generations of Zimbabwean doctors before his retirement. That same spirit of mentorship and hands-on care carries through today's team of physicians, nurses, physiotherapists and support staff.</p>
+        <div class="badge-row">
+          <div class="badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7l-9-5Z"/></svg>
+            <span>Non-racial care since 1957</span>
+          </div>
+          <div class="badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="m12 2 2.9 6.3 6.9.9-5 4.8 1.3 6.9L12 17.6 5.9 21l1.3-6.9-5-4.8 6.9-.9L12 2Z"/></svg>
+            <span>Training ground for GPs nationwide</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="avatar-cluster">
+        <div class="avatar-row">
+          <div class="avatar" style="background:#0B5FA5;">GF</div>
+          <div class="avatar" style="background:#1B9C6E;">RN</div>
+          <div class="avatar" style="background:#E0473E;">PT</div>
+          <div class="avatar" style="background:#08406F;">GP</div>
+          <div class="avatar" style="background:#63B0EE;">+</div>
+        </div>
+        <p>Doctors, nurses, physiotherapists and administrative staff working across our clinics — pictured on our clinic signage, badges of years of combined community service.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="photo-duotone">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lt.%20Matthew%20Bush%20assists%20a%20patient%20as%20he%20does%20walking%20exercises.%20(14311440329).jpg" alt="Physiotherapist assisting a patient with walking exercises" loading="lazy">
+        <div class="photo-caption">Representative photo</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 1180 34"><path d="M0 17 H480 L500 4 L520 30 L540 4 L560 30 L580 17 H1180"/></svg>
+  </div>
+
+  <section class="section-pad section-alt" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Get in touch</div>
+        <h2>We're open 24 hours — reach us any time.</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Galen House Medical Centre</h3>
+          <p>93 J. Tongogara Street &amp; Cnr 9th Avenue, Bulawayo, Zimbabwe.</p>
+
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
+            <div>
+              <div class="clabel">Landlines</div>
+              <div class="cval"><a href="tel:+2632928810514">+263 292 881 051-4</a></div>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+            <div>
+              <div class="clabel">Mobile</div>
+              <div class="cval"><a href="tel:+263773878352">+263 7773 878 352</a> · <a href="tel:+263786953896">+263 786 953 896</a> · <a href="tel:+263716544233">+263 716 544 233</a></div>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
+            <div>
+              <div class="clabel">Email</div>
+              <div class="cval"><a href="mailto:galenaccounts@gatorzw.co.uk">galenaccounts@gatorzw.co.uk</a><br><a href="mailto:allegramed@allegra.co.zw">allegramed@allegra.co.zw</a></div>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <div>
+              <div class="clabel">Hours</div>
+              <div class="cval">Open 24 hours, every day of the week</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-embed">
+          <iframe
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=93+Josiah+Tongogara+Street+Bulawayo+Zimbabwe&output=embed"
+            title="Map to Galen House Medical Centre, Bulawayo">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="photo-split">
+        <figure>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Kenyan%20Doctor%20at%20Kakuma%20refugee%20camp.jpg" alt="Doctor at a clinic" loading="lazy">
+        </figure>
+        <figure>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Physiotherapy%20session.jpg" alt="Physiotherapy session" loading="lazy">
+        </figure>
+      </div>
+      <div class="photo-caption">Representative photos</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg width="30" height="30" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="24" fill="#0B5FA5"/>
+            <path d="M24 10v28M24 10c-4 2-6 4-6 7s2 4 6 5c4 1 6 3 6 5.5S28 32 24 34" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <span class="name">Galen House Medical Centre</span>
+        </div>
+        <p>A one-stop private medical facility in Bulawayo, serving the community since 1957. Your health is our priority.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#facilities">Facilities</a></li>
+          <li><a href="#values">Our Values</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Clinics</h5>
+        <ul>
+          <li><a href="#services">Baby Clinic</a></li>
+          <li><a href="#services">Women's Clinic</a></li>
+          <li><a href="#services">Men's Clinic</a></li>
+          <li><a href="#services">Physiotherapy Unit</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+2632928810514">+263 292 881 051-4</a></li>
+          <li><a href="tel:+263773878352">+263 7773 878 352</a></li>
+          <li><a href="mailto:galenaccounts@gatorzw.co.uk">galenaccounts@gatorzw.co.uk</a></li>
+          <li>93 J. Tongogara St &amp; Cnr 9th Ave, Bulawayo</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Galen House Medical Centre. All rights reserved.</span>
+      <span>Founded 1957 by Dr Garry Ferguson · Bulawayo, Zimbabwe</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function setTheme(theme){
+    document.documentElement.setAttribute('data-theme', theme);
+    document.getElementById('theme-white').classList.toggle('active', theme === 'white');
+    document.getElementById('theme-blue').classList.toggle('active', theme === 'blue');
+  }
+
+  function toggleMobile(open){
+    document.getElementById('mobileMenu').classList.toggle('open', open);
+  }
+</script>
+
+</body>
+</html>
