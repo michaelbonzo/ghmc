@@ -638,6 +638,91 @@
   .mobile-menu nav{display:flex;flex-direction:column;gap:22px;margin-top:40px;}
   .mobile-menu nav a{font-family:'Sora',sans-serif;font-size:1.4rem;font-weight:600;color:var(--text);}
   .mobile-menu .btn{margin-top:32px;justify-content:center;}
+
+  /* ---------- Galen Assistant chatbot ---------- */
+  .gh-chat-launcher{
+    position:fixed;right:22px;bottom:22px;z-index:200;
+    width:60px;height:60px;border-radius:50%;
+    background:var(--brand-blue);color:#fff;border:none;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 14px 30px -10px rgba(11,95,165,.6);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .gh-chat-launcher:hover{transform:translateY(-2px) scale(1.04);}
+  .gh-chat-launcher svg{width:26px;height:26px;}
+  .gh-chat-launcher .gh-close-icon{display:none;}
+  .gh-chat-launcher.open .gh-chat-icon{display:none;}
+  .gh-chat-launcher.open .gh-close-icon{display:block;}
+
+  .gh-chat-window{
+    position:fixed;right:22px;bottom:96px;z-index:200;
+    width:360px;max-width:calc(100vw - 32px);
+    height:520px;max-height:calc(100vh - 140px);
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:16px;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;overflow:hidden;
+    opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;
+    transition:opacity .2s ease, transform .2s ease;
+  }
+  .gh-chat-window.open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}
+
+  .gh-chat-header{
+    background:var(--brand-navy);color:#fff;padding:14px 16px;
+    display:flex;align-items:center;gap:10px;flex-shrink:0;
+  }
+  .gh-chat-header .gh-avatar{
+    width:34px;height:34px;border-radius:50%;background:var(--brand-blue);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .gh-chat-header .gh-avatar svg{width:18px;height:18px;stroke:#fff;}
+  .gh-chat-header-text{line-height:1.25;}
+  .gh-chat-header-text .gh-title{font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;}
+  .gh-chat-header-text .gh-sub{font-size:.7rem;color:#B7CBE3;}
+
+  .gh-chat-body{
+    flex:1;overflow-y:auto;padding:16px;
+    display:flex;flex-direction:column;gap:10px;
+    background:var(--bg-alt);
+  }
+  .gh-msg{max-width:85%;font-size:.86rem;line-height:1.5;padding:10px 13px;border-radius:12px;white-space:pre-wrap;}
+  .gh-msg.bot{
+    align-self:flex-start;background:var(--surface);color:var(--text);
+    border:1px solid var(--border);border-bottom-left-radius:4px;
+  }
+  .gh-msg.user{
+    align-self:flex-end;background:var(--brand-blue);color:#fff;
+    border-bottom-right-radius:4px;
+  }
+  .gh-msg.bot a{color:var(--brand-blue);text-decoration:underline;}
+  .gh-suggest-row{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 12px;background:var(--bg-alt);flex-shrink:0;}
+  .gh-suggest-chip{
+    font-size:.72rem;padding:6px 10px;border-radius:100px;
+    background:var(--pill-bg);border:1px solid var(--border);color:var(--text);
+    cursor:pointer;transition:background .2s ease, color .2s ease;
+  }
+  .gh-suggest-chip:hover{background:var(--brand-blue);color:#fff;border-color:var(--brand-blue);}
+
+  .gh-chat-input-row{
+    display:flex;gap:8px;padding:12px;border-top:1px solid var(--border);
+    background:var(--surface);flex-shrink:0;
+  }
+  .gh-chat-input-row input{
+    flex:1;border:1px solid var(--border);border-radius:10px;
+    padding:10px 12px;font-family:'Inter',sans-serif;font-size:.86rem;
+    background:var(--bg);color:var(--text);
+  }
+  .gh-chat-input-row input:focus-visible{outline:2px solid var(--brand-blue);}
+  .gh-chat-input-row button{
+    background:var(--brand-blue);color:#fff;border:none;border-radius:10px;
+    width:40px;flex-shrink:0;display:flex;align-items:center;justify-content:center;cursor:pointer;
+  }
+  .gh-chat-input-row button svg{width:18px;height:18px;}
+  .gh-chat-disclaimer{font-size:.62rem;color:var(--text-muted);text-align:center;padding:0 12px 10px;flex-shrink:0;background:var(--surface);}
+
+  @media (max-width:480px){
+    .gh-chat-window{right:16px;left:16px;width:auto;bottom:88px;}
+    .gh-chat-launcher{right:16px;bottom:16px;}
+  }
 </style>
 </head>
 <body>
@@ -1167,6 +1252,33 @@
   </div>
 </footer>
 
+<!-- ---------- Galen Assistant chatbot ---------- -->
+<div class="gh-chat-window" id="ghChatWindow" role="dialog" aria-label="Galen House Medical Centre assistant" aria-hidden="true">
+  <div class="gh-chat-header">
+    <div class="gh-avatar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a4 4 0 0 1 4 4v3a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4Z"/><path d="M6 10v1a6 6 0 0 0 12 0v-1M12 17v5M8 22h8"/></svg>
+    </div>
+    <div class="gh-chat-header-text">
+      <div class="gh-title">Galen Assistant</div>
+      <div class="gh-sub">Ask about Galen House Medical Centre</div>
+    </div>
+  </div>
+  <div class="gh-chat-body" id="ghChatBody"></div>
+  <div class="gh-suggest-row" id="ghSuggestRow"></div>
+  <form class="gh-chat-input-row" id="ghChatForm">
+    <input type="text" id="ghChatInput" placeholder="Ask a question…" autocomplete="off" aria-label="Type your question">
+    <button type="submit" aria-label="Send">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7Z"/></svg>
+    </button>
+  </form>
+  <div class="gh-chat-disclaimer">Answers are based on Galen House website info only. For emergencies, call +263 7773 878 352.</div>
+</div>
+
+<button class="gh-chat-launcher" id="ghChatLauncher" aria-label="Open Galen House assistant chat" aria-expanded="false">
+  <svg class="gh-chat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
+  <svg class="gh-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+</button>
+
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -1179,6 +1291,235 @@
   function toggleMobile(open){
     document.getElementById('mobileMenu').classList.toggle('open', open);
   }
+
+  /* =========================================================
+     GALEN ASSISTANT — a small, self-contained Q&A chatbot
+     built entirely from the content on this page. It works
+     fully offline (no external API calls) by matching the
+     visitor's question against a knowledge base of topics
+     and returning the best-matching answer.
+     ========================================================= */
+  (function(){
+    const KB = [
+      {
+        id:'hours',
+        keywords:['hour','hours','open','close','closing','time','24','247','24/7','24hr','24hrs','when'],
+        answer:"Galen House Medical Centre is open 24 hours a day, every day of the week — including weekends and public holidays."
+      },
+      {
+        id:'location',
+        keywords:['where','address','location','located','directions','map','find you','street'],
+        answer:"We're located at 93 J. Tongogara Street & Cnr 9th Avenue, Bulawayo, Zimbabwe."
+      },
+      {
+        id:'phone',
+        keywords:['phone','call','number','contact','telephone','landline','mobile','reach you','get in touch'],
+        answer:"You can reach us by phone:\n• Landlines: +263 292 881 051-4\n• Mobile: +263 7773 878 352 · +263 786 953 896 · +263 716 544 233 (emergency line: +263 7773 878 352)"
+      },
+      {
+        id:'email',
+        keywords:['email','e-mail','mail'],
+        answer:"You can email us at galenaccounts@gatorzw.co.uk or allegramed@allegra.co.zw."
+      },
+      {
+        id:'history',
+        keywords:['history','founded','founder','start','began','old','ferguson','since when','year','scotland','1957'],
+        answer:"Galen House Medical Centre was founded in 1957 by Dr Garry Ferguson, a family physician from Scotland, who practised there for 61 years. It began as a practice for minor surgeries and ailments and grew into today's full medical centre, becoming a training ground for many of Zimbabwe's private-practice doctors."
+      },
+      {
+        id:'mission_vision',
+        keywords:['mission','vision','purpose','goal','governance'],
+        answer:"Our vision is 'A healthy Zimbabwe' and our mission is to provide quality health services for everyone who walks through our doors. We're also guided by corporate governance rules from the Health Board, our governing bodies, and general societal ethics."
+      },
+      {
+        id:'values',
+        keywords:['values','principles','confidentiality','respect','professionalism','teamwork','accountability','transparency','ethic'],
+        answer:"Our core values are: Confidentiality, Respect, Professionalism & Competency, Teamwork & Collaboration, Accountability & Trust, and Transparency — the principles behind every consultation."
+      },
+      {
+        id:'services',
+        keywords:['service','services','consultation','offer','what do you do','treat','treatment'],
+        answer:"Our services include: Doctor Consultations, Home Medical Visits, Endoscopy & Colonoscopy, ECG, Counseling, Baby Clinic, Women's Clinic, Men's Clinic, Physiotherapy, Overnight Admissions, Dermatology Clinic (quarterly, by appointment), and ANC (antenatal) Check-ups."
+      },
+      {
+        id:'baby_clinic',
+        keywords:['baby','babies','child','children','vaccination','vaccine','immunisation','immunization','weighing'],
+        answer:"Our Baby Clinic offers vaccinations and weighing for babies and children under 10."
+      },
+      {
+        id:'womens_clinic',
+        keywords:['women','woman','pap smear','viac','antenatal','anc','pregnan','maternal'],
+        answer:"Our Women's Clinic offers Pap smears and VIAC screening, plus antenatal (ANC) check-ups through every stage of pregnancy."
+      },
+      {
+        id:'mens_clinic',
+        keywords:["men's",'men','male','man'],
+        answer:"Our Men's Clinic provides dedicated screening and consultations for men's health."
+      },
+      {
+        id:'physio',
+        keywords:['physio','physiotherapy','rehab','rehabilitation','back pain','joint','mobility'],
+        answer:"Our Physiotherapy service covers rehabilitation for back pain, joint injuries, and mobility issues."
+      },
+      {
+        id:'dermatology',
+        keywords:['skin','derma','dermatology','rash'],
+        answer:"We run a quarterly Dermatology Clinic with a specialist, available by appointment."
+      },
+      {
+        id:'home_visit',
+        keywords:['home visit','house call','come to my home','travel to me'],
+        answer:"We offer Home Medical Visits for patients who are unable to travel to the centre."
+      },
+      {
+        id:'admissions',
+        keywords:['admission','admit','overnight','stay','in-patient','inpatient','bed','ward'],
+        answer:"We have Overnight Admissions with comfortable in-patient beds for observation and recovery."
+      },
+      {
+        id:'counseling',
+        keywords:['counsel','counselling','counseling','therapy','mental health','psychosocial'],
+        answer:"We offer confidential, one-on-one psychosocial Counseling."
+      },
+      {
+        id:'endoscopy',
+        keywords:['endoscopy','colonoscopy','scope'],
+        answer:"We provide Endoscopy & Colonoscopy — general surgical scopes performed by experienced specialists."
+      },
+      {
+        id:'ecg',
+        keywords:['ecg','heart','cardiac','ekg'],
+        answer:"We perform ECG (heart monitoring and diagnostics) on-site."
+      },
+      {
+        id:'facilities',
+        keywords:['facilit','xray','x-ray','ct scan','mri','laborator','lab','ultrasound','scan','imaging','ambulance'],
+        answer:"Our in-house facilities include General X-ray, CT Scan, MRI, Laboratory, Ultrasound Scan, and Ambulance Services — so imaging, lab work and specialist opinions can often stay within one visit."
+      },
+      {
+        id:'payment',
+        keywords:['pay','payment','cost','price','fee','medical aid','insurance','cash','ecocash','diaspora','bank transfer','how much'],
+        answer:"We accept several ways to pay: Medical Aid, Cash, Ecocash, Diaspora payments, and Bank Transfer."
+      },
+      {
+        id:'team',
+        keywords:['staff','team','doctor','doctors','nurse','nurses','who works','personnel'],
+        answer:"Our team includes physicians, nurses, physiotherapists and administrative staff, carrying on the mentorship tradition started by founder Dr Garry Ferguson, who practised at Galen House for 61 years and trained generations of Zimbabwean doctors."
+      },
+      {
+        id:'emergency',
+        keywords:['emergency','urgent','ambulance number','911','999'],
+        answer:"For emergencies, call our emergency line: +263 7773 878 352. We're open 24 hours a day for urgent care."
+      },
+      {
+        id:'greeting',
+        keywords:['hello','hi','hey','good morning','good afternoon','good evening'],
+        answer:"Hello! I'm the Galen Assistant. Ask me about our services, hours, facilities, location, or how to get in touch."
+      },
+      {
+        id:'thanks',
+        keywords:['thank','thanks','cheers','appreciate'],
+        answer:"You're welcome! Is there anything else you'd like to know about Galen House Medical Centre?"
+      }
+    ];
+
+    const FALLBACK = "I don't have that information from the Galen House website. For anything specific, please call us on +263 292 881 051-4 or +263 7773 878 352, or email galenaccounts@gatorzw.co.uk.";
+
+    const SUGGESTIONS = [
+      "What are your opening hours?",
+      "What services do you offer?",
+      "Where are you located?",
+      "How can I pay?"
+    ];
+
+    function normalize(str){
+      return str.toLowerCase().replace(/[^\w\s]/g,' ').replace(/\s+/g,' ').trim();
+    }
+
+    function findBestAnswer(query){
+      const q = normalize(query);
+      if(!q) return "Could you type a question? For example, ask about our hours, services, or location.";
+      let best = null, bestScore = 0;
+      KB.forEach(entry=>{
+        let score = 0;
+        entry.keywords.forEach(kw=>{
+          if(q.includes(kw)) score += kw.length; // longer/more specific matches score higher
+        });
+        if(score > bestScore){ bestScore = score; best = entry; }
+      });
+      return best ? best.answer : FALLBACK;
+    }
+
+    const chatBody = document.getElementById('ghChatBody');
+    const chatForm = document.getElementById('ghChatForm');
+    const chatInput = document.getElementById('ghChatInput');
+    const chatWindow = document.getElementById('ghChatWindow');
+    const launcher = document.getElementById('ghChatLauncher');
+    const suggestRow = document.getElementById('ghSuggestRow');
+
+    function addMessage(text, who){
+      const div = document.createElement('div');
+      div.className = 'gh-msg ' + who;
+      div.textContent = text;
+      chatBody.appendChild(div);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function renderSuggestions(){
+      suggestRow.innerHTML = '';
+      SUGGESTIONS.forEach(s=>{
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'gh-suggest-chip';
+        chip.textContent = s;
+        chip.addEventListener('click', ()=>{
+          addMessage(s, 'user');
+          respondTo(s);
+        });
+        suggestRow.appendChild(chip);
+      });
+    }
+
+    function respondTo(query){
+      setTimeout(()=>{
+        addMessage(findBestAnswer(query), 'bot');
+      }, 250);
+    }
+
+    let started = false;
+    function openChat(){
+      chatWindow.classList.add('open');
+      chatWindow.setAttribute('aria-hidden','false');
+      launcher.classList.add('open');
+      launcher.setAttribute('aria-expanded','true');
+      if(!started){
+        started = true;
+        addMessage("Hi, I'm the Galen Assistant. Ask me anything about Galen House Medical Centre — hours, services, facilities, location, payment or contact details.", 'bot');
+        renderSuggestions();
+      }
+      chatInput.focus();
+    }
+    function closeChat(){
+      chatWindow.classList.remove('open');
+      chatWindow.setAttribute('aria-hidden','true');
+      launcher.classList.remove('open');
+      launcher.setAttribute('aria-expanded','false');
+    }
+
+    launcher.addEventListener('click', ()=>{
+      if(chatWindow.classList.contains('open')) closeChat();
+      else openChat();
+    });
+
+    chatForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const val = chatInput.value.trim();
+      if(!val) return;
+      addMessage(val, 'user');
+      chatInput.value = '';
+      respondTo(val);
+    });
+  })();
 </script>
 
 </body>
