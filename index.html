@@ -195,6 +195,19 @@
   .hero-inner{
     display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;
   }
+  .hero-text-bg{
+    background:rgba(255,255,255,.88);
+    -webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.6);
+    border-radius:24px;
+    padding:32px 32px 28px;
+    box-shadow:0 20px 45px -20px rgba(10,42,77,.35);
+  }
+  html[data-theme="blue"] .hero-text-bg{
+    background:rgba(10,42,77,.82);
+    border:1px solid rgba(255,255,255,.08);
+  }
   .eyebrow{
     display:inline-flex;align-items:center;gap:8px;
     font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
@@ -781,9 +794,10 @@
 
 <main id="top">
 
-  <section class="hero">
+  <section class="hero" style="background: url(gh.jpeg); background-size:cover;">
+   
     <div class="wrap hero-inner">
-      <div>
+      <div class="hero-text-bg">
         <div class="eyebrow">Serving patients since 1957</div>
         <h1>Your health<br>is our <span>priority.</span></h1>
         <p class="lead">Galen House Medical Centre is one of the oldest health facilities in Bulawayo, taking pride in the best-quality service it offers the community. It offers doctor consultations and overnight care, and is open round the clock.</p>
@@ -791,16 +805,19 @@
           <a href="tel:+2632928810514" class="btn btn-primary">Call the Centre</a>
           <a href="#services" class="btn btn-ghost">Explore Services</a>
         </div>
+        <img src="g22.png">
         <div class="hero-note">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
           Medical Aids · Cash · Ecocash · Direct Bank Transfer accepted
         </div>
+       
       </div>
 
       <div class="ecg-hero">
         <div class="cad">
-         <img src="g22.png">
+         
         </div>
+         <img src="n.png" >
         <svg class="line" viewBox="0 0 460 140" xmlns="http://www.w3.org/2000/svg">
           <path id="ecgTrack" d="M0 70 H90 L110 30 L130 110 L150 15 L170 120 L190 70 H460" fill="none" />
           <path class="ecg-path" d="M0 70 H90 L110 30 L130 110 L150 15 L170 120 L190 70 H460" />
@@ -859,7 +876,7 @@
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-year">1957</div>
-            <div class="timeline-copy"><p>Dr Garry Ferguson, a family physician originally from Scotland, opens his practice in Bulawayo, the beginning of Galen House.</p></div>
+            <div class="timeline-copy"><p>Dr J G M Ferguson, a family physician originally from Scotland, opens his practice in Bulawayo, the beginning of Galen House.</p></div>
           </div>
           <div class="timeline-item">
             <div class="timeline-year">1980s</div>
@@ -979,43 +996,7 @@
     </div>
   </section>
 
-  <section class="section-pad" id="facilities">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">One stop, in-house</div>
-        <h2>Imaging, lab work and specialists has no referral trips required.</h2>
-        <p>Galen House houses its own diagnostic facilities, so results and specialist opinions stay within one visit wherever possible.</p>
-      </div>
 
-      <div class="facility-strip">
-        <div class="facility-cell">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>
-          <div class="flabel">General X-ray</div>
-        </div>
-        <div class="facility-cell">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
-          <div class="flabel">CT Scan</div>
-        </div>
-        <div class="facility-cell">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 12h8M12 8v8"/></svg>
-          <div class="flabel">MRI</div>
-        </div>
-        <div class="facility-cell">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M9 3h6v6l4 8a3 3 0 0 1-3 4H8a3 3 0 0 1-3-4l4-8Z"/></svg>
-          <div class="flabel">Laboratory</div>
-        </div>
-        <div class="facility-cell">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21c4-3 7-6.5 7-10a7 7 0 0 0-14 0c0 3.5 3 7 7 10Z"/></svg>
-          <div class="flabel">Ultrasound Scan</div>
-        </div>
-        <div class="facility-cell">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 13h13l3 4h2M3 13V8h9l3 5M7 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm11 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg>
-          <div class="flabel">Ambulance Services</div>
-        </div>
-      </div>
-
-     
-  </section>
 
   <div class="divider" aria-hidden="true">
     <svg viewBox="0 0 1180 34"><path d="M0 17 H480 L500 4 L520 30 L540 4 L560 30 L580 17 H1180"/></svg>
@@ -1100,19 +1081,9 @@
       <div class="team-copy">
         <div class="eyebrow">Our people</div>
         <h2>A team built on decades of mentorship.</h2>
-        <p>Founder Dr Garry Ferguson practised at Galen House for 61 years, training generations of Zimbabwean doctors before his retirement. That same spirit of mentorship and hands-on care carries through today's team of physicians, nurses, physiotherapists and support staff.</p>
+        <p>That same spirit of mentorship and hands-on care carries through today's team of physicians, nurses, physiotherapists and support staff.</p>
         <p style="margin-top:16px;"><strong style="color:var(--text);">Practitioner in Charge:</strong> Dr Munekayi Padingani, MD (UNIKIN), MPH (UZ)<br><strong style="color:var(--text);">In partnership with:</strong> Dr D. C. Sithole, Dr Mulapi, Dr K. Saunyama and Dr Mutenhaunga.</p>
-        <p style="margin-top:16px;">A young and enthusiastic, highly qualified crop of doctors — backed by experienced administrative staff, registered general nurses and ancillary staff.</p>
-        <div class="badge-row">
-          <div class="badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7l-9-5Z"/></svg>
-            <span>Non-racial care since 1957</span>
-          </div>
-          <div class="badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="m12 2 2.9 6.3 6.9.9-5 4.8 1.3 6.9L12 17.6 5.9 21l1.3-6.9-5-4.8 6.9-.9L12 2Z"/></svg>
-            <span>Training ground for GPs nationwide</span>
-          </div>
-        </div>
+       
       </div>
 
       <div class="avatar-cluster">
