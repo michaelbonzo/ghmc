@@ -512,20 +512,58 @@
   .facility-cell svg{width:26px;height:26px;stroke:var(--accent-green);margin:0 auto 10px;}
   .facility-cell .flabel{font-size:.8rem;font-weight:600;color:var(--text);}
 
-  /* ---------- Values ---------- */
+  /* ---------- Values (photo background section) ---------- */
+  .values-section{
+    position:relative;overflow:hidden;isolation:isolate;
+  }
+  .values-bg-img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:center;z-index:0;
+  }
+  .values-overlay{
+    position:absolute;inset:0;z-index:1;
+    background:
+      radial-gradient(1100px 480px at 12% -10%, rgba(27,156,110,.22), transparent 60%),
+      linear-gradient(120deg, rgba(6,30,56,.62) 0%, rgba(8,50,88,.50) 42%, rgba(11,95,165,.34) 100%);
+  }
+  .values-section .wrap{position:relative;z-index:2;}
+  .values-section .eyebrow{
+    background:rgba(255,255,255,.16);color:#EAF4FF;border:1px solid rgba(255,255,255,.22);
+  }
+  .values-section .eyebrow::before{background:var(--accent-green);}
+  .values-section h2{color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.45);}
+  .values-section .section-head p{color:rgba(255,255,255,.85);text-shadow:0 1px 10px rgba(0,0,0,.35);}
+
   .values-grid{
     display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
   }
   .value-card{
-    padding:28px 24px;border-radius:18px;
-    background:var(--surface);border:1px solid var(--border);
+    position:relative;padding:30px 24px 26px;border-radius:18px;overflow:hidden;
+    background:rgba(10,30,55,.38);
+    border:1px solid rgba(255,255,255,.22);
+    backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+    box-shadow:0 10px 30px -18px rgba(0,0,0,.5);
+    transition:transform .4s cubic-bezier(.2,.8,.2,1), background .4s ease, border-color .4s ease, box-shadow .4s ease;
   }
+  .value-card::before{
+    content:attr(data-num);position:absolute;right:8px;top:-6px;
+    font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:4.6rem;line-height:1;
+    color:rgba(255,255,255,.07);pointer-events:none;transition:color .4s ease;
+  }
+  .value-card:hover{
+    transform:translateY(-8px);
+    background:rgba(10,30,55,.52);
+    border-color:rgba(87,219,166,.6);
+    box-shadow:0 24px 44px -20px rgba(0,0,0,.6);
+  }
+  .value-card:hover::before{color:rgba(87,219,166,.16);}
   .value-num{
-    font-family:'IBM Plex Mono',monospace;color:var(--brand-blue);font-size:.78rem;
-    background:var(--pill-bg);display:inline-block;padding:4px 10px;border-radius:100px;margin-bottom:14px;
+    font-family:'IBM Plex Mono',monospace;color:#fff;font-size:.78rem;font-weight:600;
+    background:rgba(255,255,255,.14);display:inline-flex;align-items:center;justify-content:center;
+    width:34px;height:34px;border-radius:50%;margin-bottom:16px;border:1px solid rgba(255,255,255,.22);
   }
-  .value-card h4{font-size:1.02rem;margin-bottom:8px;}
-  .value-card p{font-size:.88rem;}
+  .value-card h4{font-size:1.02rem;margin-bottom:8px;color:#fff;position:relative;}
+  .value-card p{font-size:.88rem;color:rgba(255,255,255,.68);position:relative;}
 
   /* ---------- Payments ---------- */
   .pay-band{
@@ -834,12 +872,7 @@
         </div>
       </div>
     </div>
-    <div class="wrap photo-tilt-wrap">
-      <div class="photo-tilt">
-        <img src="1.jpeg" alt="Waiting room at a medical clinic" loading="lazy">
-      
-      </div>
-    </div>
+   
   </section>
 
   <section class="stats">
@@ -993,7 +1026,9 @@
     <svg viewBox="0 0 1180 34"><path d="M0 17 H480 L500 4 L520 30 L540 4 L560 30 L580 17 H1180"/></svg>
   </div>
 
-  <section class="section-pad section-alt" id="values">
+  <section class="section-pad values-section" id="values">
+    <img class="values-bg-img" src="n2.png" alt="">
+    <div class="values-overlay" aria-hidden="true"></div>
     <div class="wrap">
       <div class="section-head section-head-photo">
       
@@ -1004,32 +1039,32 @@
       </div>
 
       <div class="values-grid">
-        <div class="value-card">
+        <div class="value-card" data-num="01">
           <div class="value-num">01</div>
           <h4>Confidentiality</h4>
           <p>We adhere to the utmost patient confidentiality, always.</p>
         </div>
-        <div class="value-card">
+        <div class="value-card" data-num="02">
           <div class="value-num">02</div>
           <h4>Respect</h4>
           <p>Every patient is treated with dignity, regardless of circumstance.</p>
         </div>
-        <div class="value-card">
+        <div class="value-card" data-num="03">
           <div class="value-num">03</div>
           <h4>Professionalism</h4>
           <p>Clinical decisions are made by trained, capable health personnel.</p>
         </div>
-        <div class="value-card">
+        <div class="value-card" data-num="04">
           <div class="value-num">04</div>
           <h4>Teamwork</h4>
           <p>We work with other medical personnel and departments our patients are referred to.</p>
         </div>
-        <div class="value-card">
+        <div class="value-card" data-num="05">
           <div class="value-num">05</div>
           <h4>Accountability</h4>
           <p>We have confidence in our health personnel's decisions on patient care and management.</p>
         </div>
-        <div class="value-card">
+        <div class="value-card" data-num="06">
           <div class="value-num">06</div>
           <h4>Transparency</h4>
           <p>Committed to satisfactory care for patients, and moral support for their relatives.</p>
