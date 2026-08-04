@@ -1,1515 +1,2782 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="white">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Galen House Medical Centre — Bulawayo | Your Health Is Our Priority</title>
-<meta name="description" content="Galen House Medical Centre, Bulawayo — one-stop private medical facility offering doctor consultations, X-ray, CT/MRI, laboratory, physiotherapy, baby clinic, women's clinic, and overnight admissions. Open 24 hours, every day.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#FFFFFF;
-    --bg-alt:#F3F8FC;
-    --surface:#FFFFFF;
-    --surface-raised:#FFFFFF;
-    --text:#0A2540;
-    --text-muted:#51677F;
-    --brand-blue:#0B5FA5;
-    --brand-blue-strong:#08406F;
-    --brand-navy:#0A2540;
-    --accent-green:#1B9C6E;
-    --accent-red:#E0473E;
-    --border:#E2EAF2;
-    --shadow: 0 20px 45px -25px rgba(10,37,64,.35);
-    --pill-bg: rgba(11,95,165,.08);
-    --hero-grad: radial-gradient(120% 120% at 8% 0%, #EAF4FD 0%, #FFFFFF 45%, #FFFFFF 100%);
-    --nav-bg: rgba(255,255,255,.82);
-    --toggle-track: #E2EAF2;
-    --toggle-thumb: #0B5FA5;
-    --footer-bg: #0A2540;
-    --footer-text: #C9D9EA;
-    --code-bg: #F3F8FC;
-    --transition-theme: background-color .5s ease, color .5s ease, border-color .5s ease, box-shadow .5s ease;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galen House Medical Centre — Bulawayo | Your Health Is Our Priority</title>
+  <meta name="description"
+    content="Galen House Medical Centre, Bulawayo — one-stop private medical facility offering doctor consultations, X-ray, CT/MRI, laboratory, physiotherapy, baby clinic, women's clinic, and overnight admissions. Open 24 hours, every day.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FFFFFF;
+      --bg-alt: #F3F8FC;
+      --surface: #FFFFFF;
+      --surface-raised: #FFFFFF;
+      --text: #0A2540;
+      --text-muted: #51677F;
+      --brand-blue: #0B5FA5;
+      --brand-blue-strong: #08406F;
+      --brand-navy: #0A2540;
+      --accent-green: #1B9C6E;
+      --accent-red: #E0473E;
+      --border: #E2EAF2;
+      --shadow: 0 20px 45px -25px rgba(10, 37, 64, .35);
+      --pill-bg: rgba(11, 95, 165, .08);
+      --hero-grad: radial-gradient(120% 120% at 8% 0%, #EAF4FD 0%, #FFFFFF 45%, #FFFFFF 100%);
+      --nav-bg: rgba(255, 255, 255, .82);
+      --toggle-track: #E2EAF2;
+      --toggle-thumb: #0B5FA5;
+      --footer-bg: #0A2540;
+      --footer-text: #C9D9EA;
+      --code-bg: #F3F8FC;
+      --transition-theme: background-color .5s ease, color .5s ease, border-color .5s ease, box-shadow .5s ease;
+    }
 
-  html[data-theme="blue"]{
-    --bg:#0A2A4D;
-    --bg-alt:#0D3562;
-    --surface:#0E3868;
-    --surface-raised:#123F72;
-    --text:#F3F8FC;
-    --text-muted:#B7CBE3;
-    --brand-blue:#63B0EE;
-    --brand-blue-strong:#9ED0F7;
-    --brand-navy:#F3F8FC;
-    --accent-green:#57DBA6;
-    --accent-red:#FF8079;
-    --border:rgba(255,255,255,.14);
-    --shadow: 0 20px 45px -20px rgba(0,0,0,.5);
-    --pill-bg: rgba(255,255,255,.08);
-    --hero-grad: radial-gradient(120% 120% at 8% 0%, #123F72 0%, #0A2A4D 45%, #0A2A4D 100%);
-    --nav-bg: rgba(10,42,77,.82);
-    --toggle-track: rgba(255,255,255,.18);
-    --toggle-thumb: #63B0EE;
-    --footer-bg: #071D38;
-    --footer-text: #9FB8D6;
-    --code-bg: #0D3562;
-  }
+    html[data-theme="blue"] {
+      --bg: #0A2A4D;
+      --bg-alt: #0D3562;
+      --surface: #0E3868;
+      --surface-raised: #123F72;
+      --text: #F3F8FC;
+      --text-muted: #B7CBE3;
+      --brand-blue: #63B0EE;
+      --brand-blue-strong: #9ED0F7;
+      --brand-navy: #F3F8FC;
+      --accent-green: #57DBA6;
+      --accent-red: #FF8079;
+      --border: rgba(255, 255, 255, .14);
+      --shadow: 0 20px 45px -20px rgba(0, 0, 0, .5);
+      --pill-bg: rgba(255, 255, 255, .08);
+      --hero-grad: radial-gradient(120% 120% at 8% 0%, #123F72 0%, #0A2A4D 45%, #0A2A4D 100%);
+      --nav-bg: rgba(10, 42, 77, .82);
+      --toggle-track: rgba(255, 255, 255, .18);
+      --toggle-thumb: #63B0EE;
+      --footer-bg: #071D38;
+      --footer-text: #9FB8D6;
+      --code-bg: #0D3562;
+    }
 
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Inter',sans-serif;
-    transition:var(--transition-theme);
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,h4{
-    font-family:'Sora',sans-serif;
-    margin:0;
-    letter-spacing:-.01em;
-    color:var(--brand-navy);
-  }
-  p{margin:0;color:var(--text-muted);line-height:1.65;}
-  a{color:inherit;text-decoration:none;}
-  img{max-width:100%;display:block;}
-  .mono{font-family:'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
-  section{position:relative;}
-  ::selection{background:var(--brand-blue);color:#fff;}
-  :focus-visible{outline:3px solid var(--accent-green);outline-offset:3px;border-radius:4px;}
+    * {
+      box-sizing: border-box;
+    }
 
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important;}
-  }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  /* ---------- Top utility bar ---------- */
-  .topbar{
-    background:var(--brand-navy);
-    color:#fff;
-    font-size:.8rem;
-  }
-  html[data-theme="blue"] .topbar{ background:#071D38; }
-  .topbar .wrap{
-    display:flex;justify-content:space-between;align-items:center;
-    padding:8px 24px;gap:16px;flex-wrap:wrap;
-  }
-  .topbar-item{display:flex;align-items:center;gap:6px;color:#DCEAFB;}
-  .topbar-item strong{color:#fff;font-weight:600;}
-  .topbar a:hover{color:var(--accent-green);}
-  .topbar-badge{
-    display:inline-flex;align-items:center;gap:6px;
-    background:rgba(87,219,166,.15);
-    color:#7CE8BC;
-    padding:3px 10px;border-radius:100px;font-weight:600;
-  }
-  .pulse-dot{width:6px;height:6px;border-radius:50%;background:#57DBA6;animation:pulse 1.8s infinite;}
-  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      transition: var(--transition-theme);
+      -webkit-font-smoothing: antialiased;
+    }
 
-  /* ---------- Nav ---------- */
-  header.nav{
-    position:sticky;top:0;z-index:50;
-    background:var(--nav-bg);
-    backdrop-filter:blur(14px);
-    -webkit-backdrop-filter:blur(14px);
-    border-bottom:1px solid var(--border);
-    transition:var(--transition-theme);
-  }
-  .nav-inner{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:14px 24px;gap:20px;
-  }
-  .brand{display:flex;align-items:center;gap:12px;}
-  .brand svg{width:38px;height:38px;flex-shrink:0;}
-  .brand img{
-    height:40px;width:auto;flex-shrink:0;
-    transition:filter .4s ease;
-  }
-  /* Logo automatically switches to white in the blue theme, regardless of the source image's own colours */
-  html[data-theme="blue"] .brand img{
-    filter:brightness(0) saturate(100%) invert(1);
-  }
-  .brand-text{display:flex;flex-direction:column;line-height:1.15;}
-  .brand-text .name{font-family:'Sora',sans-serif;font-weight:700;font-size:1.05rem;color:var(--brand-navy);}
-  .brand-text .sub{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-blue);font-weight:600;}
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Sora', sans-serif;
+      margin: 0;
+      letter-spacing: -.01em;
+      color: var(--brand-navy);
+    }
 
-  nav.links{display:flex;gap:28px;align-items:center;}
-  nav.links a{
-    font-size:.92rem;font-weight:500;color:var(--text);
-    position:relative;padding:4px 0;
-  }
-  nav.links a::after{
-    content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0%;
-    background:var(--accent-green);transition:width .25s ease;
-  }
-  nav.links a:hover::after{width:100%;}
+    p {
+      margin: 0;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
 
-  .nav-actions{display:flex;align-items:center;gap:14px;}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-  .theme-toggle{
-    display:flex;align-items:center;gap:8px;
-    background:var(--pill-bg);
-    border:1px solid var(--border);
-    padding:5px;border-radius:100px;
-    cursor:pointer;
-  }
-  .theme-toggle button{
-    border:none;background:transparent;cursor:pointer;
-    padding:6px 12px;border-radius:100px;
-    font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--text-muted);
-    transition:background .25s ease, color .25s ease;
-  }
-  .theme-toggle button.active{
-    background:var(--brand-blue);color:#fff;
-  }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;
-    font-weight:600;font-size:.92rem;
-    padding:12px 22px;border-radius:10px;
-    border:1.5px solid transparent;cursor:pointer;
-    transition:transform .2s ease, box-shadow .2s ease, background .25s ease, color .25s ease, border-color .25s ease;
-    white-space:nowrap;
-  }
-  .btn-primary{background:var(--brand-blue);color:#fff;box-shadow:0 10px 24px -10px rgba(11,95,165,.55);}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 28px -10px rgba(11,95,165,.6);}
-  .btn-ghost{background:transparent;border-color:var(--border);color:var(--text);}
-  .btn-ghost:hover{border-color:var(--brand-blue);color:var(--brand-blue);}
-  .btn-sm{padding:9px 16px;font-size:.82rem;}
+    .mono {
+      font-family: 'IBM Plex Mono', monospace;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
 
-  .burger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
-  .burger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;}
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-  /* ---------- Hero ---------- */
-  .hero{
-    background:var(--hero-grad);
-    padding:72px 0 40px;
-    overflow:hidden;
-    transition:var(--transition-theme);
-  }
-  .hero-inner{
-    display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;
-  }
-  .hero-text-bg{
-    background:rgba(255,255,255,.88);
-    -webkit-backdrop-filter:blur(6px);
-    backdrop-filter:blur(6px);
-    border:1px solid rgba(255,255,255,.6);
-    border-radius:24px;
-    padding:32px 32px 28px;
-    box-shadow:0 20px 45px -20px rgba(10,42,77,.35);
-  }
-  html[data-theme="blue"] .hero-text-bg{
-    background:rgba(10,42,77,.82);
-    border:1px solid rgba(255,255,255,.08);
-  }
-  .eyebrow{
-    display:inline-flex;align-items:center;gap:8px;
-    font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--brand-blue);background:var(--pill-bg);
-    padding:7px 14px;border-radius:100px;margin-bottom:22px;
-  }
-  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent-green);}
-  .hero h1{
-    font-size:clamp(2.4rem,4.6vw,3.6rem);
-    font-weight:800;line-height:1.05;color:var(--brand-navy);
-  }
-  .hero h1 span{color:var(--brand-blue);}
-  .hero p.lead{
-    margin-top:22px;font-size:1.08rem;max-width:46ch;
-  }
-  .hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
-  .hero-note{
-    margin-top:26px;display:flex;gap:10px;align-items:center;
-    font-size:.85rem;color:var(--text-muted);
-  }
+    section {
+      position: relative;
+    }
 
-  .ecg-hero{
-    position:relative;background:var(--surface);
-    border:1px solid var(--border);border-radius:24px;
-    padding:32px 28px;box-shadow:var(--shadow);
-  }
-  .ecg-hero::before{
-    content:"";
-    position:absolute;inset:0;
-    border-radius:24px;
-    background-image:
-      linear-gradient(var(--pill-bg) 1px, transparent 1px),
-      linear-gradient(90deg, var(--pill-bg) 1px, transparent 1px);
-    background-size:24px 24px;
-    -webkit-mask-image:radial-gradient(ellipse 100% 90% at 50% 40%, #000 55%, transparent 100%);
-    mask-image:radial-gradient(ellipse 100% 90% at 50% 40%, #000 55%, transparent 100%);
-    opacity:.9;
-  }
-  .ecg-hero::after{
-    content:"";
-    position:absolute;
-    width:280px;height:280px;
-    background:radial-gradient(circle, var(--brand-blue) 0%, transparent 70%);
-    opacity:.14;
-    top:-90px;right:-90px;
-    border-radius:50%;
-    pointer-events:none;
-  }
-  .ecg-hero > *{position:relative;z-index:1;}
-  .ecg-hero .cad{
-    position:absolute;top:-18px;right:24px;
-    width:46px;height:46px;background:var(--brand-blue);
-    border-radius:50%;display:flex;align-items:center;justify-content:center;
-    box-shadow:0 10px 20px -8px rgba(11,95,165,.6);
-  }
-  .ecg-hero .cad svg{width:64px;height:64px;}
-  .ecg-hero svg.line{width:100%;height:auto;display:block;}
-  .ecg-caption{margin-top:18px;display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--text-muted);letter-spacing:.05em;}
-  .ecg-caption b{color:var(--accent-green);}
+    ::selection {
+      background: var(--brand-blue);
+      color: #fff;
+    }
 
-  .ecg-path{
-    stroke:var(--brand-blue);
-    stroke-width:2.5;
-    fill:none;
-    stroke-linecap:round;
-    stroke-linejoin:round;
-    stroke-dasharray:1000 1000;
-    stroke-dashoffset:2000;
-    animation:draw-loop 3.2s linear infinite;
-  }
-  @keyframes draw-loop{ to{ stroke-dashoffset:0; } }
+    :focus-visible {
+      outline: 3px solid var(--accent-green);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
 
-  .ecg-path-glow{
-    stroke:var(--accent-green);
-    stroke-width:2.5;
-    fill:none;
-    stroke-linecap:round;
-    stroke-linejoin:round;
-    opacity:0;
-    filter:drop-shadow(0 0 6px var(--accent-green));
-    stroke-dasharray:70 930;
-    stroke-dashoffset:1000;
-    animation:sweep 3.2s linear infinite;
-  }
-  @keyframes sweep{
-    0%{ stroke-dashoffset:1000; opacity:0; }
-    3%{ opacity:1; }
-    92%{ opacity:1; }
-    100%{ stroke-dashoffset:-930; opacity:0; }
-  }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
 
-  .ecg-dot{
-    fill:var(--accent-green);
-    filter:drop-shadow(0 0 5px var(--accent-green));
-    opacity:0;
-    animation:sweep-dot 3.2s linear infinite;
-  }
-  @keyframes sweep-dot{
-    0%{ opacity:0; }
-    3%{ opacity:1; }
-    92%{ opacity:1; }
-    100%{ opacity:0; }
-  }
+    /* ---------- Top utility bar ---------- */
+    .topbar {
+      background: var(--brand-navy);
+      color: #fff;
+      font-size: .8rem;
+    }
 
-  .status-pulse{
-    display:inline-flex;align-items:center;gap:6px;
-  }
-  .status-dot{
-    width:7px;height:7px;border-radius:50%;
-    background:var(--accent-green);
-    box-shadow:0 0 0 0 rgba(87,219,166,.6);
-    animation:status-ping 1.8s ease-out infinite;
-  }
-  @keyframes status-ping{
-    0%{ box-shadow:0 0 0 0 rgba(87,219,166,.55); }
-    70%{ box-shadow:0 0 0 8px rgba(87,219,166,0); }
-    100%{ box-shadow:0 0 0 0 rgba(87,219,166,0); }
-  }
-  .status-text{
-    animation:status-fade 2.4s ease-in-out infinite;
-  }
-  @keyframes status-fade{
-    0%,100%{ opacity:1; }
-    50%{ opacity:.55; }
-  }
+    html[data-theme="blue"] .topbar {
+      background: #071D38;
+    }
 
-  /* ---------- Stats strip ---------- */
-  .stats{
-    background:var(--surface);
-    border-top:1px solid var(--border);
-    border-bottom:1px solid var(--border);
-    transition:var(--transition-theme);
-  }
-  .stats .wrap{
-    display:grid;grid-template-columns:repeat(4,1fr);
-    padding:34px 24px;gap:20px;
-  }
-  .stat{text-align:center;border-right:1px solid var(--border);}
-  .stat:last-child{border-right:none;}
-  .stat .num{font-family:'Sora',sans-serif;font-weight:800;font-size:2rem;color:var(--brand-blue);}
-  .stat .label{margin-top:4px;font-size:.78rem;color:var(--text-muted);font-weight:500;}
+    .topbar .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 24px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
 
-  /* ---------- Section headers ---------- */
-  .section-pad{padding:96px 0;}
-  .section-head{max-width:640px;margin-bottom:52px;}
-  .section-head .eyebrow{margin-bottom:16px;}
-  .section-head h2{font-size:clamp(1.8rem,3vw,2.4rem);}
-  .section-head p{margin-top:14px;font-size:1.02rem;}
-  .section-alt{background:var(--bg-alt);transition:var(--transition-theme);}
+    .topbar-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #DCEAFB;
+    }
 
-  /* divider */
-  .divider{
-    display:flex;align-items:center;justify-content:center;
-    padding:6px 0 0;
-  }
-  .divider svg{width:100%;max-width:1180px;height:34px;opacity:.55;}
-  .divider path{stroke:var(--brand-blue);stroke-width:2;fill:none;opacity:.5;}
+    .topbar-item strong {
+      color: #fff;
+      font-weight: 600;
+    }
 
-  /* ---------- Real-life photography: varied treatments ---------- */
-  .photo-caption{
-    font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;
-    color:var(--text-muted);font-weight:500;margin-top:10px;
-  }
+    .topbar a:hover {
+      color: var(--accent-green);
+    }
 
-  /* 1. Tilted framed card — used in the hero */
-  .photo-tilt-wrap{margin-top:48px;display:flex;justify-content:center;}
-  .photo-tilt{
-    position:relative;
-    max-width:640px;width:100%;
-    border-radius:18px;overflow:hidden;
-    border:5px solid var(--surface);
-    box-shadow:var(--shadow);
-    transform:rotate(-1.4deg);
-    transition:transform .35s ease, var(--transition-theme);
-    aspect-ratio:16/8;
-  }
-  .photo-tilt:hover{transform:rotate(0deg);}
-  .photo-tilt img{width:100%;height:100%;object-fit:cover;display:block;}
-  .photo-tilt .photo-caption{
-    position:absolute;left:14px;bottom:12px;margin-top:0;
-    background:rgba(10,37,64,.78);color:#fff;padding:6px 12px;border-radius:100px;
-  }
+    .topbar-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(87, 219, 166, .15);
+      color: #7CE8BC;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-weight: 600;
+    }
 
-  /* 2. Offset collage pair — used in About */
-  .photo-collage{
-    position:relative;margin-top:44px;
-    padding-bottom:60px;padding-right:40px;
-  }
-  .photo-collage .collage-main{
-    border-radius:18px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);
-    aspect-ratio:16/10;
-  }
-  .photo-collage .collage-main img{width:100%;height:100%;object-fit:cover;display:block;}
-  .photo-collage .collage-accent{
-    position:absolute;right:0;bottom:0;width:46%;
-    border-radius:14px;overflow:hidden;border:5px solid var(--bg);box-shadow:var(--shadow);
-    aspect-ratio:4/3;
-  }
-  .photo-collage .collage-accent img{width:100%;height:100%;object-fit:cover;display:block;}
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #57DBA6;
+      animation: pulse 1.8s infinite;
+    }
 
-  /* 3. Circular badge photo — used in Services / Values */
-  .photo-circle{
-    width:120px;height:120px;border-radius:50%;overflow:hidden;flex-shrink:0;
-    border:4px solid var(--surface);box-shadow:var(--shadow);
-  }
-  .photo-circle img{width:100%;height:100%;object-fit:cover;display:block;}
-  .section-head-photo{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+    @keyframes pulse {
 
-  /* 4. Filmstrip row of unequal photos — used in Facilities */
-  .photo-filmstrip{
-    display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:16px;margin-top:40px;
-  }
-  .photo-filmstrip figure{
-    margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);
-    aspect-ratio:3/4;position:relative;
-  }
-  .photo-filmstrip figure:first-child{aspect-ratio:1/1;}
-  .photo-filmstrip img{width:100%;height:100%;object-fit:cover;display:block;}
-  .photo-filmstrip figcaption{
-    position:absolute;left:0;right:0;bottom:0;
-    background:linear-gradient(to top, rgba(6,20,36,.82), transparent);
-    color:#fff;font-size:.7rem;font-weight:600;padding:10px 12px;
-  }
-  @media (max-width:768px){ .photo-filmstrip{grid-template-columns:1fr 1fr;} .photo-filmstrip figure:first-child{grid-column:1/-1;aspect-ratio:16/9;} }
+      0%,
+      100% {
+        opacity: 1;
+      }
 
-  /* 5. Duotone editorial banner — used in Team */
-  .photo-duotone{
-    position:relative;margin-top:44px;border-radius:20px;overflow:hidden;
-    aspect-ratio:16/6;border:1px solid var(--border);
-  }
-  .photo-duotone img{
-    width:100%;height:100%;object-fit:cover;display:block;
-    filter:grayscale(1) contrast(1.05);
-  }
-  .photo-duotone::after{
-    content:"";position:absolute;inset:0;
-    background:var(--brand-blue);mix-blend-mode:multiply;opacity:.72;
-  }
-  .photo-duotone .photo-caption{
-    position:absolute;left:24px;bottom:18px;margin-top:0;color:#fff;
-    z-index:1;font-size:.74rem;
-  }
+      50% {
+        opacity: .3;
+      }
+    }
 
-  /* 6. Split pair — used in Contact */
-  .photo-split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px;}
-  .photo-split figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);aspect-ratio:4/3;}
-  .photo-split img{width:100%;height:100%;object-fit:cover;display:block;}
-  @media (max-width:560px){ .photo-split{grid-template-columns:1fr;} }
+    /* ---------- Nav ---------- */
+    header.nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--nav-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition-theme);
+    }
 
-  /* ---------- About / history ---------- */
-  .about-grid{
-    display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start;
-  }
-  .about-card{
-    background:var(--surface);border:1px solid var(--border);
-    border-radius:20px;padding:30px;box-shadow:var(--shadow);
-  }
-  .about-card h3{font-size:1.15rem;margin-bottom:10px;}
-  .about-card p{font-size:.94rem;}
-  .about-card + .about-card{margin-top:20px;}
-  .founder-quote{
-    border-left:3px solid var(--accent-green);
-    padding-left:20px;margin-top:24px;font-style:italic;color:var(--text);
-    font-size:1.02rem;
-  }
-  .timeline{margin-top:28px;display:flex;flex-direction:column;gap:18px;}
-  .timeline-item{display:flex;gap:16px;}
-  .timeline-year{
-    font-family:'IBM Plex Mono',monospace;font-weight:500;color:var(--brand-blue);
-    min-width:64px;font-size:.85rem;padding-top:2px;
-  }
-  .timeline-copy p{font-size:.92rem;}
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      gap: 20px;
+    }
 
-  /* ---------- Services ---------- */
-  .service-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
-  }
-  .service-card{
-    background:var(--surface);border:1px solid var(--border);
-    border-radius:18px;padding:26px 24px;
-    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-  }
-  .service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--brand-blue);}
-  .service-icon{
-    width:44px;height:44px;border-radius:12px;
-    background:var(--pill-bg);display:flex;align-items:center;justify-content:center;
-    margin-bottom:16px;
-  }
-  .service-icon svg{width:22px;height:22px;stroke:var(--brand-blue);}
-  .service-card h4{font-size:1.02rem;margin-bottom:6px;}
-  .service-card p{font-size:.86rem;}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-  /* ---------- Facilities ---------- */
-  .facility-strip{
-    display:grid;grid-template-columns:repeat(6,1fr);gap:0;
-    border:1px solid var(--border);border-radius:20px;overflow:hidden;
-    background:var(--surface);
-  }
-  .facility-cell{
-    padding:26px 16px;text-align:center;border-right:1px solid var(--border);border-bottom:1px solid var(--border);
-  }
-  .facility-cell svg{width:26px;height:26px;stroke:var(--accent-green);margin:0 auto 10px;}
-  .facility-cell .flabel{font-size:.8rem;font-weight:600;color:var(--text);}
+    .brand svg {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+    }
 
-  /* ---------- Values (photo background section) ---------- */
-  .values-section{
-    position:relative;overflow:hidden;isolation:isolate;
-  }
-  .values-bg-img{
-    position:absolute;inset:0;width:100%;height:100%;
-    object-fit:cover;object-position:center;z-index:0;
-  }
-  .values-overlay{
-    position:absolute;inset:0;z-index:1;
-    background:
-      radial-gradient(1100px 480px at 12% -10%, rgba(27,156,110,.22), transparent 60%),
-      linear-gradient(120deg, rgba(6,30,56,.62) 0%, rgba(8,50,88,.50) 42%, rgba(11,95,165,.34) 100%);
-  }
-  .values-section .wrap{position:relative;z-index:2;}
-  .values-section .eyebrow{
-    background:rgba(255,255,255,.16);color:#EAF4FF;border:1px solid rgba(255,255,255,.22);
-  }
-  .values-section .eyebrow::before{background:var(--accent-green);}
-  .values-section h2{color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.45);}
-  .values-section .section-head p{color:rgba(255,255,255,.85);text-shadow:0 1px 10px rgba(0,0,0,.35);}
+    .brand img {
+      height: 40px;
+      width: auto;
+      flex-shrink: 0;
+      transition: filter .4s ease;
+    }
 
-  .values-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
-  }
-  .value-card{
-    position:relative;padding:30px 24px 26px;border-radius:18px;overflow:hidden;
-    background:rgba(10,30,55,.38);
-    border:1px solid rgba(255,255,255,.22);
-    backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-    box-shadow:0 10px 30px -18px rgba(0,0,0,.5);
-    transition:transform .4s cubic-bezier(.2,.8,.2,1), background .4s ease, border-color .4s ease, box-shadow .4s ease;
-  }
-  .value-card::before{
-    content:attr(data-num);position:absolute;right:8px;top:-6px;
-    font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:4.6rem;line-height:1;
-    color:rgba(255,255,255,.07);pointer-events:none;transition:color .4s ease;
-  }
-  .value-card:hover{
-    transform:translateY(-8px);
-    background:rgba(10,30,55,.52);
-    border-color:rgba(87,219,166,.6);
-    box-shadow:0 24px 44px -20px rgba(0,0,0,.6);
-  }
-  .value-card:hover::before{color:rgba(87,219,166,.16);}
-  .value-num{
-    font-family:'IBM Plex Mono',monospace;color:#fff;font-size:.78rem;font-weight:600;
-    background:rgba(255,255,255,.14);display:inline-flex;align-items:center;justify-content:center;
-    width:34px;height:34px;border-radius:50%;margin-bottom:16px;border:1px solid rgba(255,255,255,.22);
-  }
-  .value-card h4{font-size:1.02rem;margin-bottom:8px;color:#fff;position:relative;}
-  .value-card p{font-size:.88rem;color:rgba(255,255,255,.68);position:relative;}
+    /* Logo automatically switches to white in the blue theme, regardless of the source image's own colours */
+    html[data-theme="blue"] .brand img {
+      filter: brightness(0) saturate(100%) invert(1);
+    }
 
-  /* ---------- Payments ---------- */
-  .pay-band{
-    background:var(--brand-navy);
-    border-radius:24px;padding:48px 40px;
-    display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:center;
-    color:#fff;
-  }
-  html[data-theme="blue"] .pay-band{background:#071D38;}
-  .pay-band h3{color:#fff;font-size:1.5rem;margin-bottom:10px;}
-  .pay-band p{color:#B9CEE6;}
-  .pay-icons{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
-  .pay-chip{
-    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
-    border-radius:14px;padding:18px 10px;text-align:center;
-  }
-  .pay-chip svg{width:24px;height:24px;stroke:#7CE8BC;margin:0 auto 8px;}
-  .pay-chip span{font-size:.74rem;color:#DCEAFB;font-weight:600;}
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
 
-  /* ---------- Team strip ---------- */
-  .team-band{
-    display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;
-  }
-  .team-copy p{margin-top:16px;font-size:1rem;}
-  .badge-row{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap;}
-  .badge{
-    display:flex;align-items:center;gap:10px;
-    border:1px solid var(--border);border-radius:14px;padding:12px 16px;
-    background:var(--surface);
-  }
-  .badge svg{width:20px;height:20px;stroke:var(--brand-blue);}
-  .badge span{font-size:.82rem;font-weight:600;}
-  .avatar-cluster{
-    background:var(--surface);border:1px solid var(--border);border-radius:20px;
-    padding:26px;box-shadow:var(--shadow);
-  }
-  .avatar-row{display:flex;}
-  .avatar{
-    width:52px;height:52px;border-radius:50%;
-    border:3px solid var(--bg);
-    margin-left:-14px;
-    display:flex;align-items:center;justify-content:center;
-    font-family:'Sora',sans-serif;font-weight:700;color:#fff;font-size:.8rem;
-  }
-  .avatar:first-child{margin-left:0;}
-  .avatar-row + p{margin-top:16px;font-size:.85rem;}
+    .brand-text .name {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--brand-navy);
+    }
 
-  /* ---------- Contact ---------- */
-  .contact-grid{
-    display:grid;grid-template-columns:1fr 1fr;gap:0;
-    border:1px solid var(--border);border-radius:24px;overflow:hidden;
-  }
-  .contact-info{
-    background:var(--surface);padding:48px 44px;
-  }
-  .contact-info h3{font-size:1.4rem;margin-bottom:8px;}
-  .contact-row{
-    display:flex;gap:16px;padding:18px 0;border-top:1px solid var(--border);
-  }
-  .contact-row:first-of-type{margin-top:26px;}
-  .contact-row svg{width:20px;height:20px;stroke:var(--brand-blue);flex-shrink:0;margin-top:2px;}
-  .contact-row .clabel{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);font-weight:600;margin-bottom:3px;}
-  .contact-row .cval{font-size:.95rem;color:var(--text);font-weight:500;}
-  .contact-row a:hover{color:var(--brand-blue);}
-  .map-embed{min-height:100%;background:var(--bg-alt);}
-  .map-embed iframe{width:100%;height:100%;min-height:420px;border:0;filter:grayscale(.15);}
+    .brand-text .sub {
+      font-size: .66rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--brand-blue);
+      font-weight: 600;
+    }
 
-  /* ---------- Footer ---------- */
-  footer{
-    background:var(--footer-bg);color:var(--footer-text);
-    padding:64px 0 28px;
-  }
-  .footer-grid{
-    display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;
-    padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1);
-  }
-  .footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
-  .footer-brand .name{font-family:'Sora',sans-serif;font-weight:700;color:#fff;font-size:1.05rem;}
-  footer p{color:var(--footer-text);font-size:.88rem;max-width:34ch;}
-  footer h5{color:#fff;font-family:'Sora',sans-serif;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
-  footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
-  footer ul a{font-size:.88rem;color:var(--footer-text);}
-  footer ul a:hover{color:#fff;}
-  .footer-bottom{
-    padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
-    font-size:.78rem;color:#8FA8C6;
-  }
+    nav.links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
 
-  /* ---------- Responsive ---------- */
-  @media (max-width:980px){
-    nav.links, .nav-actions .btn-ghost{display:none;}
-    .burger{display:block;}
-    .hero-inner{grid-template-columns:1fr;}
-    .about-grid, .team-band{grid-template-columns:1fr;}
-    .service-grid{grid-template-columns:repeat(2,1fr);}
-    .facility-strip{grid-template-columns:repeat(3,1fr);}
-    .values-grid{grid-template-columns:1fr 1fr;}
-    .pay-band{grid-template-columns:1fr;}
-    .pay-icons{grid-template-columns:repeat(4,1fr);}
-    .contact-grid{grid-template-columns:1fr;}
-    .stats .wrap{grid-template-columns:repeat(2,1fr);}
-    .stat{border-right:none;border-bottom:1px solid var(--border);padding-bottom:16px;}
-    .footer-grid{grid-template-columns:1fr 1fr;}
-  }
-  @media (max-width:560px){
-    .service-grid{grid-template-columns:1fr;}
-    .facility-strip{grid-template-columns:repeat(2,1fr);}
-    .values-grid{grid-template-columns:1fr;}
-    .pay-icons{grid-template-columns:repeat(2,1fr);}
-    .footer-grid{grid-template-columns:1fr;}
-    .section-pad{padding:64px 0;}
-    .topbar .wrap{justify-content:center;text-align:center;}
-  }
+    nav.links a {
+      font-size: .92rem;
+      font-weight: 500;
+      color: var(--text);
+      position: relative;
+      padding: 4px 0;
+    }
 
-  /* Mobile menu */
-  .mobile-menu{
-    position:fixed;inset:0;background:var(--bg);z-index:100;
-    display:flex;flex-direction:column;padding:24px;
-    transform:translateX(100%);transition:transform .3s ease;
-  }
-  .mobile-menu.open{transform:translateX(0);}
-  .mobile-menu .close-row{display:flex;justify-content:flex-end;}
-  .mobile-menu nav{display:flex;flex-direction:column;gap:22px;margin-top:40px;}
-  .mobile-menu nav a{font-family:'Sora',sans-serif;font-size:1.4rem;font-weight:600;color:var(--text);}
-  .mobile-menu .btn{margin-top:32px;justify-content:center;}
+    nav.links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      height: 2px;
+      width: 0%;
+      background: var(--accent-green);
+      transition: width .25s ease;
+    }
 
-  /* ---------- Galen Assistant chatbot ---------- */
-  .gh-chat-launcher{
-    position:fixed;right:22px;bottom:22px;z-index:200;
-    width:60px;height:60px;border-radius:50%;
-    background:var(--brand-blue);color:#fff;border:none;cursor:pointer;
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 14px 30px -10px rgba(11,95,165,.6);
-    transition:transform .2s ease, box-shadow .2s ease;
-  }
-  .gh-chat-launcher:hover{transform:translateY(-2px) scale(1.04);}
-  .gh-chat-launcher svg{width:26px;height:26px;}
-  .gh-chat-launcher .gh-close-icon{display:none;}
-  .gh-chat-launcher.open .gh-chat-icon{display:none;}
-  .gh-chat-launcher.open .gh-close-icon{display:block;}
+    nav.links a:hover::after {
+      width: 100%;
+    }
 
-  .gh-chat-window{
-    position:fixed;right:22px;bottom:96px;z-index:200;
-    width:360px;max-width:calc(100vw - 32px);
-    height:520px;max-height:calc(100vh - 140px);
-    background:var(--surface);border:1px solid var(--border);
-    border-radius:16px;box-shadow:var(--shadow);
-    display:flex;flex-direction:column;overflow:hidden;
-    opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;
-    transition:opacity .2s ease, transform .2s ease;
-  }
-  .gh-chat-window.open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
 
-  .gh-chat-header{
-    background:var(--brand-navy);color:#fff;padding:14px 16px;
-    display:flex;align-items:center;gap:10px;flex-shrink:0;
-  }
-  .gh-chat-header .gh-avatar{
-    width:34px;height:34px;border-radius:50%;background:var(--brand-blue);
-    display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  }
-  .gh-chat-header .gh-avatar svg{width:18px;height:18px;stroke:#fff;}
-  .gh-chat-header-text{line-height:1.25;}
-  .gh-chat-header-text .gh-title{font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;}
-  .gh-chat-header-text .gh-sub{font-size:.7rem;color:#B7CBE3;}
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--pill-bg);
+      border: 1px solid var(--border);
+      padding: 5px;
+      border-radius: 100px;
+      cursor: pointer;
+    }
 
-  .gh-chat-body{
-    flex:1;overflow-y:auto;padding:16px;
-    display:flex;flex-direction:column;gap:10px;
-    background:var(--bg-alt);
-  }
-  .gh-msg{max-width:85%;font-size:.86rem;line-height:1.5;padding:10px 13px;border-radius:12px;white-space:pre-wrap;}
-  .gh-msg.bot{
-    align-self:flex-start;background:var(--surface);color:var(--text);
-    border:1px solid var(--border);border-bottom-left-radius:4px;
-  }
-  .gh-msg.user{
-    align-self:flex-end;background:var(--brand-blue);color:#fff;
-    border-bottom-right-radius:4px;
-  }
-  .gh-msg.bot a{color:var(--brand-blue);text-decoration:underline;}
-  .gh-suggest-row{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 12px;background:var(--bg-alt);flex-shrink:0;}
-  .gh-suggest-chip{
-    font-size:.72rem;padding:6px 10px;border-radius:100px;
-    background:var(--pill-bg);border:1px solid var(--border);color:var(--text);
-    cursor:pointer;transition:background .2s ease, color .2s ease;
-  }
-  .gh-suggest-chip:hover{background:var(--brand-blue);color:#fff;border-color:var(--brand-blue);}
+    .theme-toggle button {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 100px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .68rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: background .25s ease, color .25s ease;
+    }
 
-  .gh-chat-input-row{
-    display:flex;gap:8px;padding:12px;border-top:1px solid var(--border);
-    background:var(--surface);flex-shrink:0;
-  }
-  .gh-chat-input-row input{
-    flex:1;border:1px solid var(--border);border-radius:10px;
-    padding:10px 12px;font-family:'Inter',sans-serif;font-size:.86rem;
-    background:var(--bg);color:var(--text);
-  }
-  .gh-chat-input-row input:focus-visible{outline:2px solid var(--brand-blue);}
-  .gh-chat-input-row button{
-    background:var(--brand-blue);color:#fff;border:none;border-radius:10px;
-    width:40px;flex-shrink:0;display:flex;align-items:center;justify-content:center;cursor:pointer;
-  }
-  .gh-chat-input-row button svg{width:18px;height:18px;}
-  .gh-chat-disclaimer{font-size:.62rem;color:var(--text-muted);text-align:center;padding:0 12px 10px;flex-shrink:0;background:var(--surface);}
+    .theme-toggle button.active {
+      background: var(--brand-blue);
+      color: #fff;
+    }
 
-  @media (max-width:480px){
-    .gh-chat-window{right:16px;left:16px;width:auto;bottom:88px;}
-    .gh-chat-launcher{right:16px;bottom:16px;}
-  }
-</style>
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: .92rem;
+      padding: 12px 22px;
+      border-radius: 10px;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .25s ease, color .25s ease, border-color .25s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--brand-blue);
+      color: #fff;
+      box-shadow: 0 10px 24px -10px rgba(11, 95, 165, .55);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 28px -10px rgba(11, 95, 165, .6);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--brand-blue);
+      color: var(--brand-blue);
+    }
+
+    .btn-sm {
+      padding: 9px 16px;
+      font-size: .82rem;
+    }
+
+    .burger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .burger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      margin: 5px 0;
+      border-radius: 2px;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background: var(--hero-grad);
+      padding: 72px 0 40px;
+      overflow: hidden;
+      transition: var(--transition-theme);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .hero-text-bg {
+      background: rgba(255, 255, 255, .88);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, .6);
+      border-radius: 24px;
+      padding: 32px 32px 28px;
+      box-shadow: 0 20px 45px -20px rgba(10, 42, 77, .35);
+    }
+
+    html[data-theme="blue"] .hero-text-bg {
+      background: rgba(10, 42, 77, .82);
+      border: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--brand-blue);
+      background: var(--pill-bg);
+      padding: 7px 14px;
+      border-radius: 100px;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent-green);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 4.6vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.05;
+      color: var(--brand-navy);
+    }
+
+    .hero h1 span {
+      color: var(--brand-blue);
+    }
+
+    .hero p.lead {
+      margin-top: 22px;
+      font-size: 1.08rem;
+      max-width: 46ch;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .hero-note {
+      margin-top: 26px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-size: .85rem;
+      color: var(--text-muted);
+    }
+
+    .ecg-hero {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .ecg-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      background-image:
+        linear-gradient(var(--pill-bg) 1px, transparent 1px),
+        linear-gradient(90deg, var(--pill-bg) 1px, transparent 1px);
+      background-size: 24px 24px;
+      -webkit-mask-image: radial-gradient(ellipse 100% 90% at 50% 40%, #000 55%, transparent 100%);
+      mask-image: radial-gradient(ellipse 100% 90% at 50% 40%, #000 55%, transparent 100%);
+      opacity: .9;
+    }
+
+    .ecg-hero::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, var(--brand-blue) 0%, transparent 70%);
+      opacity: .14;
+      top: -90px;
+      right: -90px;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .ecg-hero>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .ecg-hero .cad {
+      position: absolute;
+      top: -18px;
+      right: 24px;
+      width: 46px;
+      height: 46px;
+      background: var(--brand-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 20px -8px rgba(11, 95, 165, .6);
+    }
+
+    .ecg-hero .cad svg {
+      width: 64px;
+      height: 64px;
+    }
+
+    .ecg-hero svg.line {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .ecg-caption {
+      margin-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .7rem;
+      color: var(--text-muted);
+      letter-spacing: .05em;
+    }
+
+    .ecg-caption b {
+      color: var(--accent-green);
+    }
+
+    .ecg-path {
+      stroke: var(--brand-blue);
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 1000 1000;
+      stroke-dashoffset: 2000;
+      animation: draw-loop 3.2s linear infinite;
+    }
+
+    @keyframes draw-loop {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    .ecg-path-glow {
+      stroke: var(--accent-green);
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0;
+      filter: drop-shadow(0 0 6px var(--accent-green));
+      stroke-dasharray: 70 930;
+      stroke-dashoffset: 1000;
+      animation: sweep 3.2s linear infinite;
+    }
+
+    @keyframes sweep {
+      0% {
+        stroke-dashoffset: 1000;
+        opacity: 0;
+      }
+
+      3% {
+        opacity: 1;
+      }
+
+      92% {
+        opacity: 1;
+      }
+
+      100% {
+        stroke-dashoffset: -930;
+        opacity: 0;
+      }
+    }
+
+    .ecg-dot {
+      fill: var(--accent-green);
+      filter: drop-shadow(0 0 5px var(--accent-green));
+      opacity: 0;
+      animation: sweep-dot 3.2s linear infinite;
+    }
+
+    @keyframes sweep-dot {
+      0% {
+        opacity: 0;
+      }
+
+      3% {
+        opacity: 1;
+      }
+
+      92% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .status-pulse {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent-green);
+      box-shadow: 0 0 0 0 rgba(87, 219, 166, .6);
+      animation: status-ping 1.8s ease-out infinite;
+    }
+
+    @keyframes status-ping {
+      0% {
+        box-shadow: 0 0 0 0 rgba(87, 219, 166, .55);
+      }
+
+      70% {
+        box-shadow: 0 0 0 8px rgba(87, 219, 166, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(87, 219, 166, 0);
+      }
+    }
+
+    .status-text {
+      animation: status-fade 2.4s ease-in-out infinite;
+    }
+
+    @keyframes status-fade {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: .55;
+      }
+    }
+
+    /* ---------- Stats strip ---------- */
+    .stats {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition-theme);
+    }
+
+    .stats .wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 34px 24px;
+      gap: 20px;
+    }
+
+    .stat {
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat .num {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 2rem;
+      color: var(--brand-blue);
+    }
+
+    .stat .label {
+      margin-top: 4px;
+      font-size: .78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ---------- Section headers ---------- */
+    .section-pad {
+      padding: 96px 0;
+    }
+
+    .section-head {
+      max-width: 640px;
+      margin-bottom: 52px;
+    }
+
+    .section-head .eyebrow {
+      margin-bottom: 16px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+    }
+
+    .section-head p {
+      margin-top: 14px;
+      font-size: 1.02rem;
+    }
+
+    .section-alt {
+      background: var(--bg-alt);
+      transition: var(--transition-theme);
+    }
+
+    /* divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 0 0;
+    }
+
+    .divider svg {
+      width: 100%;
+      max-width: 1180px;
+      height: 34px;
+      opacity: .55;
+    }
+
+    .divider path {
+      stroke: var(--brand-blue);
+      stroke-width: 2;
+      fill: none;
+      opacity: .5;
+    }
+
+    /* ---------- Real-life photography: varied treatments ---------- */
+    .photo-caption {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .68rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-top: 10px;
+    }
+
+    /* 1. Tilted framed card — used in the hero */
+    .photo-tilt-wrap {
+      margin-top: 48px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo-tilt {
+      position: relative;
+      max-width: 640px;
+      width: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 5px solid var(--surface);
+      box-shadow: var(--shadow);
+      transform: rotate(-1.4deg);
+      transition: transform .35s ease, var(--transition-theme);
+      aspect-ratio: 16/8;
+    }
+
+    .photo-tilt:hover {
+      transform: rotate(0deg);
+    }
+
+    .photo-tilt img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-tilt .photo-caption {
+      position: absolute;
+      left: 14px;
+      bottom: 12px;
+      margin-top: 0;
+      background: rgba(10, 37, 64, .78);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 100px;
+    }
+
+    /* 2. Offset collage pair — used in About */
+    .photo-collage {
+      position: relative;
+      margin-top: 44px;
+      padding-bottom: 60px;
+      padding-right: 40px;
+    }
+
+    .photo-collage .collage-main {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      aspect-ratio: 16/10;
+    }
+
+    .photo-collage .collage-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-collage .collage-accent {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 46%;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 5px solid var(--bg);
+      box-shadow: var(--shadow);
+      aspect-ratio: 4/3;
+    }
+
+    .photo-collage .collage-accent img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* 3. Circular badge photo — used in Services / Values */
+    .photo-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 4px solid var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .photo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .section-head-photo {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    /* 4. Filmstrip row of unequal photos — used in Facilities */
+    .photo-filmstrip {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .photo-filmstrip figure {
+      margin: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      aspect-ratio: 3/4;
+      position: relative;
+    }
+
+    .photo-filmstrip figure:first-child {
+      aspect-ratio: 1/1;
+    }
+
+    .photo-filmstrip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-filmstrip figcaption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(6, 20, 36, .82), transparent);
+      color: #fff;
+      font-size: .7rem;
+      font-weight: 600;
+      padding: 10px 12px;
+    }
+
+    @media (max-width:768px) {
+      .photo-filmstrip {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .photo-filmstrip figure:first-child {
+        grid-column: 1/-1;
+        aspect-ratio: 16/9;
+      }
+    }
+
+    /* 5. Duotone editorial banner — used in Team */
+    .photo-duotone {
+      position: relative;
+      margin-top: 44px;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 16/6;
+      border: 1px solid var(--border);
+    }
+
+    .photo-duotone img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(1) contrast(1.05);
+    }
+
+    .photo-duotone::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--brand-blue);
+      mix-blend-mode: multiply;
+      opacity: .72;
+    }
+
+    .photo-duotone .photo-caption {
+      position: absolute;
+      left: 24px;
+      bottom: 18px;
+      margin-top: 0;
+      color: #fff;
+      z-index: 1;
+      font-size: .74rem;
+    }
+
+    /* 6. Split pair — used in Contact */
+    .photo-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .photo-split figure {
+      margin: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      aspect-ratio: 4/3;
+    }
+
+    .photo-split img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width:560px) {
+      .photo-split {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ---------- About / history ---------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .about-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+
+    .about-card p {
+      font-size: .94rem;
+    }
+
+    .about-card+.about-card {
+      margin-top: 20px;
+    }
+
+    .founder-quote {
+      border-left: 3px solid var(--accent-green);
+      padding-left: 20px;
+      margin-top: 24px;
+      font-style: italic;
+      color: var(--text);
+      font-size: 1.02rem;
+    }
+
+    .timeline {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 16px;
+    }
+
+    .timeline-year {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      color: var(--brand-blue);
+      min-width: 64px;
+      font-size: .85rem;
+      padding-top: 2px;
+    }
+
+    .timeline-copy p {
+      font-size: .92rem;
+    }
+
+    /* ---------- Services ---------- */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px 24px;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: var(--brand-blue);
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--pill-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .service-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--brand-blue);
+    }
+
+    .service-card h4 {
+      font-size: 1.02rem;
+      margin-bottom: 6px;
+    }
+
+    .service-card p {
+      font-size: .86rem;
+    }
+
+    /* ---------- Facilities ---------- */
+    .facility-strip {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .facility-cell {
+      padding: 26px 16px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .facility-cell svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--accent-green);
+      margin: 0 auto 10px;
+    }
+
+    .facility-cell .flabel {
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* ---------- Values (photo background section) ---------- */
+    .values-section {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .values-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    .values-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        radial-gradient(1100px 480px at 12% -10%, rgba(27, 156, 110, .22), transparent 60%),
+        linear-gradient(120deg, rgba(6, 30, 56, .62) 0%, rgba(8, 50, 88, .50) 42%, rgba(11, 95, 165, .34) 100%);
+    }
+
+    .values-section .wrap {
+      position: relative;
+      z-index: 2;
+    }
+
+    .values-section .eyebrow {
+      background: rgba(255, 255, 255, .16);
+      color: #EAF4FF;
+      border: 1px solid rgba(255, 255, 255, .22);
+    }
+
+    .values-section .eyebrow::before {
+      background: var(--accent-green);
+    }
+
+    .values-section h2 {
+      color: #fff;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, .45);
+    }
+
+    .values-section .section-head p {
+      color: rgba(255, 255, 255, .85);
+      text-shadow: 0 1px 10px rgba(0, 0, 0, .35);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .value-card {
+      position: relative;
+      padding: 30px 24px 26px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(10, 30, 55, .38);
+      border: 1px solid rgba(255, 255, 255, .22);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 10px 30px -18px rgba(0, 0, 0, .5);
+      transition: transform .4s cubic-bezier(.2, .8, .2, 1), background .4s ease, border-color .4s ease, box-shadow .4s ease;
+    }
+
+    .value-card::before {
+      content: attr(data-num);
+      position: absolute;
+      right: 8px;
+      top: -6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 700;
+      font-size: 4.6rem;
+      line-height: 1;
+      color: rgba(255, 255, 255, .07);
+      pointer-events: none;
+      transition: color .4s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-8px);
+      background: rgba(10, 30, 55, .52);
+      border-color: rgba(87, 219, 166, .6);
+      box-shadow: 0 24px 44px -20px rgba(0, 0, 0, .6);
+    }
+
+    .value-card:hover::before {
+      color: rgba(87, 219, 166, .16);
+    }
+
+    .value-num {
+      font-family: 'IBM Plex Mono', monospace;
+      color: #fff;
+      font-size: .78rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, .14);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      margin-bottom: 16px;
+      border: 1px solid rgba(255, 255, 255, .22);
+    }
+
+    .value-card h4 {
+      font-size: 1.02rem;
+      margin-bottom: 8px;
+      color: #fff;
+      position: relative;
+    }
+
+    .value-card p {
+      font-size: .88rem;
+      color: rgba(255, 255, 255, .68);
+      position: relative;
+    }
+
+    /* ---------- Payments ---------- */
+    .pay-band {
+      background: var(--brand-navy);
+      border-radius: 24px;
+      padding: 48px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 40px;
+      align-items: center;
+      color: #fff;
+    }
+
+    html[data-theme="blue"] .pay-band {
+      background: #071D38;
+    }
+
+    .pay-band h3 {
+      color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .pay-band p {
+      color: #B9CEE6;
+    }
+
+    .pay-icons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .pay-chip {
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 14px;
+      padding: 18px 10px;
+      text-align: center;
+    }
+
+    .pay-chip svg {
+      width: 24px;
+      height: 24px;
+      stroke: #7CE8BC;
+      margin: 0 auto 8px;
+    }
+
+    .pay-chip span {
+      font-size: .74rem;
+      color: #DCEAFB;
+      font-weight: 600;
+    }
+
+    /* ---------- Team strip ---------- */
+    .team-band {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .team-copy p {
+      margin-top: 16px;
+      font-size: 1rem;
+    }
+
+    .badge-row {
+      display: flex;
+      gap: 14px;
+      margin-top: 26px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 16px;
+      background: var(--surface);
+    }
+
+    .badge svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--brand-blue);
+    }
+
+    .badge span {
+      font-size: .82rem;
+      font-weight: 600;
+    }
+
+    .avatar-cluster {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .avatar-row {
+      display: flex;
+    }
+
+    .avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 3px solid var(--bg);
+      margin-left: -14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      color: #fff;
+      font-size: .8rem;
+    }
+
+    .avatar:first-child {
+      margin-left: 0;
+    }
+
+    .avatar-row+p {
+      margin-top: 16px;
+      font-size: .85rem;
+    }
+
+    /* ---------- Contact ---------- */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .contact-info {
+      background: var(--surface);
+      padding: 48px 44px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 16px;
+      padding: 18px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-row:first-of-type {
+      margin-top: 26px;
+    }
+
+    .contact-row svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--brand-blue);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .contact-row .clabel {
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .contact-row .cval {
+      font-size: .95rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .contact-row a:hover {
+      color: var(--brand-blue);
+    }
+
+    .map-embed {
+      min-height: 100%;
+      background: var(--bg-alt);
+    }
+
+    .map-embed iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      border: 0;
+      filter: grayscale(.15);
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 64px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .footer-brand .name {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      color: #fff;
+      font-size: 1.05rem;
+    }
+
+    footer p {
+      color: var(--footer-text);
+      font-size: .88rem;
+      max-width: 34ch;
+    }
+
+    footer h5 {
+      color: #fff;
+      font-family: 'Sora', sans-serif;
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 16px;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    footer ul a {
+      font-size: .88rem;
+      color: var(--footer-text);
+    }
+
+    footer ul a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: .78rem;
+      color: #8FA8C6;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width:980px) {
+
+      nav.links,
+      .nav-actions .btn-ghost {
+        display: none;
+      }
+
+      .burger {
+        display: block;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid,
+      .team-band {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .facility-strip {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .pay-band {
+        grid-template-columns: 1fr;
+      }
+
+      .pay-icons {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats .wrap {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 16px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width:560px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .facility-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pay-icons {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-pad {
+        padding: 64px 0;
+      }
+
+      .topbar .wrap {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      transform: translateX(100%);
+      transition: transform .3s ease;
+    }
+
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    .mobile-menu .close-row {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .mobile-menu nav {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      margin-top: 40px;
+    }
+
+    .mobile-menu nav a {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .mobile-menu .btn {
+      margin-top: 32px;
+      justify-content: center;
+    }
+
+    /* ---------- Galen Assistant chatbot ---------- */
+    .gh-chat-launcher {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 200;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--brand-blue);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 14px 30px -10px rgba(11, 95, 165, .6);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .gh-chat-launcher:hover {
+      transform: translateY(-2px) scale(1.04);
+    }
+
+    .gh-chat-launcher svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .gh-chat-launcher .gh-close-icon {
+      display: none;
+    }
+
+    .gh-chat-launcher.open .gh-chat-icon {
+      display: none;
+    }
+
+    .gh-chat-launcher.open .gh-close-icon {
+      display: block;
+    }
+
+    .gh-chat-window {
+      position: fixed;
+      right: 22px;
+      bottom: 96px;
+      z-index: 200;
+      width: 360px;
+      max-width: calc(100vw - 32px);
+      height: 520px;
+      max-height: calc(100vh - 140px);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(16px) scale(.98);
+      pointer-events: none;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .gh-chat-window.open {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .gh-chat-header {
+      background: var(--brand-navy);
+      color: #fff;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .gh-chat-header .gh-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--brand-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .gh-chat-header .gh-avatar svg {
+      width: 18px;
+      height: 18px;
+      stroke: #fff;
+    }
+
+    .gh-chat-header-text {
+      line-height: 1.25;
+    }
+
+    .gh-chat-header-text .gh-title {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: .92rem;
+    }
+
+    .gh-chat-header-text .gh-sub {
+      font-size: .7rem;
+      color: #B7CBE3;
+    }
+
+    .gh-chat-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: var(--bg-alt);
+    }
+
+    .gh-msg {
+      max-width: 85%;
+      font-size: .86rem;
+      line-height: 1.5;
+      padding: 10px 13px;
+      border-radius: 12px;
+      white-space: pre-wrap;
+    }
+
+    .gh-msg.bot {
+      align-self: flex-start;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-bottom-left-radius: 4px;
+    }
+
+    .gh-msg.user {
+      align-self: flex-end;
+      background: var(--brand-blue);
+      color: #fff;
+      border-bottom-right-radius: 4px;
+    }
+
+    .gh-msg.bot a {
+      color: var(--brand-blue);
+      text-decoration: underline;
+    }
+
+    .gh-suggest-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 0 16px 12px;
+      background: var(--bg-alt);
+      flex-shrink: 0;
+    }
+
+    .gh-suggest-chip {
+      font-size: .72rem;
+      padding: 6px 10px;
+      border-radius: 100px;
+      background: var(--pill-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .gh-suggest-chip:hover {
+      background: var(--brand-blue);
+      color: #fff;
+      border-color: var(--brand-blue);
+    }
+
+    .gh-chat-input-row {
+      display: flex;
+      gap: 8px;
+      padding: 12px;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+
+    .gh-chat-input-row input {
+      flex: 1;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: .86rem;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .gh-chat-input-row input:focus-visible {
+      outline: 2px solid var(--brand-blue);
+    }
+
+    .gh-chat-input-row button {
+      background: var(--brand-blue);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      width: 40px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .gh-chat-input-row button svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .gh-chat-disclaimer {
+      font-size: .62rem;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 0 12px 10px;
+      flex-shrink: 0;
+      background: var(--surface);
+    }
+
+    @media (max-width:480px) {
+      .gh-chat-window {
+        right: 16px;
+        left: 16px;
+        width: auto;
+        bottom: 88px;
+      }
+
+      .gh-chat-launcher {
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="topbar">
-  <div class="wrap">
-    <div class="topbar-item">
-      <span class="topbar-badge"><span class="pulse-dot"></span>Open 24 hours, every day</span>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="topbar-item">
+        <span class="topbar-badge"><span class="pulse-dot"></span>Open 24 hours, every day</span>
+      </div>
+      <div class="topbar-item"> 93 J. Tongogara St &amp; Cnr 9th Ave, Bulawayo</div>
+      <div class="topbar-item"><strong>Emergency line:</strong>&nbsp;<a href="tel:+263716544233">+263 716 544 233</a>
+      </div>
     </div>
-    <div class="topbar-item"> 93 J. Tongogara St &amp; Cnr 9th Ave, Bulawayo</div>
-    <div class="topbar-item"><strong>Emergency line:</strong>&nbsp;<a href="tel:+263773878352">+263 7773 878 352</a></div>
   </div>
-</div>
 
-<header class="nav">
-  <div class="nav-inner wrap">
-    <a href="#top" class="brand">
-     <img src='g1.png' />
-    </a>
+  <header class="nav">
+    <div class="nav-inner wrap">
+      <a href="#top" class="brand">
+        <img src='g1.png' />
+      </a>
 
-    <nav class="links">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-     
-      <a href="#values">Values</a>
-      <a href="#contact">Contact</a>
+      <nav class="links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+
+        <a href="#values">Values</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="theme-toggle" role="group" aria-label="Theme switcher">
+          <button type="button" id="theme-white" class="active" onclick="setTheme('white')">White</button>
+          <button type="button" id="theme-blue" onclick="setTheme('blue')">Blue</button>
+        </div>
+        <a href="tel:+2632928810514" class="btn btn-ghost btn-sm"> +263 292 881 051-4</a>
+
+        <button class="burger" onclick="toggleMobile(true)" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="close-row">
+      <button class="burger" onclick="toggleMobile(false)" aria-label="Close menu">✕</button>
+    </div>
+    <nav>
+      <a href="#about" onclick="toggleMobile(false)">About</a>
+      <a href="#services" onclick="toggleMobile(false)">Services</a>
+
+      <a href="#values" onclick="toggleMobile(false)">Values</a>
+      <a href="#contact" onclick="toggleMobile(false)">Contact</a>
     </nav>
-
-    <div class="nav-actions">
-      <div class="theme-toggle" role="group" aria-label="Theme switcher">
-        <button type="button" id="theme-white" class="active" onclick="setTheme('white')">White</button>
-        <button type="button" id="theme-blue" onclick="setTheme('blue')">Blue</button>
-      </div>
-      <a href="tel:+2632928810514" class="btn btn-ghost btn-sm"> +263 292 881 051-4</a>
-      
-      <button class="burger" onclick="toggleMobile(true)" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+    <a href="tel:+263716544233" class="btn btn-primary">Call +263 716 544 233</a>
   </div>
-</header>
 
-<div class="mobile-menu" id="mobileMenu">
-  <div class="close-row">
-    <button class="burger" onclick="toggleMobile(false)" aria-label="Close menu">✕</button>
-  </div>
-  <nav>
-    <a href="#about" onclick="toggleMobile(false)">About</a>
-    <a href="#services" onclick="toggleMobile(false)">Services</a>
+  <main id="top">
 
-    <a href="#values" onclick="toggleMobile(false)">Values</a>
-    <a href="#contact" onclick="toggleMobile(false)">Contact</a>
-  </nav>
-  <a href="tel:+263773878352" class="btn btn-primary">Call +263 773 878 352</a>
-</div>
+    <section class="hero" style="background: url(gh.jpeg); background-size:cover;">
 
-<main id="top">
-
-  <section class="hero" style="background: url(gh.jpeg); background-size:cover;">
-   
-    <div class="wrap hero-inner">
-      <div class="hero-text-bg">
-        <div class="eyebrow">Serving patients since 1957</div>
-        <h1>Your health<br>is our <span>priority.</span></h1>
-        <p class="lead">Galen House Medical Centre is one of the oldest health facilities in Bulawayo, taking pride in the best-quality service it offers the community. It offers doctor consultations and overnight care, and is open round the clock.</p>
-        <div class="hero-ctas">
-          <a href="tel:+2632928810514" class="btn btn-primary">Call the Centre</a>
-          <a href="#services" class="btn btn-ghost">Explore Services</a>
-        </div>
-       
-        <div class="hero-note">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
-          Medical Aids · Cash · Ecocash · Direct Bank Transfer accepted
-        </div>
-       
-      </div>
-
-      <div class="ecg-hero">
-        <div class="cad">
-          <img src="g22.png">
-        </div>
-         <img src="n.png" >
-        <svg class="line" viewBox="0 0 460 140" xmlns="http://www.w3.org/2000/svg">
-          <path id="ecgTrack" d="M0 70 H90 L110 30 L130 110 L150 15 L170 120 L190 70 H460" fill="none" />
-          <path class="ecg-path" d="M0 70 H90 L110 30 L130 110 L150 15 L170 120 L190 70 H460" />
-          <path class="ecg-path-glow" d="M0 70 H90 L110 30 L130 110 L150 15 L170 120 L190 70 H460" />
-          <circle class="ecg-dot" r="4">
-            <animateMotion dur="3.2s" repeatCount="indefinite" rotate="auto">
-              <mpath href="#ecgTrack"/>
-            </animateMotion>
-          </circle>
-        </svg>
-        <div class="ecg-caption">
-          <span>PATIENT STATUS</span>
-          <span class="status-pulse"><span class="status-dot"></span><span class="status-text">STABLE &amp; CARED FOR</span></span>
-        </div>
-      </div>
-    </div>
-   
-  </section>
-
-  <section class="stats">
-    <div class="wrap">
-      <div class="stat">
-        <div class="num">1957</div>
-        <div class="label">Founded by Dr&nbsp;Garry&nbsp;Ferguson</div>
-      </div>
-      <div class="stat">
-        <div class="num">24/7</div>
-        <div class="label">Open every hour, every day</div>
-      </div>
-      <div class="stat">
-        <div class="num">15+</div>
-        <div class="label">Services under one roof</div>
-      </div>
-      <div class="stat">
-        <div class="num">4</div>
-        <div class="label">Convenient ways to pay</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-pad" id="about">
-    <div class="wrap about-grid">
-      <div>
-        <div class="section-head" style="margin-bottom:0;">
-          <div class="eyebrow">Our story</div>
-          <h2>Built on six decades of trust.</h2>
-        </div>
-        <div class="founder-quote">
-          "Galen House was set up for minor surgeries and ailments, to save people the stress of going all the way to bigger institutions. Over the years it became a training ground for the doctors who shaped private practice in Zimbabwe."
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-year">1957</div>
-            <div class="timeline-copy"><p>Dr J G M Ferguson, a family physician originally from Scotland, opens his practice in Bulawayo, the beginning of Galen House.</p></div>
+      <div class="wrap hero-inner">
+        <div class="hero-text-bg">
+          <div class="eyebrow">Serving patients since 1957</div>
+          <h1>Your health<br>is our <span>priority.</span></h1>
+          <p class="lead">Galen House Medical Centre is one of the oldest health facilities in Bulawayo, taking pride in
+            the best-quality service it offers the community. It offers doctor consultations and overnight care, and is
+            open round the clock.</p>
+          <div class="hero-ctas">
+            <a href="tel:+2632928810514" class="btn btn-primary">Call the Centre</a>
+            <a href="#services" class="btn btn-ghost">Explore Services</a>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-year">1980s</div>
-            <div class="timeline-copy"><p>Dr Ferguson helps form a united Zimbabwe Medical Association and co-establishes examinations for doctors entering private practice.</p></div>
+
+          <div class="hero-note">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+            Medical Aids · Cash · Ecocash · Direct Bank Transfer accepted
           </div>
-          <div class="timeline-item">
-            <div class="timeline-year">Today</div>
-            <div class="timeline-copy"><p>Galen House has grown into a full medical centre and now has imaging, laboratory, specialist clinics, physiotherapy and overnight admissions. It is still guided by the same founding purpose.</p></div>
+
+        </div>
+
+        <div class="ecg-hero">
+          <div class="cad">
+            <img src="g22.png">
+          </div>
+          <img src="n.png">
+          <svg class="line" viewBox="0 0 460 140" xmlns="http://www.w3.org/2000/svg">
+            <path id="ecgTrack" d="M0 70 H90 L110 30 L130 110 L150 15 L170 120 L190 70 H460" fill="none" />
+            <path class="ecg-path" d="M0 70 H90 L110 30 L130 110 L150 15 L170 120 L190 70 H460" />
+            <path class="ecg-path-glow" d="M0 70 H90 L110 30 L130 110 L150 15 L170 120 L190 70 H460" />
+            <circle class="ecg-dot" r="4">
+              <animateMotion dur="3.2s" repeatCount="indefinite" rotate="auto">
+                <mpath href="#ecgTrack" />
+              </animateMotion>
+            </circle>
+          </svg>
+          <div class="ecg-caption">
+            <span>PATIENT STATUS</span>
+            <span class="status-pulse"><span class="status-dot"></span><span class="status-text">STABLE &amp; CARED
+                FOR</span></span>
           </div>
         </div>
       </div>
 
-      <div>
-        <div class="about-card">
-          <h3>Our Vision</h3>
-          <p>A healthy Zimbabwe.</p>
+    </section>
+
+    <section class="stats">
+      <div class="wrap">
+        <div class="stat">
+          <div class="num">1957</div>
+          <div class="label">Founded by Dr&nbsp;Garry&nbsp;Ferguson</div>
         </div>
-        <div class="about-card">
-          <h3>Our Mission</h3>
-          <p>To provide quality health services.</p>
+        <div class="stat">
+          <div class="num">24/7</div>
+          <div class="label">Open every hour, every day</div>
         </div>
-        <div class="about-card">
-          <h3>Corporate Governance</h3>
-          <p>We abide by the rules and regulations set by the Health Board, our governing bodies, and general societal ethics. We have the same discipline that has guided the centre since 1957.</p>
+        <div class="stat">
+          <div class="num">15+</div>
+          <div class="label">Services under one roof</div>
+        </div>
+        <div class="stat">
+          <div class="num">4</div>
+          <div class="label">Convenient ways to pay</div>
         </div>
       </div>
-    </div>
-   <img src="nurse.png" >
-  </section>
+    </section>
 
-  <div class="divider" aria-hidden="true">
-    <svg viewBox="0 0 1180 34"><path d="M0 17 H480 L500 4 L520 30 L540 4 L560 30 L580 17 H1180"/></svg>
-  </div>
-
-  <section class="section-pad section-alt" id="services">
-    <div class="wrap">
-      
-
-      <div class="service-grid">
-
-        <div class="service-card">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2a4 4 0 0 1 4 4v3a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4Z"/><path d="M6 10v1a6 6 0 0 0 12 0v-1M12 17v5M8 22h8"/></svg></div>
-          <h4>GP Consultations</h4>
-          <p>General practitioner consultations and full medical examinations.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="m3 11 9-8 9 8M5 10v10h14V10"/></svg></div>
-          <h4>Home Visits</h4>
-          <p>Care that comes to you when travelling to the centre isn't possible.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
-          <h4>Endoscopy &amp; Colonoscopy</h4>
-          <p>General surgical scopes performed by experienced specialists.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></div>
-          <h4>ECG</h4>
-          <p>Heart monitoring and diagnostics performed on-site.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M8 10h8M8 14h5"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg></div>
-          <h4>Counselling</h4>
-          <p>Confidential, one-on-one psychosocial support.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
-          <h4>Baby Clinic</h4>
-          <p>Vaccinations and weighing for babies and children under 10.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 21s-7-4.35-9.5-8.5C.7 8.9 2.7 5 6.5 5c2 0 3.4 1.1 4 2.2C11.1 6.1 12.5 5 14.5 5c3.8 0 5.8 3.9 4 7.5C19 16.65 12 21 12 21Z"/></svg></div>
-          <h4>Women's Clinic</h4>
-          <p>Pap smears and VIAC screening, plus antenatal check-ups.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a6 6 0 0 1 12 0v2"/></svg></div>
-          <h4>Men's Clinic</h4>
-          <p>Dedicated screening and consultations for men's health.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M6 4v16M18 4v16M6 8h4M6 16h4M14 8h4M14 16h4"/></svg></div>
-          <h4>Physiotherapy</h4>
-          <p>Rehabilitation for back pain, joint injuries and mobility.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg></div>
-          <h4>Overnight Admissions</h4>
-          <p>Comfortable in-patient beds for observation and recovery.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 9h.01M15 9h.01M8 14s1.5 2 4 2 4-2 4-2"/></svg></div>
-          <h4>Dermatology Clinic</h4>
-          <p>Quarterly specialist skin clinic, by appointment.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-
-  <div class="divider" aria-hidden="true">
-    <svg viewBox="0 0 1180 34"><path d="M0 17 H480 L500 4 L520 30 L540 4 L560 30 L580 17 H1180"/></svg>
-  </div>
-
-  <section class="section-pad values-section" id="values">
-    <img class="values-bg-img" src="n2.png" alt="">
-    <div class="values-overlay" aria-hidden="true"></div>
-    <div class="wrap">
-      <div class="section-head section-head-photo">
-      
+    <section class="section-pad" id="about">
+      <div class="wrap about-grid">
         <div>
-          <div class="eyebrow">Our values</div>
-          <h2>The principles behind every consultation.</h2>
+          <div class="section-head" style="margin-bottom:0;">
+            <div class="eyebrow">Our story</div>
+            <h2>Built on six decades of trust.</h2>
+          </div>
+          <div class="founder-quote">
+            "Galen House was set up for minor surgeries and ailments, to save people the stress of going all the way to
+            bigger institutions. Over the years it became a training ground for the doctors who shaped private practice
+            in Zimbabwe."
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-year">1957</div>
+              <div class="timeline-copy">
+                <p>Dr J G M Ferguson, a family physician originally from Scotland, opens his practice in Bulawayo, the
+                  beginning of Galen House.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">1980s</div>
+              <div class="timeline-copy">
+                <p>Dr Ferguson helps form a united Zimbabwe Medical Association and co-establishes examinations for
+                  doctors entering private practice.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">Today</div>
+              <div class="timeline-copy">
+                <p>Galen House is housed with facilities that offer imaging, laboratory, different specialist
+                  disciplines, physiotherapy, and ambulance services.
+                  The practice is still guided by the same founding purpose to provide easy access to health services to
+                  the Bulawayo community round the clock.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="values-grid">
-        <div class="value-card" data-num="01">
-          <div class="value-num">01</div>
-          <h4>Confidentiality</h4>
-          <p>We adhere to the utmost patient confidentiality, always.</p>
-        </div>
-        <div class="value-card" data-num="02">
-          <div class="value-num">02</div>
-          <h4>Respect</h4>
-          <p>Every patient is treated with dignity, regardless of circumstance.</p>
-        </div>
-        <div class="value-card" data-num="03">
-          <div class="value-num">03</div>
-          <h4>Professionalism</h4>
-          <p>Clinical decisions are made by trained, capable health personnel.</p>
-        </div>
-        <div class="value-card" data-num="04">
-          <div class="value-num">04</div>
-          <h4>Teamwork</h4>
-          <p>We work with other medical personnel and departments our patients are referred to.</p>
-        </div>
-        <div class="value-card" data-num="05">
-          <div class="value-num">05</div>
-          <h4>Accountability</h4>
-          <p>We have confidence in our health personnel's decisions on patient care and management.</p>
-        </div>
-        <div class="value-card" data-num="06">
-          <div class="value-num">06</div>
-          <h4>Transparency</h4>
-          <p>Committed to satisfactory care for patients, and moral support for their relatives.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-pad">
-    <div class="wrap">
-      <div class="pay-band">
         <div>
-          <h3>Modes of Payment</h3>
-          <p>We keep payment simple. You supporting your care either locally or from abroad.</p>
-        </div>
-        <div class="pay-icons">
-          <div class="pay-chip">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M20 8H4M20 8v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8M20 8l-8-5-8 5"/></svg>
-            <span>Medical Aid</span>
+          <div class="about-card">
+            <h3>Our Vision</h3>
+            <p>A healthy Zimbabwe.</p>
           </div>
-          <div class="pay-chip">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            <span>Cash</span>
+          <div class="about-card">
+            <h3>Our Mission</h3>
+            <p>To provide quality health services.</p>
           </div>
-          <div class="pay-chip">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20"/></svg>
-            <span>Ecocash</span>
-          </div>
-          <div class="pay-chip">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg>
-            <span>Direct Bank Transfer</span>
+          <div class="about-card">
+            <h3>Corporate Governance</h3>
+            <p>We abide by the rules and regulations set by the Health Board, our governing bodies, and general societal
+              ethics. We have the same discipline that has guided the centre since 1957.</p>
           </div>
         </div>
       </div>
+      <img src="nurse.png">
+    </section>
+
+    <div class="divider" aria-hidden="true">
+      <svg viewBox="0 0 1180 34">
+        <path d="M0 17 H480 L500 4 L520 30 L540 4 L560 30 L580 17 H1180" />
+      </svg>
     </div>
-  </section>
 
-  <section class="section-pad" id="team">
-    <div class="wrap team-band">
-      <div class="team-copy">
-        <div class="eyebrow">Our people</div>
-        <h2>A team built on decades of mentorship.</h2>
-        <p>That same spirit of mentorship and hands-on care carries through today's team of physicians, nurses, physiotherapists and support staff.</p>
-        <p style="margin-top:16px;"><strong style="color:var(--text);">Practitioner in Charge:</strong> Dr Munekayi Padingani, MD (UNIKIN), MPH (UZ)<br><strong style="color:var(--text);">In partnership with:</strong> Dr D. C. Sithole, Dr Mulapi, Dr K. Saunyama and Dr Mutenhaunga.</p>
-       
-      </div>
+    <section class="section-pad section-alt" id="services">
+      <div class="wrap">
 
-      <div class="avatar-cluster">
-        <div class="avatar-row">
-          <div class="avatar" style="background:#0B5FA5;">GF</div>
-          <div class="avatar" style="background:#1B9C6E;">RN</div>
-          <div class="avatar" style="background:#E0473E;">PT</div>
-          <div class="avatar" style="background:#08406F;">GP</div>
-          <div class="avatar" style="background:#63B0EE;">+</div>
+
+        <div class="service-grid">
+
+          <div class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <path d="M12 2a4 4 0 0 1 4 4v3a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4Z" />
+                <path d="M6 10v1a6 6 0 0 0 12 0v-1M12 17v5M8 22h8" />
+              </svg></div>
+            <h4>GP Consultations</h4>
+            <p>General practitioner consultations and full medical examinations.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <path d="m3 11 9-8 9 8M5 10v10h14V10" />
+              </svg></div>
+            <h4>Home Visits</h4>
+            <p>Care that comes to you when travelling to the centre isn't possible.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <circle cx="12" cy="12" r="8" />
+                <path d="M12 8v4l3 2" />
+              </svg></div>
+            <h4>Endoscopy &amp; Colonoscopy</h4>
+            <p>State of the art equipment to do general surgical scopes performed by experienced specialists.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <path d="M3 12h4l2-6 4 12 2-6h6" />
+              </svg></div>
+            <h4>ECG</h4>
+            <p>Heart monitoring and diagnostics performed on-site.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <path d="M8 10h8M8 14h5" />
+                <rect x="3" y="4" width="18" height="16" rx="2" />
+              </svg></div>
+            <h4>Counselling</h4>
+            <p>Confidential, one-on-one psychosocial support.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 21c0-4 4-6 8-6s8 2 8 6" />
+              </svg></div>
+            <h4>Baby Clinic</h4>
+            <p>Vaccinations and weighing for babies and children under 10.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <path
+                  d="M12 21s-7-4.35-9.5-8.5C.7 8.9 2.7 5 6.5 5c2 0 3.4 1.1 4 2.2C11.1 6.1 12.5 5 14.5 5c3.8 0 5.8 3.9 4 7.5C19 16.65 12 21 12 21Z" />
+              </svg></div>
+            <h4>Women's Clinic</h4>
+            <p>Pap smears and VIAC screening, plus antenatal check-ups.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <circle cx="12" cy="7" r="4" />
+                <path d="M6 21v-2a6 6 0 0 1 12 0v2" />
+              </svg></div>
+            <h4>Men's Clinic</h4>
+            <p>Dedicated screening and consultations for men's health.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <path d="M6 4v16M18 4v16M6 8h4M6 16h4M14 8h4M14 16h4" />
+              </svg></div>
+            <h4>Physiotherapy</h4>
+            <p>Rehabilitation for back pain, joint injuries and mobility.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <path d="M4 21V9l8-6 8 6v12" />
+                <path d="M9 21v-6h6v6" />
+              </svg></div>
+            <h4>Overnight Admissions</h4>
+            <p>Comfortable in-patient beds for observation and recovery.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M9 9h.01M15 9h.01M8 14s1.5 2 4 2 4-2 4-2" />
+              </svg></div>
+            <h4>Dermatology Clinic</h4>
+            <p>Quarterly specialist skin clinic, by appointment.</p>
+          </div>
+
         </div>
-        <p>Doctors, nurses, physiotherapists and administrative staff working across our clinics are pictured on our clinic signage, badges of years of combined community service.</p>
       </div>
+    </section>
+
+
+
+    <div class="divider" aria-hidden="true">
+      <svg viewBox="0 0 1180 34">
+        <path d="M0 17 H480 L500 4 L520 30 L540 4 L560 30 L580 17 H1180" />
+      </svg>
     </div>
-    <div class="wrap">
-      <div class="photo-duotone">
-        <img src="2.jpeg" alt="Physiotherapist assisting a patient with walking exercises" loading="lazy">
-       
-      </div>
-    </div>
-  </section>
 
-  <div class="divider" aria-hidden="true">
-    <svg viewBox="0 0 1180 34"><path d="M0 17 H480 L500 4 L520 30 L540 4 L560 30 L580 17 H1180"/></svg>
-  </div>
+    <section class="section-pad values-section" id="values">
+      <img class="values-bg-img" src="n2.png" alt="">
+      <div class="values-overlay" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="section-head section-head-photo">
 
-  <section class="section-pad section-alt" id="contact">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">Get in touch</div>
-        <h2>We're open 24 hours — reach us any time.</h2>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h3>Galen House Medical Centre</h3>
-          <p>93 J. Tongogara Street &amp; Cnr 9th Avenue, Bulawayo, Zimbabwe.</p>
-
-          <div class="contact-row">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
-            <div>
-              <div class="clabel">Landlines</div>
-              <div class="cval"><a href="tel:+2632928810514">+263 292 881 051-4</a></div>
-            </div>
-          </div>
-
-          <div class="contact-row">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-            <div>
-              <div class="clabel">Mobile</div>
-              <div class="cval"><a href="tel:+263773878352">+263 7773 878 352</a> · <a href="tel:+263786953896">+263 786 953 896</a> · <a href="tel:+263716544233">+263 716 544 233</a></div>
-            </div>
-          </div>
-
-          <div class="contact-row">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
-            <div>
-              <div class="clabel">Email</div>
-              <div class="cval"><a href="mailto:galenaccounts@gatorzw.co.uk">galenaccounts@gatorzw.co.uk</a><br><a href="mailto:allegramed@allegra.co.zw">allegramed@allegra.co.zw</a></div>
-            </div>
-          </div>
-
-          <div class="contact-row">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            <div>
-              <div class="clabel">Hours</div>
-              <div class="cval">Open 24 hours, every day of the week</div>
-            </div>
+          <div>
+            <div class="eyebrow">Our values</div>
+            <h2>The principles behind every consultation.</h2>
           </div>
         </div>
 
-        <div class="map-embed">
-          <iframe
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+        <div class="values-grid">
+          <div class="value-card" data-num="01">
+            <div class="value-num">01</div>
+            <h4>Confidentiality</h4>
+            <p>We adhere to the utmost patient confidentiality, always.</p>
+          </div>
+          <div class="value-card" data-num="02">
+            <div class="value-num">02</div>
+            <h4>Respect</h4>
+            <p>Every patient is treated with dignity, regardless of circumstance.</p>
+          </div>
+          <div class="value-card" data-num="03">
+            <div class="value-num">03</div>
+            <h4>Professionalism</h4>
+            <p>Clinical decisions are made by trained, capable health personnel.</p>
+          </div>
+          <div class="value-card" data-num="04">
+            <div class="value-num">04</div>
+            <h4>Teamwork</h4>
+            <p>We work with other medical personnel and departments our patients are referred to.</p>
+          </div>
+          <div class="value-card" data-num="05">
+            <div class="value-num">05</div>
+            <h4>Accountability</h4>
+            <p>We have confidence in our health personnel's decisions on patient care and management.</p>
+          </div>
+          <div class="value-card" data-num="06">
+            <div class="value-num">06</div>
+            <h4>Transparency</h4>
+            <p>Committed to satisfactory care for patients, and moral support for their relatives.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="wrap">
+        <div class="pay-band">
+          <div>
+            <h3>Modes of Payment</h3>
+            <p>We keep payment simple. You supporting your care either locally or from abroad.</p>
+          </div>
+          <div class="pay-icons">
+            <div class="pay-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7">
+                <path d="M20 8H4M20 8v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8M20 8l-8-5-8 5" />
+              </svg>
+              <span>Medical Aid</span>
+            </div>
+            <div class="pay-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7">
+                <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+              </svg>
+              <span>Cash</span>
+            </div>
+            <div class="pay-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7">
+                <rect x="2" y="6" width="20" height="12" rx="2" />
+                <path d="M2 10h20" />
+              </svg>
+              <span>Ecocash</span>
+            </div>
+            <div class="pay-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7">
+                <path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6" />
+              </svg>
+              <span>Direct Bank Transfer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="team">
+      <div class="wrap team-band">
+        <div class="team-copy">
+          <div class="eyebrow">Our people</div>
+          <h2>A team built on decades of mentorship.</h2>
+          <p>That same spirit of mentorship and hands-on care carries through today's team of physicians, nurses,
+            physiotherapists and support staff.</p>
+          <p style="margin-top:16px;"><strong style="color:var(--text);">Practitioner in Charge:</strong> Dr Munekayi
+            Padingani, MD (UNIKIN), MPH (UZ)<br><strong style="color:var(--text);">In partnership with:</strong> Dr D.
+            C. Sithole, Dr Mulapi, Dr K. Saunyama and Dr Mutenhaunga.</p>
+
+        </div>
+
+        <div class="avatar-cluster">
+          <div class="avatar-row">
+            <div class="avatar" style="background:#0B5FA5;">GF</div>
+            <div class="avatar" style="background:#1B9C6E;">RN</div>
+            <div class="avatar" style="background:#E0473E;">PT</div>
+            <div class="avatar" style="background:#08406F;">GP</div>
+            <div class="avatar" style="background:#63B0EE;">+</div>
+          </div>
+          <p>Doctors, nurses, physiotherapists and administrative staff working across our clinics are pictured on our
+            clinic signage, badges of years of combined community service.</p>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="photo-duotone">
+          <img src="2.jpeg" alt="Physiotherapist assisting a patient with walking exercises" loading="lazy">
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true">
+      <svg viewBox="0 0 1180 34">
+        <path d="M0 17 H480 L500 4 L520 30 L540 4 L560 30 L580 17 H1180" />
+      </svg>
+    </div>
+
+    <section class="section-pad section-alt" id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Get in touch</div>
+          <h2>We're open 24 hours — reach us any time.</h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Galen House Medical Centre</h3>
+            <p>93 J. Tongogara Street &amp; Cnr 9th Avenue, Bulawayo, Zimbabwe.</p>
+
+            <div class="contact-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <path
+                  d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z" />
+              </svg>
+              <div>
+                <div class="clabel">Landlines</div>
+                <div class="cval"><a href="tel:+2632928810514">+263 292 881 051-4</a></div>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <rect x="5" y="2" width="14" height="20" rx="2" />
+                <path d="M12 18h.01" />
+              </svg>
+              <div>
+                <div class="clabel">Mobile</div>
+                <a href="tel:+263716544233">+263 716 544 233</a>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <path d="M4 4h16v16H4z" />
+                <path d="m4 6 8 7 8-7" />
+              </svg>
+              <div>
+                <div class="clabel">Email</div>
+                <div class="cval"><a href="mailto:galenaccounts@gatorzw.co.uk">galenaccounts@gatorzw.co.uk</a><br><a
+                    href="mailto:allegramed@allegra.co.zw">allegramed@allegra.co.zw</a></div>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+              <div>
+                <div class="clabel">Hours</div>
+                <div class="cval">Open 24 hours, every day of the week</div>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z" />
+              </svg>
+              <div>
+                <div class="clabel">WhatsApp</div>
+                <div class="cval"><a href="https://wa.me/263716544233" target="_blank" rel="noopener">Chat with us on
+                    WhatsApp</a></div>
+              </div>
+            </div>
+          </div>
+
+ <div class="map-embed">
+          <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
             src="https://www.google.com/maps?q=93+Josiah+Tongogara+Street+Bulawayo+Zimbabwe&output=embed"
             title="Map to Galen House Medical Centre, Bulawayo">
           </iframe>
         </div>
-      </div>
-
-    
-
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">
-          <img src="g2.png">
-          
         </div>
-        <p>A one-stop private medical facility in Bulawayo, serving the community since 1957. Your health is our priority.</p>
+
+       
       </div>
-      <div>
-        <h5>Explore</h5>
-        <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#facilities">Facilities</a></li>
-          <li><a href="#values">Our Values</a></li>
-        </ul>
+
+
+
       </div>
-      <div>
-        <h5>Clinics</h5>
-        <ul>
-          <li><a href="#services">Baby Clinic</a></li>
-          <li><a href="#services">Women's Clinic</a></li>
-          <li><a href="#services">Men's Clinic</a></li>
-          <li><a href="#services">Physiotherapy Unit</a></li>
-        </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="g2.png">
+
+          </div>
+          <p>A one-stop private medical facility in Bulawayo, serving the community since 1957. Your health is our
+            priority.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#facilities">Facilities</a></li>
+            <li><a href="#values">Our Values</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Clinics</h5>
+          <ul>
+            <li><a href="#services">Baby Clinic</a></li>
+            <li><a href="#services">Women's Clinic</a></li>
+            <li><a href="#services">Men's Clinic</a></li>
+            <li><a href="#services">Physiotherapy Unit</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="tel:+2632928810514">+263 292 881 051-4</a></li>
+            <li><a href="tel:+263716544233">+263 716 544 233</a></li>
+            <li><a href="https://wa.me/263716544233" target="_blank" rel="noopener">Whatsapp</a></li>
+            <li><a href="mailto:galenaccounts@gatorzw.co.uk">galenaccounts@gatorzw.co.uk</a></li>
+            <li>93 J. Tongogara St &amp; Cnr 9th Ave, Bulawayo</li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h5>Contact</h5>
-        <ul>
-          <li><a href="tel:+2632928810514">+263 292 881 051-4</a></li>
-          <li><a href="tel:+263773878352">+263 7773 878 352</a></li>
-          <li>93 J. Tongogara St &amp; Cnr 9th Ave, Bulawayo</li>
-        </ul>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Galen House Medical Centre. All rights reserved.</span>
+        <span>Founded 1957 by Dr Garry Ferguson · Bulawayo, Zimbabwe</span>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© <span id="year"></span> Galen House Medical Centre. All rights reserved.</span>
-      <span>Founded 1957 by Dr Garry Ferguson · Bulawayo, Zimbabwe</span>
+  </footer>
+
+  <!-- ---------- Galen Assistant chatbot ---------- -->
+  <div class="gh-chat-window" id="ghChatWindow" role="dialog" aria-label="Galen House Medical Centre assistant"
+    aria-hidden="true">
+    <div class="gh-chat-header">
+      <div class="gh-avatar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M12 2a4 4 0 0 1 4 4v3a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4Z" />
+          <path d="M6 10v1a6 6 0 0 0 12 0v-1M12 17v5M8 22h8" />
+        </svg>
+      </div>
+      <div class="gh-chat-header-text">
+        <div class="gh-title">Galen Assistant</div>
+        <div class="gh-sub">Ask about Galen House Medical Centre</div>
+      </div>
     </div>
+    <div class="gh-chat-body" id="ghChatBody"></div>
+    <div class="gh-suggest-row" id="ghSuggestRow"></div>
+    <form class="gh-chat-input-row" id="ghChatForm">
+      <input type="text" id="ghChatInput" placeholder="Ask a question…" autocomplete="off"
+        aria-label="Type your question">
+      <button type="submit" aria-label="Send">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 2 11 13" />
+          <path d="M22 2 15 22l-4-9-9-4 20-7Z" />
+        </svg>
+      </button>
+    </form>
+    <div class="gh-chat-disclaimer">Answers are based on Galen House website info only. For emergencies, call +263 716
+      544 233.</div>
   </div>
-</footer>
 
-<!-- ---------- Galen Assistant chatbot ---------- -->
-<div class="gh-chat-window" id="ghChatWindow" role="dialog" aria-label="Galen House Medical Centre assistant" aria-hidden="true">
-  <div class="gh-chat-header">
-    <div class="gh-avatar">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a4 4 0 0 1 4 4v3a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4Z"/><path d="M6 10v1a6 6 0 0 0 12 0v-1M12 17v5M8 22h8"/></svg>
-    </div>
-    <div class="gh-chat-header-text">
-      <div class="gh-title">Galen Assistant</div>
-      <div class="gh-sub">Ask about Galen House Medical Centre</div>
-    </div>
-  </div>
-  <div class="gh-chat-body" id="ghChatBody"></div>
-  <div class="gh-suggest-row" id="ghSuggestRow"></div>
-  <form class="gh-chat-input-row" id="ghChatForm">
-    <input type="text" id="ghChatInput" placeholder="Ask a question…" autocomplete="off" aria-label="Type your question">
-    <button type="submit" aria-label="Send">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7Z"/></svg>
-    </button>
-  </form>
-  <div class="gh-chat-disclaimer">Answers are based on Galen House website info only. For emergencies, call +263 7773 878 352.</div>
-</div>
+  <button class="gh-chat-launcher" id="ghChatLauncher" aria-label="Open Galen House assistant chat"
+    aria-expanded="false">
+    <svg class="gh-chat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path
+        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z" />
+    </svg>
+    <svg class="gh-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 6 6 18M6 6l12 12" />
+    </svg>
+  </button>
 
-<button class="gh-chat-launcher" id="ghChatLauncher" aria-label="Open Galen House assistant chat" aria-expanded="false">
-  <svg class="gh-chat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
-  <svg class="gh-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
-</button>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      document.getElementById('theme-white').classList.toggle('active', theme === 'white');
+      document.getElementById('theme-blue').classList.toggle('active', theme === 'blue');
+    }
 
-  function setTheme(theme){
-    document.documentElement.setAttribute('data-theme', theme);
-    document.getElementById('theme-white').classList.toggle('active', theme === 'white');
-    document.getElementById('theme-blue').classList.toggle('active', theme === 'blue');
-  }
+    function toggleMobile(open) {
+      document.getElementById('mobileMenu').classList.toggle('open', open);
+    }
 
-  function toggleMobile(open){
-    document.getElementById('mobileMenu').classList.toggle('open', open);
-  }
+    /* =========================================================
+       GALEN ASSISTANT — a small, self-contained Q&A chatbot
+       built entirely from the content on this page. It works
+       fully offline (no external API calls) by matching the
+       visitor's question against a knowledge base of topics
+       and returning the best-matching answer.
+       ========================================================= */
+    (function () {
+      const KB = [
+        {
+          id: 'hours',
+          keywords: ['hour', 'hours', 'open', 'close', 'closing', 'time', '24', '247', '24/7', '24hr', '24hrs', 'when'],
+          answer: "Galen House Medical Centre is open 24 hours a day, every day of the week — including weekends and public holidays."
+        },
+        {
+          id: 'location',
+          keywords: ['where', 'address', 'location', 'located', 'directions', 'map', 'find you', 'street'],
+          answer: "We're located at 93 J. Tongogara Street & Cnr 9th Avenue, Bulawayo, Zimbabwe."
+        },
+        {
+          id: 'phone',
+          keywords: ['phone', 'call', 'number', 'contact', 'telephone', 'landline', 'mobile', 'reach you', 'get in touch'],
+          answer: "You can reach us by phone:\n• Landlines: +263 292 881 051-4\n• Mobile: +263 786 953 896 · +263 716 544 233\n• Emergency line: +263 716 544 233\n• Or message us on WhatsApp: +263 716 544 233"
+        },
+        {
+          id: 'whatsapp',
+          keywords: ['whatsapp', 'wa.me', 'chat online', 'message you', 'text you'],
+          answer: "Yes — you can message us directly on WhatsApp at +263 716 544 233, or use the WhatsApp link in the Contact section of this site."
+        },
+        {
+          id: 'email',
+          keywords: ['email', 'e-mail', 'mail'],
+          answer: "You can email us at galenaccounts@gatorzw.co.uk or allegramed@allegra.co.zw."
+        },
+        {
+          id: 'history',
+          keywords: ['history', 'founded', 'founder', 'start', 'began', 'old', 'ferguson', 'since when', 'year', 'scotland', '1957'],
+          answer: "Galen House Medical Centre was founded in 1957 by Dr Garry Ferguson, a family physician from Scotland, who practised there for 61 years. It began as a practice for minor surgeries and ailments and grew into today's full medical centre, becoming a training ground for many of Zimbabwe's private-practice doctors."
+        },
+        {
+          id: 'mission_vision',
+          keywords: ['mission', 'vision', 'purpose', 'goal', 'governance'],
+          answer: "Our vision is 'A healthy Zimbabwe' and our mission is to provide quality health services. We're also guided by corporate governance rules from the Health Board, our governing bodies, and general societal ethics."
+        },
+        {
+          id: 'values',
+          keywords: ['values', 'principles', 'confidentiality', 'respect', 'professionalism', 'teamwork', 'accountability', 'transparency', 'ethic'],
+          answer: "Our core values are: Confidentiality, Respect, Professionalism, Teamwork, Accountability, and Transparency — the principles behind every consultation."
+        },
+        {
+          id: 'services',
+          keywords: ['service', 'services', 'consultation', 'offer', 'what do you do', 'treat', 'treatment'],
+          answer: "Our services include: GP Consultations, Home Visits, Endoscopy & Colonoscopy, ECG, Counselling, Baby Clinic, Women's Clinic, Men's Clinic, Physiotherapy, Overnight Admissions, and Dermatology Clinic (quarterly, by appointment)."
+        },
+        {
+          id: 'baby_clinic',
+          keywords: ['baby', 'babies', 'child', 'children', 'vaccination', 'vaccine', 'immunisation', 'immunization', 'weighing'],
+          answer: "Our Baby Clinic offers vaccinations and weighing for babies and children under 10."
+        },
+        {
+          id: 'womens_clinic',
+          keywords: ['women', 'woman', 'pap smear', 'viac', 'antenatal', 'anc', 'pregnan', 'maternal'],
+          answer: "Our Women's Clinic offers Pap smears and VIAC screening, plus antenatal (ANC) check-ups through every stage of pregnancy."
+        },
+        {
+          id: 'mens_clinic',
+          keywords: ["men's", 'men', 'male', 'man'],
+          answer: "Our Men's Clinic provides dedicated screening and consultations for men's health."
+        },
+        {
+          id: 'physio',
+          keywords: ['physio', 'physiotherapy', 'rehab', 'rehabilitation', 'back pain', 'joint', 'mobility'],
+          answer: "Our Physiotherapy service covers rehabilitation for back pain, joint injuries, and mobility issues."
+        },
+        {
+          id: 'dermatology',
+          keywords: ['skin', 'derma', 'dermatology', 'rash'],
+          answer: "We run a quarterly Dermatology Clinic with a specialist, available by appointment."
+        },
+        {
+          id: 'home_visit',
+          keywords: ['home visit', 'house call', 'come to my home', 'travel to me'],
+          answer: "We offer Home Visits for patients who are unable to travel to the centre."
+        },
+        {
+          id: 'admissions',
+          keywords: ['admission', 'admit', 'overnight', 'stay', 'in-patient', 'inpatient', 'bed', 'ward'],
+          answer: "We have Overnight Admissions with comfortable in-patient beds for observation and recovery."
+        },
+        {
+          id: 'counseling',
+          keywords: ['counsel', 'counselling', 'counseling', 'therapy', 'mental health', 'psychosocial'],
+          answer: "We offer confidential, one-on-one psychosocial Counseling."
+        },
+        {
+          id: 'endoscopy',
+          keywords: ['endoscopy', 'colonoscopy', 'scope'],
+          answer: "We provide Endoscopy & Colonoscopy — general surgical scopes performed by experienced specialists."
+        },
+        {
+          id: 'ecg',
+          keywords: ['ecg', 'heart', 'cardiac', 'ekg'],
+          answer: "We perform ECG (heart monitoring and diagnostics) on-site."
+        },
+        {
+          id: 'facilities',
+          keywords: ['facilit', 'xray', 'x-ray', 'ct scan', 'mri', 'laborator', 'lab', 'ultrasound', 'scan', 'imaging', 'ambulance'],
+          answer: "Our in-house facilities include General X-ray, CT Scan, MRI, Laboratory, Ultrasound Scan, and Ambulance Services — so imaging, lab work and specialist opinions can often stay within one visit."
+        },
+        {
+          id: 'payment',
+          keywords: ['pay', 'payment', 'cost', 'price', 'fee', 'medical aid', 'insurance', 'cash', 'ecocash', 'bank transfer', 'how much'],
+          answer: "We accept several ways to pay: Medical Aid, Cash, Ecocash, and Direct Bank Transfer."
+        },
+        {
+          id: 'team',
+          keywords: ['staff', 'team', 'doctor', 'doctors', 'nurse', 'nurses', 'who works', 'personnel'],
+          answer: "Our practitioner in charge is Dr Munekayi Padingani, MD (UNIKIN), MPH (UZ), in partnership with Dr D. C. Sithole, Dr Mulapi, Dr K. Saunyama and Dr Mutenhaunga — a young and enthusiastic, highly qualified crop of doctors, backed by experienced administrative staff, registered general nurses and ancillary staff. They carry on the mentorship tradition started by founder Dr Garry Ferguson, who practised at Galen House for 61 years and trained generations of Zimbabwean doctors."
+        },
+        {
+          id: 'emergency',
+          keywords: ['emergency', 'urgent', 'ambulance number', '911', '999'],
+          answer: "For emergencies, call our emergency line: +263 716 544 233. We're open 24 hours a day for urgent care."
+        },
+        {
+          id: 'greeting',
+          keywords: ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening'],
+          answer: "Hello! I'm the Galen Assistant. Ask me about our services, hours, facilities, location, or how to get in touch."
+        },
+        {
+          id: 'thanks',
+          keywords: ['thank', 'thanks', 'cheers', 'appreciate'],
+          answer: "You're welcome! Is there anything else you'd like to know about Galen House Medical Centre?"
+        }
+      ];
 
-  /* =========================================================
-     GALEN ASSISTANT — a small, self-contained Q&A chatbot
-     built entirely from the content on this page. It works
-     fully offline (no external API calls) by matching the
-     visitor's question against a knowledge base of topics
-     and returning the best-matching answer.
-     ========================================================= */
-  (function(){
-    const KB = [
-      {
-        id:'hours',
-        keywords:['hour','hours','open','close','closing','time','24','247','24/7','24hr','24hrs','when'],
-        answer:"Galen House Medical Centre is open 24 hours a day, every day of the week — including weekends and public holidays."
-      },
-      {
-        id:'location',
-        keywords:['where','address','location','located','directions','map','find you','street'],
-        answer:"We're located at 93 J. Tongogara Street & Cnr 9th Avenue, Bulawayo, Zimbabwe."
-      },
-      {
-        id:'phone',
-        keywords:['phone','call','number','contact','telephone','landline','mobile','reach you','get in touch'],
-        answer:"You can reach us by phone:\n• Landlines: +263 292 881 051-4\n• Mobile: +263 7773 878 352 · +263 786 953 896 · +263 716 544 233 (emergency line: +263 7773 878 352)"
-      },
-      {
-        id:'email',
-        keywords:['email','e-mail','mail'],
-        answer:"You can email us at galenaccounts@gatorzw.co.uk or allegramed@allegra.co.zw."
-      },
-      {
-        id:'history',
-        keywords:['history','founded','founder','start','began','old','ferguson','since when','year','scotland','1957'],
-        answer:"Galen House Medical Centre was founded in 1957 by Dr Garry Ferguson, a family physician from Scotland, who practised there for 61 years. It began as a practice for minor surgeries and ailments and grew into today's full medical centre, becoming a training ground for many of Zimbabwe's private-practice doctors."
-      },
-      {
-        id:'mission_vision',
-        keywords:['mission','vision','purpose','goal','governance'],
-        answer:"Our vision is 'A healthy Zimbabwe' and our mission is to provide quality health services. We're also guided by corporate governance rules from the Health Board, our governing bodies, and general societal ethics."
-      },
-      {
-        id:'values',
-        keywords:['values','principles','confidentiality','respect','professionalism','teamwork','accountability','transparency','ethic'],
-        answer:"Our core values are: Confidentiality, Respect, Professionalism, Teamwork, Accountability, and Transparency — the principles behind every consultation."
-      },
-      {
-        id:'services',
-        keywords:['service','services','consultation','offer','what do you do','treat','treatment'],
-        answer:"Our services include: GP Consultations, Home Visits, Endoscopy & Colonoscopy, ECG, Counselling, Baby Clinic, Women's Clinic, Men's Clinic, Physiotherapy, Overnight Admissions, and Dermatology Clinic (quarterly, by appointment)."
-      },
-      {
-        id:'baby_clinic',
-        keywords:['baby','babies','child','children','vaccination','vaccine','immunisation','immunization','weighing'],
-        answer:"Our Baby Clinic offers vaccinations and weighing for babies and children under 10."
-      },
-      {
-        id:'womens_clinic',
-        keywords:['women','woman','pap smear','viac','antenatal','anc','pregnan','maternal'],
-        answer:"Our Women's Clinic offers Pap smears and VIAC screening, plus antenatal (ANC) check-ups through every stage of pregnancy."
-      },
-      {
-        id:'mens_clinic',
-        keywords:["men's",'men','male','man'],
-        answer:"Our Men's Clinic provides dedicated screening and consultations for men's health."
-      },
-      {
-        id:'physio',
-        keywords:['physio','physiotherapy','rehab','rehabilitation','back pain','joint','mobility'],
-        answer:"Our Physiotherapy service covers rehabilitation for back pain, joint injuries, and mobility issues."
-      },
-      {
-        id:'dermatology',
-        keywords:['skin','derma','dermatology','rash'],
-        answer:"We run a quarterly Dermatology Clinic with a specialist, available by appointment."
-      },
-      {
-        id:'home_visit',
-        keywords:['home visit','house call','come to my home','travel to me'],
-        answer:"We offer Home Visits for patients who are unable to travel to the centre."
-      },
-      {
-        id:'admissions',
-        keywords:['admission','admit','overnight','stay','in-patient','inpatient','bed','ward'],
-        answer:"We have Overnight Admissions with comfortable in-patient beds for observation and recovery."
-      },
-      {
-        id:'counseling',
-        keywords:['counsel','counselling','counseling','therapy','mental health','psychosocial'],
-        answer:"We offer confidential, one-on-one psychosocial Counseling."
-      },
-      {
-        id:'endoscopy',
-        keywords:['endoscopy','colonoscopy','scope'],
-        answer:"We provide Endoscopy & Colonoscopy — general surgical scopes performed by experienced specialists."
-      },
-      {
-        id:'ecg',
-        keywords:['ecg','heart','cardiac','ekg'],
-        answer:"We perform ECG (heart monitoring and diagnostics) on-site."
-      },
-      {
-        id:'facilities',
-        keywords:['facilit','xray','x-ray','ct scan','mri','laborator','lab','ultrasound','scan','imaging','ambulance'],
-        answer:"Our in-house facilities include General X-ray, CT Scan, MRI, Laboratory, Ultrasound Scan, and Ambulance Services — so imaging, lab work and specialist opinions can often stay within one visit."
-      },
-      {
-        id:'payment',
-        keywords:['pay','payment','cost','price','fee','medical aid','insurance','cash','ecocash','bank transfer','how much'],
-        answer:"We accept several ways to pay: Medical Aid, Cash, Ecocash, and Direct Bank Transfer."
-      },
-      {
-        id:'team',
-        keywords:['staff','team','doctor','doctors','nurse','nurses','who works','personnel'],
-        answer:"Our practitioner in charge is Dr Munekayi Padingani, MD (UNIKIN), MPH (UZ), in partnership with Dr D. C. Sithole, Dr Mulapi, Dr K. Saunyama and Dr Mutenhaunga — a young and enthusiastic, highly qualified crop of doctors, backed by experienced administrative staff, registered general nurses and ancillary staff. They carry on the mentorship tradition started by founder Dr Garry Ferguson, who practised at Galen House for 61 years and trained generations of Zimbabwean doctors."
-      },
-      {
-        id:'emergency',
-        keywords:['emergency','urgent','ambulance number','911','999'],
-        answer:"For emergencies, call our emergency line: +263 7773 878 352. We're open 24 hours a day for urgent care."
-      },
-      {
-        id:'greeting',
-        keywords:['hello','hi','hey','good morning','good afternoon','good evening'],
-        answer:"Hello! I'm the Galen Assistant. Ask me about our services, hours, facilities, location, or how to get in touch."
-      },
-      {
-        id:'thanks',
-        keywords:['thank','thanks','cheers','appreciate'],
-        answer:"You're welcome! Is there anything else you'd like to know about Galen House Medical Centre?"
+      const FALLBACK = "I don't have that information from the Galen House website. For anything specific, please call us on +263 292 881 051-4 or +263 716 544 233, message us on WhatsApp at +263 716 544 233, or email galenaccounts@gatorzw.co.uk.";
+
+      const SUGGESTIONS = [
+        "What are your opening hours?",
+        "What services do you offer?",
+        "Where are you located?",
+        "How can I pay?",
+        "Can I message you on WhatsApp?"
+      ];
+
+      function normalize(str) {
+        return str.toLowerCase().replace(/[^\w\s]/g, ' ').replace(/\s+/g, ' ').trim();
       }
-    ];
 
-    const FALLBACK = "I don't have that information from the Galen House website. For anything specific, please call us on +263 292 881 051-4 or +263 7773 878 352, or email galenaccounts@gatorzw.co.uk.";
-
-    const SUGGESTIONS = [
-      "What are your opening hours?",
-      "What services do you offer?",
-      "Where are you located?",
-      "How can I pay?"
-    ];
-
-    function normalize(str){
-      return str.toLowerCase().replace(/[^\w\s]/g,' ').replace(/\s+/g,' ').trim();
-    }
-
-    function findBestAnswer(query){
-      const q = normalize(query);
-      if(!q) return "Could you type a question? For example, ask about our hours, services, or location.";
-      let best = null, bestScore = 0;
-      KB.forEach(entry=>{
-        let score = 0;
-        entry.keywords.forEach(kw=>{
-          if(q.includes(kw)) score += kw.length; // longer/more specific matches score higher
+      function findBestAnswer(query) {
+        const q = normalize(query);
+        if (!q) return "Could you type a question? For example, ask about our hours, services, or location.";
+        let best = null, bestScore = 0;
+        KB.forEach(entry => {
+          let score = 0;
+          entry.keywords.forEach(kw => {
+            if (q.includes(kw)) score += kw.length; // longer/more specific matches score higher
+          });
+          if (score > bestScore) {bestScore = score; best = entry;}
         });
-        if(score > bestScore){ bestScore = score; best = entry; }
-      });
-      return best ? best.answer : FALLBACK;
-    }
-
-    const chatBody = document.getElementById('ghChatBody');
-    const chatForm = document.getElementById('ghChatForm');
-    const chatInput = document.getElementById('ghChatInput');
-    const chatWindow = document.getElementById('ghChatWindow');
-    const launcher = document.getElementById('ghChatLauncher');
-    const suggestRow = document.getElementById('ghSuggestRow');
-
-    function addMessage(text, who){
-      const div = document.createElement('div');
-      div.className = 'gh-msg ' + who;
-      div.textContent = text;
-      chatBody.appendChild(div);
-      chatBody.scrollTop = chatBody.scrollHeight;
-    }
-
-    function renderSuggestions(){
-      suggestRow.innerHTML = '';
-      SUGGESTIONS.forEach(s=>{
-        const chip = document.createElement('button');
-        chip.type = 'button';
-        chip.className = 'gh-suggest-chip';
-        chip.textContent = s;
-        chip.addEventListener('click', ()=>{
-          addMessage(s, 'user');
-          respondTo(s);
-        });
-        suggestRow.appendChild(chip);
-      });
-    }
-
-    function respondTo(query){
-      setTimeout(()=>{
-        addMessage(findBestAnswer(query), 'bot');
-      }, 250);
-    }
-
-    let started = false;
-    function openChat(){
-      chatWindow.classList.add('open');
-      chatWindow.setAttribute('aria-hidden','false');
-      launcher.classList.add('open');
-      launcher.setAttribute('aria-expanded','true');
-      if(!started){
-        started = true;
-        addMessage("Hi, I'm the Galen Assistant. Ask me anything about Galen House Medical Centre — hours, services, facilities, location, payment or contact details.", 'bot');
-        renderSuggestions();
+        return best ? best.answer : FALLBACK;
       }
-      chatInput.focus();
-    }
-    function closeChat(){
-      chatWindow.classList.remove('open');
-      chatWindow.setAttribute('aria-hidden','true');
-      launcher.classList.remove('open');
-      launcher.setAttribute('aria-expanded','false');
-    }
 
-    launcher.addEventListener('click', ()=>{
-      if(chatWindow.classList.contains('open')) closeChat();
-      else openChat();
-    });
+      const chatBody = document.getElementById('ghChatBody');
+      const chatForm = document.getElementById('ghChatForm');
+      const chatInput = document.getElementById('ghChatInput');
+      const chatWindow = document.getElementById('ghChatWindow');
+      const launcher = document.getElementById('ghChatLauncher');
+      const suggestRow = document.getElementById('ghSuggestRow');
 
-    chatForm.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const val = chatInput.value.trim();
-      if(!val) return;
-      addMessage(val, 'user');
-      chatInput.value = '';
-      respondTo(val);
-    });
-  })();
-</script>
+      function addMessage(text, who) {
+        const div = document.createElement('div');
+        div.className = 'gh-msg ' + who;
+        div.textContent = text;
+        chatBody.appendChild(div);
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }
+
+      function renderSuggestions() {
+        suggestRow.innerHTML = '';
+        SUGGESTIONS.forEach(s => {
+          const chip = document.createElement('button');
+          chip.type = 'button';
+          chip.className = 'gh-suggest-chip';
+          chip.textContent = s;
+          chip.addEventListener('click', () => {
+            addMessage(s, 'user');
+            respondTo(s);
+          });
+          suggestRow.appendChild(chip);
+        });
+      }
+
+      function respondTo(query) {
+        setTimeout(() => {
+          addMessage(findBestAnswer(query), 'bot');
+        }, 250);
+      }
+
+      let started = false;
+      function openChat() {
+        chatWindow.classList.add('open');
+        chatWindow.setAttribute('aria-hidden', 'false');
+        launcher.classList.add('open');
+        launcher.setAttribute('aria-expanded', 'true');
+        if (!started) {
+          started = true;
+          addMessage("Hi, I'm the Galen Assistant. Ask me anything about Galen House Medical Centre — hours, services, facilities, location, payment or contact details.", 'bot');
+          renderSuggestions();
+        }
+        chatInput.focus();
+      }
+      function closeChat() {
+        chatWindow.classList.remove('open');
+        chatWindow.setAttribute('aria-hidden', 'true');
+        launcher.classList.remove('open');
+        launcher.setAttribute('aria-expanded', 'false');
+      }
+
+      launcher.addEventListener('click', () => {
+        if (chatWindow.classList.contains('open')) closeChat();
+        else openChat();
+      });
+
+      chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const val = chatInput.value.trim();
+        if (!val) return;
+        addMessage(val, 'user');
+        chatInput.value = '';
+        respondTo(val);
+      });
+    })();
+  </script>
 
 </body>
+
 </html>
