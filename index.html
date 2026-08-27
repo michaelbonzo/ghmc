@@ -18,48 +18,48 @@
       --bg-alt: #F3F8FC;
       --surface: #FFFFFF;
       --surface-raised: #FFFFFF;
-      --text: #0A2540;
+      --text: #0B332D;
       --text-muted: #51677F;
-      --brand-blue: #0B5FA5;
-      --brand-blue-strong: #08406F;
-      --brand-navy: #0A2540;
+      --brand-teal: #0D9488;
+      --brand-teal-strong: #115E59;
+      --brand-navy: #0B332D;
       --accent-green: #1B9C6E;
       --accent-red: #E0473E;
       --border: #E2EAF2;
-      --shadow: 0 20px 45px -25px rgba(10, 37, 64, .35);
-      --pill-bg: rgba(11, 95, 165, .08);
+      --shadow: 0 20px 45px -25px rgba(11, 51, 45, .35);
+      --pill-bg: rgba(13, 148, 136, .08);
       --hero-grad: radial-gradient(120% 120% at 8% 0%, #EAF4FD 0%, #FFFFFF 45%, #FFFFFF 100%);
       --nav-bg: rgba(255, 255, 255, .82);
       --toggle-track: #E2EAF2;
-      --toggle-thumb: #0B5FA5;
-      --footer-bg: #0A2540;
+      --toggle-thumb: #0D9488;
+      --footer-bg: #0B332D;
       --footer-text: #C9D9EA;
       --code-bg: #F3F8FC;
       --transition-theme: background-color .5s ease, color .5s ease, border-color .5s ease, box-shadow .5s ease;
     }
 
-    html[data-theme="blue"] {
-      --bg: #0A2A4D;
-      --bg-alt: #0D3562;
-      --surface: #0E3868;
-      --surface-raised: #123F72;
+    html[data-theme="teal"] {
+      --bg: #0A3B36;
+      --bg-alt: #0E4A43;
+      --surface: #0F5049;
+      --surface-raised: #135B52;
       --text: #F3F8FC;
-      --text-muted: #B7CBE3;
-      --brand-blue: #63B0EE;
-      --brand-blue-strong: #9ED0F7;
+      --text-muted: #A9D3CB;
+      --brand-teal: #4FD1C5;
+      --brand-teal-strong: #7EEAD4;
       --brand-navy: #F3F8FC;
       --accent-green: #57DBA6;
       --accent-red: #FF8079;
       --border: rgba(255, 255, 255, .14);
       --shadow: 0 20px 45px -20px rgba(0, 0, 0, .5);
       --pill-bg: rgba(255, 255, 255, .08);
-      --hero-grad: radial-gradient(120% 120% at 8% 0%, #123F72 0%, #0A2A4D 45%, #0A2A4D 100%);
-      --nav-bg: rgba(10, 42, 77, .82);
+      --hero-grad: radial-gradient(120% 120% at 8% 0%, #135B52 0%, #0A3B36 45%, #0A3B36 100%);
+      --nav-bg: rgba(10, 59, 54, .82);
       --toggle-track: rgba(255, 255, 255, .18);
-      --toggle-thumb: #63B0EE;
-      --footer-bg: #071D38;
-      --footer-text: #9FB8D6;
-      --code-bg: #0D3562;
+      --toggle-thumb: #4FD1C5;
+      --footer-bg: #072A26;
+      --footer-text: #9DD9CE;
+      --code-bg: #0E4A43;
     }
 
     * {
@@ -122,7 +122,7 @@
     }
 
     ::selection {
-      background: var(--brand-blue);
+      background: var(--brand-teal);
       color: #fff;
     }
 
@@ -148,8 +148,8 @@
       font-size: .8rem;
     }
 
-    html[data-theme="blue"] .topbar {
-      background: #071D38;
+    html[data-theme="teal"] .topbar {
+      background: #072A26;
     }
 
     .topbar .wrap {
@@ -247,8 +247,8 @@
       transition: filter .4s ease;
     }
 
-    /* Logo automatically switches to white in the blue theme, regardless of the source image's own colours */
-    html[data-theme="blue"] .brand img {
+    /* Logo automatically switches to white in the teal theme, regardless of the source image's own colours */
+    html[data-theme="teal"] .brand img {
       filter: brightness(0) saturate(100%) invert(1);
     }
 
@@ -269,7 +269,7 @@
       font-size: .66rem;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: var(--brand-blue);
+      color: var(--brand-teal);
       font-weight: 600;
     }
 
@@ -334,7 +334,7 @@
     }
 
     .theme-toggle button.active {
-      background: var(--brand-blue);
+      background: var(--brand-teal);
       color: #fff;
     }
 
@@ -353,7 +353,7 @@
     }
 
     .btn-primary {
-      background: var(--brand-blue);
+      background: var(--brand-teal);
       color: #fff;
       box-shadow: 0 10px 24px -10px rgba(11, 95, 165, .55);
     }
@@ -370,8 +370,8 @@
     }
 
     .btn-ghost:hover {
-      border-color: var(--brand-blue);
-      color: var(--brand-blue);
+      border-color: var(--brand-teal);
+      color: var(--brand-teal);
     }
 
     .btn-sm {
@@ -418,11 +418,11 @@
       border: 1px solid rgba(255, 255, 255, .6);
       border-radius: 24px;
       padding: 32px 32px 28px;
-      box-shadow: 0 20px 45px -20px rgba(10, 42, 77, .35);
+      box-shadow: 0 20px 45px -20px rgba(10, 59, 54, .35);
     }
 
-    html[data-theme="blue"] .hero-text-bg {
-      background: rgba(10, 42, 77, .82);
+    html[data-theme="teal"] .hero-text-bg {
+      background: rgba(10, 59, 54, .82);
       border: 1px solid rgba(255, 255, 255, .08);
     }
 
@@ -434,7 +434,7 @@
       font-size: .72rem;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: var(--brand-blue);
+      color: var(--brand-teal);
       background: var(--pill-bg);
       padding: 7px 14px;
       border-radius: 100px;
@@ -457,7 +457,7 @@
     }
 
     .hero h1 span {
-      color: var(--brand-blue);
+      color: var(--brand-teal);
     }
 
     .hero p.lead {
@@ -510,7 +510,7 @@
       position: absolute;
       width: 280px;
       height: 280px;
-      background: radial-gradient(circle, var(--brand-blue) 0%, transparent 70%);
+      background: radial-gradient(circle, var(--brand-teal) 0%, transparent 70%);
       opacity: .14;
       top: -90px;
       right: -90px;
@@ -529,7 +529,7 @@
       right: 24px;
       width: 46px;
       height: 46px;
-      background: var(--brand-blue);
+      background: var(--brand-teal);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -563,7 +563,7 @@
     }
 
     .ecg-path {
-      stroke: var(--brand-blue);
+      stroke: var(--brand-teal);
       stroke-width: 2.5;
       fill: none;
       stroke-linecap: round;
@@ -710,7 +710,7 @@
       font-family: 'Sora', sans-serif;
       font-weight: 800;
       font-size: 2rem;
-      color: var(--brand-blue);
+      color: var(--brand-teal);
     }
 
     .stat .label {
@@ -764,7 +764,7 @@
     }
 
     .divider path {
-      stroke: var(--brand-blue);
+      stroke: var(--brand-teal);
       stroke-width: 2;
       fill: none;
       opacity: .5;
@@ -817,7 +817,7 @@
       left: 14px;
       bottom: 12px;
       margin-top: 0;
-      background: rgba(10, 37, 64, .78);
+      background: rgba(11, 51, 45, .78);
       color: #fff;
       padding: 6px 12px;
       border-radius: 100px;
@@ -964,7 +964,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: var(--brand-blue);
+      background: var(--brand-teal);
       mix-blend-mode: multiply;
       opacity: .72;
     }
@@ -1062,7 +1062,7 @@
     .timeline-year {
       font-family: 'IBM Plex Mono', monospace;
       font-weight: 500;
-      color: var(--brand-blue);
+      color: var(--brand-teal);
       min-width: 64px;
       font-size: .85rem;
       padding-top: 2px;
@@ -1090,7 +1090,7 @@
     .service-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow);
-      border-color: var(--brand-blue);
+      border-color: var(--brand-teal);
     }
 
     .service-icon {
@@ -1107,7 +1107,7 @@
     .service-icon svg {
       width: 22px;
       height: 22px;
-      stroke: var(--brand-blue);
+      stroke: var(--brand-teal);
     }
 
     .service-card h4 {
@@ -1286,8 +1286,8 @@
       color: #fff;
     }
 
-    html[data-theme="blue"] .pay-band {
-      background: #071D38;
+    html[data-theme="teal"] .pay-band {
+      background: #072A26;
     }
 
     .pay-band h3 {
@@ -1360,7 +1360,7 @@
     .badge svg {
       width: 20px;
       height: 20px;
-      stroke: var(--brand-blue);
+      stroke: var(--brand-teal);
     }
 
     .badge span {
@@ -1438,7 +1438,7 @@
     .contact-row svg {
       width: 20px;
       height: 20px;
-      stroke: var(--brand-blue);
+      stroke: var(--brand-teal);
       flex-shrink: 0;
       margin-top: 2px;
     }
@@ -1459,7 +1459,7 @@
     }
 
     .contact-row a:hover {
-      color: var(--brand-blue);
+      color: var(--brand-teal);
     }
 
     .map-embed {
@@ -1688,7 +1688,7 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: var(--brand-blue);
+      background: var(--brand-teal);
       color: #fff;
       border: none;
       cursor: pointer;
@@ -1762,7 +1762,7 @@
       width: 34px;
       height: 34px;
       border-radius: 50%;
-      background: var(--brand-blue);
+      background: var(--brand-teal);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1787,7 +1787,7 @@
 
     .gh-chat-header-text .gh-sub {
       font-size: .7rem;
-      color: #B7CBE3;
+      color: #A9D3CB;
     }
 
     .gh-chat-body {
@@ -1819,13 +1819,13 @@
 
     .gh-msg.user {
       align-self: flex-end;
-      background: var(--brand-blue);
+      background: var(--brand-teal);
       color: #fff;
       border-bottom-right-radius: 4px;
     }
 
     .gh-msg.bot a {
-      color: var(--brand-blue);
+      color: var(--brand-teal);
       text-decoration: underline;
     }
 
@@ -1850,9 +1850,9 @@
     }
 
     .gh-suggest-chip:hover {
-      background: var(--brand-blue);
+      background: var(--brand-teal);
       color: #fff;
-      border-color: var(--brand-blue);
+      border-color: var(--brand-teal);
     }
 
     .gh-chat-input-row {
@@ -1876,11 +1876,11 @@
     }
 
     .gh-chat-input-row input:focus-visible {
-      outline: 2px solid var(--brand-blue);
+      outline: 2px solid var(--brand-teal);
     }
 
     .gh-chat-input-row button {
-      background: var(--brand-blue);
+      background: var(--brand-teal);
       color: #fff;
       border: none;
       border-radius: 10px;
@@ -1952,7 +1952,7 @@
       <div class="nav-actions">
         <div class="theme-toggle" role="group" aria-label="Theme switcher">
           <button type="button" id="theme-white" class="active" onclick="setTheme('white')">White</button>
-          <button type="button" id="theme-blue" onclick="setTheme('blue')">Blue</button>
+          <button type="button" id="theme-teal" onclick="setTheme('teal')">Teal</button>
         </div>
         <a href="tel:+2632928810514" class="btn btn-ghost btn-sm"> +263 292 881 051-4</a>
 
@@ -1983,7 +1983,7 @@
 
       <div class="wrap hero-inner">
         <div class="hero-text-bg">
-          <div class="eyebrow">Serving patients since 1957</div>
+         
           <h1>Your health<br>is our <span>priority.</span></h1>
           <p class="lead">Galen House Medical Centre is one of the oldest health facilities in Bulawayo, taking pride in
             the best-quality service it offers the community. It offers doctor consultations and overnight care, and is
@@ -2029,16 +2029,13 @@
 
     <section class="stats">
       <div class="wrap">
-        <div class="stat">
-          <div class="num">1957</div>
-          <div class="label">Founded by Dr&nbsp;Garry&nbsp;Ferguson</div>
-        </div>
+        
         <div class="stat">
           <div class="num">24/7</div>
           <div class="label">Open every hour, every day</div>
         </div>
         <div class="stat">
-          <div class="num">15+</div>
+          <div class="num">10+</div>
           <div class="label">Services under one roof</div>
         </div>
         <div class="stat">
@@ -2048,7 +2045,7 @@
       </div>
     </section>
 
-    <section class="section-pad" id="about">
+   <!-- <section class="section-pad" id="about">
       <div class="wrap about-grid">
         <div>
           <div class="section-head" style="margin-bottom:0;">
@@ -2087,7 +2084,7 @@
             </div>
           </div>
         </div>
-
+-->
         <div>
           <div class="about-card">
             <h3>Our Vision</h3>
@@ -2100,7 +2097,7 @@
           <div class="about-card">
             <h3>Corporate Governance</h3>
             <p>We abide by the rules and regulations set by the Health Board, our governing bodies, and general societal
-              ethics. We have the same discipline that has guided the centre since 1957.</p>
+              ethics. </p>
           </div>
         </div>
       </div>
@@ -2169,7 +2166,7 @@
               </svg></div>
             <h4>Baby Clinic</h4>
             <p>Vaccinations and weighing for babies and children under 10.</p>
-            <p style="margin-top:4px;font-size:.78rem;font-weight:600;color:var(--brand-blue);">Mon–Fri, 8am–5pm</p>
+            <p style="margin-top:4px;font-size:.78rem;font-weight:600;color:var(--brand-teal);">Mon–Fri, 8am–5pm</p>
           </div>
 
           <div class="service-card">
@@ -2328,11 +2325,11 @@
 
         <div class="avatar-cluster">
           <div class="avatar-row">
-            <div class="avatar" style="background:#0B5FA5;">GF</div>
+            <div class="avatar" style="background:#0D9488;">GF</div>
             <div class="avatar" style="background:#1B9C6E;">RN</div>
             <div class="avatar" style="background:#E0473E;">PT</div>
-            <div class="avatar" style="background:#08406F;">GP</div>
-            <div class="avatar" style="background:#63B0EE;">+</div>
+            <div class="avatar" style="background:#115E59;">GP</div>
+            <div class="avatar" style="background:#4FD1C5;">+</div>
           </div>
           <p>Doctors, nurses, physiotherapists and administrative staff working across our clinics are pictured on our
             clinic signage, badges of years of combined community service.</p>
@@ -2428,7 +2425,7 @@
               </svg>
               <div>
                 <div class="clabel">Bookings</div>
-                <div class="cval"><a href="tel:+263772388941">+263 772 388 941</a></div>
+                <div class="cval"><a href="tel:+263772388941">0772 388 941</a></div>
               </div>
             </div>
           </div>
@@ -2546,7 +2543,7 @@
     function setTheme(theme) {
       document.documentElement.setAttribute('data-theme', theme);
       document.getElementById('theme-white').classList.toggle('active', theme === 'white');
-      document.getElementById('theme-blue').classList.toggle('active', theme === 'blue');
+      document.getElementById('theme-teal').classList.toggle('active', theme === 'teal');
     }
 
     function toggleMobile(open) {
