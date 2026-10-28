@@ -1919,6 +1919,832 @@
         bottom: 16px;
       }
     }
+
+    /* ---------- Updates (campaigns & notices) ---------- */
+    .updates-section {
+      --pink: #D6246E;
+      --pink-deep: #A3154F;
+      --pink-soft: #FDEAF2;
+      --pink-line: #F6C6DA;
+      --ink: #12305C;
+      background:
+        radial-gradient(700px 380px at 92% 0%, rgba(214, 36, 110, .10), transparent 65%),
+        radial-gradient(600px 340px at 0% 100%, rgba(79, 209, 197, .12), transparent 65%),
+        var(--bg);
+      overflow: hidden;
+    }
+
+    html[data-theme="teal"] .updates-section {
+      --pink-soft: rgba(255, 255, 255, .06);
+      --pink-line: rgba(255, 140, 185, .35);
+      --ink: #F3F8FC;
+    }
+
+    .updates-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .updates-head .section-head {
+      margin-bottom: 0;
+    }
+
+    .updates-section .eyebrow {
+      color: var(--pink);
+      background: rgba(214, 36, 110, .08);
+    }
+
+    .updates-section .eyebrow::before {
+      background: var(--pink);
+    }
+
+    html[data-theme="teal"] .updates-section .eyebrow {
+      color: #FF9CC4;
+    }
+
+    .update-card {
+      display: grid;
+      grid-template-columns: minmax(280px, 440px) 1fr;
+      gap: 0;
+      background: var(--surface);
+      border: 1px solid var(--pink-line);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 30px 60px -35px rgba(163, 21, 79, .45);
+    }
+
+    .update-flyer {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      cursor: zoom-in;
+      background: linear-gradient(160deg, #FDEAF2, #F7D3E3);
+      overflow: hidden;
+    }
+
+    .update-flyer img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      transition: transform .6s cubic-bezier(.2, .8, .2, 1);
+    }
+
+    .update-flyer:hover img,
+    .update-flyer:focus-visible img {
+      transform: scale(1.04);
+    }
+
+    .update-flyer .flyer-hint {
+      position: absolute;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(18, 20, 40, .78);
+      color: #fff;
+      font-size: .78rem;
+      font-weight: 600;
+      padding: 9px 16px;
+      border-radius: 100px;
+      white-space: nowrap;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: background .25s ease;
+    }
+
+    .update-flyer:hover .flyer-hint {
+      background: var(--pink);
+    }
+
+    .update-flyer .flyer-hint svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .update-body {
+      padding: 40px 44px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .update-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: .74rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 100px;
+      background: var(--pink-soft);
+      color: var(--pink);
+      border: 1px solid var(--pink-line);
+    }
+
+    html[data-theme="teal"] .tag {
+      color: #FF9CC4;
+    }
+
+    .tag.live::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--pink);
+      animation: pulse 1.6s infinite;
+    }
+
+    .tag.ended {
+      background: var(--pill-bg);
+      color: var(--text-muted);
+      border-color: var(--border);
+    }
+
+    .tag.ended::before {
+      display: none;
+    }
+
+    .update-body h3 {
+      font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+      line-height: 1.15;
+      color: var(--ink);
+    }
+
+    .update-body h3 em {
+      font-style: normal;
+      color: var(--pink);
+    }
+
+    html[data-theme="teal"] .update-body h3 em {
+      color: #FF9CC4;
+    }
+
+    .update-body>p {
+      margin-top: 12px;
+      font-size: 1rem;
+      max-width: 56ch;
+    }
+
+    .update-facts {
+      list-style: none;
+      padding: 0;
+      margin: 22px 0 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .update-facts li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: .94rem;
+      color: var(--text);
+    }
+
+    .update-facts svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      color: var(--pink);
+    }
+
+    .discount-note {
+      margin-top: 22px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      background: linear-gradient(100deg, var(--pink), var(--pink-deep));
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    .discount-note .bang {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--pink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .steps-preview {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px dashed var(--pink-line);
+    }
+
+    .steps-preview .sp-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .step-chips {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    .step-chip {
+      border: 1px solid var(--pink-line);
+      background: var(--pink-soft);
+      border-radius: 14px;
+      padding: 12px 10px;
+      text-align: left;
+      cursor: pointer;
+      font: inherit;
+      color: var(--text);
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .step-chip:hover {
+      transform: translateY(-3px);
+      border-color: var(--pink);
+    }
+
+    .step-chip b {
+      display: flex;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--pink);
+      color: #fff;
+      font-size: .78rem;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+
+    .step-chip span {
+      display: block;
+      font-size: .76rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .update-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn-pink {
+      background: var(--pink);
+      color: #fff;
+      box-shadow: 0 12px 26px -12px rgba(214, 36, 110, .7);
+    }
+
+    .btn-pink:hover {
+      transform: translateY(-2px);
+      background: var(--pink-deep);
+    }
+
+    .updates-section .btn-ghost:hover {
+      border-color: var(--pink);
+      color: var(--pink);
+    }
+
+    /* ---------- Update modal ---------- */
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    .gh-modal {
+      --pink: #D6246E;
+      --pink-deep: #A3154F;
+      --pink-soft: #FDEAF2;
+      --pink-line: #F6C6DA;
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(12, 14, 30, .72);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s ease, visibility .25s ease;
+    }
+
+    html[data-theme="teal"] .gh-modal {
+      --pink-soft: rgba(255, 255, 255, .06);
+      --pink-line: rgba(255, 140, 185, .35);
+    }
+
+    .gh-modal.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .gh-modal-panel {
+      position: relative;
+      width: min(1120px, 100%);
+      max-height: calc(100vh - 48px);
+      background: var(--surface);
+      border-radius: 26px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .6);
+      transform: translateY(18px) scale(.98);
+      transition: transform .3s cubic-bezier(.2, .8, .2, 1);
+    }
+
+    .gh-modal.open .gh-modal-panel {
+      transform: none;
+    }
+
+    .gh-modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 3;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gh-modal-close:hover {
+      border-color: var(--pink);
+      color: var(--pink);
+    }
+
+    .gh-modal-close svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .modal-flyer {
+      background: linear-gradient(160deg, #FDEAF2, #F4C9DC);
+      overflow: auto;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .modal-flyer img {
+      width: 100%;
+      height: auto;
+      display: block;
+      cursor: zoom-in;
+    }
+
+    .modal-flyer.zoomed img {
+      width: 180%;
+      max-width: none;
+      cursor: zoom-out;
+    }
+
+    .modal-flyer-bar {
+      position: sticky;
+      bottom: 0;
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 10px 12px;
+      background: linear-gradient(to top, rgba(20, 6, 14, .9), rgba(20, 6, 14, 0));
+    }
+
+    .modal-flyer-bar button,
+    .modal-flyer-bar a {
+      font: inherit;
+      font-size: .74rem;
+      font-weight: 600;
+      color: #fff;
+      background: rgba(255, 255, 255, .14);
+      border: 1px solid rgba(255, 255, 255, .25);
+      padding: 7px 12px;
+      border-radius: 100px;
+      cursor: pointer;
+    }
+
+    .modal-flyer-bar button:hover,
+    .modal-flyer-bar a:hover {
+      background: var(--pink);
+      border-color: var(--pink);
+    }
+
+    .modal-guide {
+      overflow-y: auto;
+      padding: 40px 40px 32px;
+    }
+
+    .modal-guide .tag {
+      margin-bottom: 14px;
+    }
+
+    .modal-guide h3 {
+      font-size: 1.6rem;
+      line-height: 1.2;
+      padding-right: 40px;
+    }
+
+    .modal-guide h3 em {
+      font-style: normal;
+      color: var(--pink);
+    }
+
+    .modal-guide .intro {
+      margin-top: 10px;
+      font-size: .95rem;
+    }
+
+    .when-box {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .when-box div {
+      background: var(--pink-soft);
+      border: 1px solid var(--pink-line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-size: .84rem;
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    .when-box strong {
+      display: block;
+      font-family: 'Sora', sans-serif;
+      font-size: .8rem;
+      color: var(--pink);
+      margin-bottom: 3px;
+    }
+
+    .step-tabs {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-top: 26px;
+      position: relative;
+    }
+
+    .step-tab {
+      font: inherit;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      border-radius: 12px;
+      padding: 10px 6px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      font-size: .7rem;
+      font-weight: 600;
+      line-height: 1.2;
+      text-align: center;
+      transition: all .2s ease;
+    }
+
+    .step-tab b {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--pink-soft);
+      color: var(--pink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .82rem;
+      transition: all .2s ease;
+    }
+
+    .step-tab[aria-selected="true"] {
+      border-color: var(--pink);
+      color: var(--text);
+      box-shadow: 0 10px 20px -14px rgba(214, 36, 110, .8);
+    }
+
+    .step-tab[aria-selected="true"] b {
+      background: var(--pink);
+      color: #fff;
+    }
+
+    .step-tab.done b {
+      background: var(--pink-deep);
+      color: #fff;
+    }
+
+    .step-progress {
+      height: 4px;
+      border-radius: 4px;
+      background: var(--pink-soft);
+      margin-top: 12px;
+      overflow: hidden;
+    }
+
+    .step-progress span {
+      display: block;
+      height: 100%;
+      width: 20%;
+      background: linear-gradient(90deg, var(--pink), var(--pink-deep));
+      border-radius: 4px;
+      transition: width .35s ease;
+    }
+
+    .step-panel {
+      margin-top: 22px;
+      animation: stepIn .35s ease;
+    }
+
+    .step-panel[hidden] {
+      display: none;
+    }
+
+    @keyframes stepIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .step-panel .sp-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--pink);
+    }
+
+    .step-panel h4 {
+      font-size: 1.25rem;
+      margin-top: 6px;
+    }
+
+    .step-panel>p {
+      margin-top: 8px;
+      font-size: .94rem;
+    }
+
+    .how-list {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: how;
+      display: grid;
+      gap: 10px;
+    }
+
+    .how-list li {
+      counter-increment: how;
+      display: flex;
+      gap: 12px;
+      font-size: .9rem;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .how-list li::before {
+      content: counter(how);
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 1px solid var(--pink-line);
+      color: var(--pink);
+      font-size: .72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .look-for {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: var(--bg-alt);
+      border-left: 3px solid var(--pink);
+    }
+
+    .look-for strong {
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--text);
+    }
+
+    .look-for p {
+      font-size: .86rem;
+      margin-top: 4px;
+    }
+
+    .step-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .step-nav button {
+      font: inherit;
+      font-size: .85rem;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--text);
+    }
+
+    .step-nav button:disabled {
+      opacity: .4;
+      cursor: default;
+    }
+
+    .step-nav .next {
+      background: var(--pink);
+      border-color: var(--pink);
+      color: #fff;
+    }
+
+    .warn-signs {
+      margin-top: 28px;
+      padding: 20px;
+      border-radius: 18px;
+      border: 1px solid var(--pink-line);
+      background: var(--pink-soft);
+    }
+
+    .warn-signs h5 {
+      font-family: 'Sora', sans-serif;
+      font-size: .95rem;
+      margin: 0 0 10px;
+      color: var(--text);
+    }
+
+    .warn-signs ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 16px;
+    }
+
+    .warn-signs li {
+      font-size: .84rem;
+      color: var(--text);
+      display: flex;
+      gap: 8px;
+    }
+
+    .warn-signs li::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--pink);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    .warn-signs .reassure {
+      margin-top: 12px;
+      font-size: .82rem;
+    }
+
+    .modal-cta {
+      margin-top: 22px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .modal-cta .btn-ghost:hover {
+      border-color: var(--pink);
+      color: var(--pink);
+    }
+
+    .modal-disclaimer {
+      margin-top: 16px;
+      font-size: .72rem;
+    }
+
+    @media (max-width:980px) {
+      .update-card {
+        grid-template-columns: 1fr;
+      }
+
+      .update-flyer img {
+        max-height: 560px;
+      }
+
+      .gh-modal {
+        padding: 0;
+        align-items: stretch;
+      }
+
+      .gh-modal-panel {
+        grid-template-columns: 1fr;
+        max-height: 100vh;
+        height: 100%;
+        border-radius: 0;
+        overflow-y: auto;
+        display: block;
+      }
+
+      .modal-flyer {
+        max-height: 70vh;
+      }
+
+      .gh-modal-close {
+        position: fixed;
+        box-shadow: 0 6px 16px -6px rgba(0, 0, 0, .4);
+      }
+
+      .modal-guide {
+        overflow: visible;
+      }
+    }
+
+    @media (max-width:560px) {
+      .update-body {
+        padding: 28px 22px;
+      }
+
+      .step-chips {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 6px;
+      }
+
+      .step-chip {
+        padding: 10px 4px;
+        text-align: center;
+      }
+
+      .step-chip b {
+        margin: 0 auto;
+      }
+
+      .step-chip span {
+        display: none;
+      }
+
+      .modal-guide {
+        padding: 28px 20px 24px;
+      }
+
+      .step-tab {
+        font-size: 0;
+        gap: 0;
+      }
+
+      .when-box,
+      .warn-signs ul {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -1945,6 +2771,7 @@
         <a href="#about">About</a>
         <a href="#services">Services</a>
 
+        <a href="#updates">Updates</a>
         <a href="#values">Values</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -1971,6 +2798,7 @@
       <a href="#about" onclick="toggleMobile(false)">About</a>
       <a href="#services" onclick="toggleMobile(false)">Services</a>
 
+      <a href="#updates" onclick="toggleMobile(false)">Updates</a>
       <a href="#values" onclick="toggleMobile(false)">Values</a>
       <a href="#contact" onclick="toggleMobile(false)">Contact</a>
     </nav>
@@ -2231,6 +3059,77 @@
 
 
 
+
+    <div class="divider" aria-hidden="true">
+      <svg viewBox="0 0 1180 34">
+        <path d="M0 17 H480 L500 4 L520 30 L540 4 L560 30 L580 17 H1180" />
+      </svg>
+    </div>
+
+    <!-- ---------- Updates ---------- -->
+    <section class="section-pad updates-section" id="updates">
+      <div class="wrap">
+        <div class="updates-head">
+          <div class="section-head">
+            <div class="eyebrow">Updates</div>
+            <h2>What's happening at Galen House.</h2>
+            <p>Health campaigns, screening programmes and notices for our patients and community.</p>
+          </div>
+        </div>
+
+        <article class="update-card">
+          <button type="button" class="update-flyer" data-open-update aria-label="Open the Breast Cancer Awareness flyer and self-examination guide">
+            <img src="breast-cancer-awareness.jpeg"
+              alt="October Breast Cancer Awareness Month flyer: Cancer Screening Program, 1st to 30th October 2026, with 5 steps for breast self-examination"
+              loading="lazy">
+            <span class="flyer-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3M11 8v6M8 11h6" /></svg>
+              View flyer &amp; guide
+            </span>
+          </button>
+
+          <div class="update-body">
+            <div class="update-meta">
+              <span class="tag live" id="campaignStatus">Running now</span>
+              <span class="tag">1 – 30 October 2026</span>
+              <span class="tag">Women's Clinic</span>
+            </div>
+
+            <h3>October is <em>Breast Cancer</em> Awareness Month.</h3>
+            <p>Early detection creates brighter tomorrows. Throughout October we're running a Cancer Screening
+              Programme at discounted rates. Book your slot and learn how to check yourself at home.</p>
+
+            <ul class="update-facts">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10" /><path d="m8 12 3 3 5-6" /></svg>Early detection saves lives.</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10" /><path d="m8 12 3 3 5-6" /></svg>Cervical cancer is preventable.</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10" /><path d="m8 12 3 3 5-6" /></svg>Breast cancer is treatable if caught early.</li>
+            </ul>
+
+            <div class="discount-note">
+              <span class="bang">!</span>
+              Screening is at discounted rates this month. Book your slot now!
+            </div>
+
+            <div class="steps-preview">
+              <div class="sp-label">5 steps for breast self-examination · tap a step</div>
+              <div class="step-chips">
+                <button type="button" class="step-chip" data-open-update data-step="0"><b>1</b><span>Look in the mirror</span></button>
+                <button type="button" class="step-chip" data-open-update data-step="1"><b>2</b><span>Raise your arms</span></button>
+                <button type="button" class="step-chip" data-open-update data-step="2"><b>3</b><span>Check for discharge</span></button>
+                <button type="button" class="step-chip" data-open-update data-step="3"><b>4</b><span>Feel lying down</span></button>
+                <button type="button" class="step-chip" data-open-update data-step="4"><b>5</b><span>Feel standing / showering</span></button>
+              </div>
+            </div>
+
+            <div class="update-ctas">
+              <a href="tel:+263772388941" class="btn btn-pink">Book your screening · 0772 388 941</a>
+              <button type="button" class="btn btn-ghost" data-open-update>Read the full guide</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <div class="divider" aria-hidden="true">
       <svg viewBox="0 0 1180 34">
         <path d="M0 17 H480 L500 4 L520 30 L540 4 L560 30 L580 17 H1180" />
@@ -2479,6 +3378,7 @@
             <li><a href="#about">About Us</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#facilities">Facilities</a></li>
+            <li><a href="#updates">Updates</a></li>
             <li><a href="#values">Our Values</a></li>
           </ul>
         </div>
@@ -2508,6 +3408,68 @@
       </div>
     </div>
   </footer>
+
+
+  <!-- ---------- Update modal: flyer + self-examination guide ---------- -->
+  <div class="gh-modal" id="updateModal" role="dialog" aria-modal="true" aria-labelledby="updateModalTitle" aria-hidden="true">
+    <div class="gh-modal-panel">
+      <button type="button" class="gh-modal-close" data-close-update aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12" /></svg>
+      </button>
+
+      <div class="modal-flyer" id="modalFlyer">
+        <img src="breast-cancer-awareness.jpeg" alt="Full Breast Cancer Awareness Month flyer from Galen House Medical Centre" id="modalFlyerImg">
+        <div class="modal-flyer-bar">
+          <button type="button" id="flyerZoom">Zoom in</button>
+          <a href="breast-cancer-awareness.jpeg" target="_blank" rel="noopener">Open full size</a>
+        </div>
+      </div>
+
+      <div class="modal-guide">
+        <span class="tag">Breast Cancer Awareness · October 2026</span>
+        <h3 id="updateModalTitle"><em>5 steps</em> for breast self-examination</h3>
+        <p class="intro">A monthly self-check helps you learn what's normal for your body, so you notice changes early.
+          It takes about 10 minutes.</p>
+
+        <div class="when-box">
+          <div><strong>When to check</strong>Once a month, 3–5 days after your period ends, when breasts are least tender.</div>
+          <div><strong>No periods?</strong>Pick the same date each month (e.g. the 1st) if you're post-menopausal or pregnant.</div>
+        </div>
+
+        <div class="step-tabs" role="tablist" aria-label="Self-examination steps" id="stepTabs"></div>
+        <div class="step-progress" aria-hidden="true"><span id="stepProgress"></span></div>
+        <div id="stepPanels"></div>
+
+        <div class="step-nav">
+          <button type="button" id="stepPrev">← Previous</button>
+          <button type="button" class="next" id="stepNext">Next step →</button>
+        </div>
+
+        <div class="warn-signs">
+          <h5>See a doctor if you notice</h5>
+          <ul>
+            <li>A new lump or thickening in the breast or armpit</li>
+            <li>A change in size or shape of one breast</li>
+            <li>Dimpling or puckering of the skin</li>
+            <li>A nipple that turns inward or changes position</li>
+            <li>Redness, scaling or a rash on the nipple or skin</li>
+            <li>Fluid or blood from the nipple (not breast milk)</li>
+            <li>Swelling in the armpit or near the collarbone</li>
+            <li>Pain in one area that doesn't go away</li>
+          </ul>
+          <p class="reassure">Most breast changes are not cancer — but every change deserves a check. Don't wait for
+            your next monthly exam.</p>
+        </div>
+
+        <div class="modal-cta">
+          <a href="tel:+263772388941" class="btn btn-pink">Book a screening · 0772 388 941</a>
+          <a href="https://wa.me/263716544233" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp us</a>
+        </div>
+        <p class="modal-disclaimer">Self-examination does not replace a clinical breast exam or screening by a health
+          professional. Discounted screening runs 1–30 October 2026 at our Women's Clinic (Mon–Fri, 8am–5pm).</p>
+      </div>
+    </div>
+  </div>
 
   <!-- ---------- Galen Assistant chatbot ---------- -->
   <div class="gh-chat-window" id="ghChatWindow" role="dialog" aria-label="Galen House Medical Centre assistant"
@@ -2553,6 +3515,179 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* =========================================================
+       UPDATES — flyer modal + step-by-step self-exam guide
+       ========================================================= */
+    (function () {
+      const STEPS = [
+        {
+          short: 'Mirror',
+          title: 'Look in the mirror',
+          lead: 'Stand topless in front of a mirror with your shoulders straight and arms on your hips.',
+          how: [
+            'Look at both breasts from the front, then turn to each side.',
+            'Compare them with each other — it is normal for one to be slightly larger.',
+            'Press your hands firmly on your hips to tighten the chest muscles and look again.'
+          ],
+          look: 'Changes in size, shape or outline; skin dimpling, puckering or bulging; redness, rash or swelling; a nipple that has moved or turned inward.'
+        },
+        {
+          short: 'Arms up',
+          title: 'Raise your arms',
+          lead: 'Lift both arms high above your head and look for the same changes again.',
+          how: [
+            'Raise your arms slowly and watch how both breasts move.',
+            'Check from the front and from each side.',
+            'Look closely at the lower curve of each breast and towards the armpits.'
+          ],
+          look: 'Any area that pulls in, puckers or does not move like the other breast; skin that looks like orange peel.'
+        },
+        {
+          short: 'Discharge',
+          title: 'Check for discharge',
+          lead: 'While still at the mirror, look at each nipple for any signs of fluid.',
+          how: [
+            'Look at the nipple and the area around it (the areola).',
+            'Check your bra or clothing for any staining.',
+            'Do not squeeze hard — just observe.'
+          ],
+          look: 'Watery, milky, yellow or blood-stained fluid from one or both nipples when you are not breastfeeding. Report any discharge, especially if it is bloody.'
+        },
+        {
+          short: 'Lying down',
+          title: 'Feel while lying down',
+          lead: 'Lie on your back. When breast tissue spreads evenly, it is easier to feel.',
+          how: [
+            'Place a pillow under your right shoulder and put your right arm behind your head.',
+            'Use the flat pads of the three middle fingers of your left hand — not the fingertips.',
+            'Move in small circles the size of a coin, covering the whole breast: from collarbone to the top of the belly, and from armpit to the middle of the chest.',
+            'Use three pressures in each spot: light (just under the skin), medium, and firm (deep tissue near the ribs).',
+            'Follow a pattern, such as up-and-down lines, so you do not miss any area. Then switch sides.'
+          ],
+          look: 'A hard lump, knot or thickening; an area that feels different from the same area on the other breast; tenderness in one spot.'
+        },
+        {
+          short: 'Standing',
+          title: 'Feel while standing or showering',
+          lead: 'Repeat the exam standing up — many people find it easiest in the shower with wet, soapy skin.',
+          how: [
+            'Raise one arm and use the opposite hand to examine that breast.',
+            'Use the same small circular motions and three levels of pressure.',
+            'Cover the entire breast and continue into the armpit and up to the collarbone.',
+            'Repeat on the other side.'
+          ],
+          look: 'Lumps or swelling in the breast, under the arm or around the collarbone. Make a note of anything new and call us to book a check.'
+        }
+      ];
+
+      const modal = document.getElementById('updateModal');
+      const tabsEl = document.getElementById('stepTabs');
+      const panelsEl = document.getElementById('stepPanels');
+      const progress = document.getElementById('stepProgress');
+      const prevBtn = document.getElementById('stepPrev');
+      const nextBtn = document.getElementById('stepNext');
+      const flyer = document.getElementById('modalFlyer');
+      const zoomBtn = document.getElementById('flyerZoom');
+      let current = 0, lastFocus = null;
+
+      STEPS.forEach((s, i) => {
+        const tab = document.createElement('button');
+        tab.type = 'button';
+        tab.className = 'step-tab';
+        tab.id = 'step-tab-' + i;
+        tab.setAttribute('role', 'tab');
+        tab.setAttribute('aria-controls', 'step-panel-' + i);
+        tab.innerHTML = '<b>' + (i + 1) + '</b>' + s.short;
+        tab.addEventListener('click', () => goTo(i));
+        tabsEl.appendChild(tab);
+
+        const panel = document.createElement('div');
+        panel.className = 'step-panel';
+        panel.id = 'step-panel-' + i;
+        panel.setAttribute('role', 'tabpanel');
+        panel.setAttribute('aria-labelledby', 'step-tab-' + i);
+        panel.innerHTML =
+          '<div class="sp-kicker">Step ' + (i + 1) + ' of ' + STEPS.length + '</div>' +
+          '<h4>' + s.title + '</h4>' +
+          '<p>' + s.lead + '</p>' +
+          '<ol class="how-list">' + s.how.map(h => '<li>' + h + '</li>').join('') + '</ol>' +
+          '<div class="look-for"><strong>What to look for</strong><p>' + s.look + '</p></div>';
+        panelsEl.appendChild(panel);
+      });
+
+      function goTo(i) {
+        current = Math.max(0, Math.min(STEPS.length - 1, i));
+        tabsEl.querySelectorAll('.step-tab').forEach((t, n) => {
+          t.setAttribute('aria-selected', n === current ? 'true' : 'false');
+          t.classList.toggle('done', n < current);
+        });
+        panelsEl.querySelectorAll('.step-panel').forEach((p, n) => { p.hidden = n !== current; });
+        progress.style.width = ((current + 1) / STEPS.length * 100) + '%';
+        prevBtn.disabled = current === 0;
+        nextBtn.textContent = current === STEPS.length - 1 ? 'Start again ↺' : 'Next step →';
+      }
+
+      prevBtn.addEventListener('click', () => goTo(current - 1));
+      nextBtn.addEventListener('click', () => goTo(current === STEPS.length - 1 ? 0 : current + 1));
+
+      function openModal(step) {
+        lastFocus = document.activeElement;
+        goTo(typeof step === 'number' ? step : 0);
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        modal.querySelector('.gh-modal-close').focus();
+      }
+
+      function closeModal() {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        flyer.classList.remove('zoomed');
+        zoomBtn.textContent = 'Zoom in';
+        if (lastFocus) lastFocus.focus();
+      }
+
+      document.querySelectorAll('[data-open-update]').forEach(el => {
+        el.addEventListener('click', () => {
+          const s = el.getAttribute('data-step');
+          openModal(s === null ? 0 : parseInt(s, 10));
+        });
+      });
+
+      modal.querySelectorAll('[data-close-update]').forEach(el => el.addEventListener('click', closeModal));
+      modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+      document.addEventListener('keydown', e => {
+        if (!modal.classList.contains('open')) return;
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowRight' && e.target.closest('.step-tabs')) goTo(current + 1);
+        if (e.key === 'ArrowLeft' && e.target.closest('.step-tabs')) goTo(current - 1);
+      });
+
+      function toggleZoom() {
+        const z = flyer.classList.toggle('zoomed');
+        zoomBtn.textContent = z ? 'Zoom out' : 'Zoom in';
+      }
+      zoomBtn.addEventListener('click', toggleZoom);
+      document.getElementById('modalFlyerImg').addEventListener('click', toggleZoom);
+
+      /* Live campaign status: days left, or ended */
+      const status = document.getElementById('campaignStatus');
+      const start = new Date(2026, 9, 1), end = new Date(2026, 9, 30, 23, 59, 59);
+      const now = new Date();
+      if (now < start) {
+        status.textContent = 'Starts 1 October';
+      } else if (now <= end) {
+        const days = Math.ceil((end - now) / 86400000);
+        status.textContent = days <= 1 ? 'Last day — book today' : 'Running now · ' + days + ' days left';
+      } else {
+        status.textContent = 'Campaign ended';
+        status.classList.remove('live');
+        status.classList.add('ended');
+      }
+    })();
 
     function setTheme(theme) {
       document.documentElement.setAttribute('data-theme', theme);
@@ -2687,6 +3822,11 @@
           id: 'emergency',
           keywords: ['emergency', 'urgent', 'ambulance number', '911', '999'],
           answer: "For emergencies, call our emergency line: +263 716 544 233. We're open 24 hours a day for urgent care."
+        },
+        {
+          id: 'breast_cancer',
+          keywords: ['breast', 'cancer', 'screening', 'self exam', 'self-exam', 'lump', 'october', 'pink', 'cervical'],
+          answer: "October is Breast Cancer Awareness Month. Our Cancer Screening Programme runs 1–30 October 2026 at discounted rates — book your slot on 0772 388 941. See the Updates section for our 5-step breast self-examination guide."
         },
         {
           id: 'greeting',
